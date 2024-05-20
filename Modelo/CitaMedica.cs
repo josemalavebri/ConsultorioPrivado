@@ -14,7 +14,6 @@ namespace ConsultorioPrivado.Modelo
         private TipoConsulta tipoConsulta;
         private DateTime fechaConsulta;
 
-
         public CitaMedica(int idCitaMedica, Paciente paciente, DateTime fechaConsulta, TipoConsulta tipoConsulta, Medico medico)
         {
             this.IdCitaMedica = idCitaMedica;
@@ -23,7 +22,6 @@ namespace ConsultorioPrivado.Modelo
             this.Medico = medico;
             this.TipoConsulta = tipoConsulta;
         }
-
 
         public int IdCitaMedica { get => idCitaMedica; set => idCitaMedica = value; }
         public DateTime FechaConsulta { get => fechaConsulta; set => fechaConsulta = value; }

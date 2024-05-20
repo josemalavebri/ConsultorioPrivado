@@ -11,8 +11,8 @@ namespace ConsultorioPrivado.Datos.Interface
     public interface InterfaceDatos
     {
         DataTable get(ROL rol);
-        bool getId(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista);
-        bool crear(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista);
-        bool eliminar(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista);
+        bool getId(ROL rol, List<CD_Parameter_SP> lista);
+        bool crear(ROL rol, List<CD_Parameter_SP> lista);
+        bool elimina(ROL rol, List<CD_Parameter_SP> lista);
     }
 }
