@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Modelo
 {
-    internal class Paciente
+    public class Paciente
     {
         private int id;
         private int cedula;
