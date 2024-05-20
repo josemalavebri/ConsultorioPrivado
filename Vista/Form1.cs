@@ -7,7 +7,7 @@ namespace ConsultorioPrivado
         public Form1()
         {
             InitializeComponent();
-            abrirFormulario(new AgendarCita_form());
+            abrirFormulario(new Paciente_form());
         }
 
         private void abrirFormulario(Form form)

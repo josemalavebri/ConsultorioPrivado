@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ConsultorioPrivado.Utilidad;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,8 @@ namespace ConsultorioPrivado.Datos.Interface
 {
     public interface InterfaceDatos
     {
-        DataTable get(CODIGO_SP codigo_SP, ROL rol);
-        bool get_id(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista);
+        DataTable get(ROL rol);
+        bool getId(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista);
         bool crear(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista);
         bool eliminar(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista);
     }

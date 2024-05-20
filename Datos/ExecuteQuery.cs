@@ -1,4 +1,4 @@
-﻿using ConsultorioPrivado.Datos.Interface;
+﻿using ConsultorioPrivado.Utilidad;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Datos
 {
-    internal class ExecuteSQL
+    internal class ExecuteQuery
     {
 
         private ConexionDB conn = new ConexionDB();
@@ -38,7 +38,6 @@ namespace ConsultorioPrivado.Datos
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = nombre_sp;
-            //añadimos los parametros si los hay
             if (lista_parametros.Count > 0)
             {
                 foreach (var parametro in lista_parametros)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Modelo
 {
-    internal class Medico
+    public class Medico
     {
         private int id;
         private string nombre;

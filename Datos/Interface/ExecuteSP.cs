@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsultorioPrivado.Utilidad;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
@@ -14,17 +15,17 @@ namespace ConsultorioPrivado.Datos.Interface
         public ExecuteSP() { }
 
 
-        private ExecuteSQL obj_bd = new ExecuteSQL();
+        private ExecuteQuery obj_bd = new ExecuteQuery();
 
 
-        public DataTable get(CODIGO_SP codigo_SP, ROL rol)
+        public DataTable get( ROL rol)
         {
             List<CD_Parameter_SP> lista = new List<CD_Parameter_SP>();
-            cadenaFinal = codigo_SP.ToString() + rol.ToString();
+            cadenaFinal = CODIGO_SP.SP_GET + rol.ToString();
             return obj_bd.ExecuteSPQuery(cadenaFinal, lista);
         }
 
-        public bool get_id(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista)
+        public bool getId(CODIGO_SP codigo_SP, ROL rol, List<CD_Parameter_SP> lista)
         {
             throw new NotImplementedException();
         }
