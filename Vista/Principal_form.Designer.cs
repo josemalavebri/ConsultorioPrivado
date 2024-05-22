@@ -1,6 +1,6 @@
 ﻿namespace ConsultorioPrivado
 {
-    partial class Form1
+    partial class Principal_form
     {
         /// <summary>
         ///  Required designer variable.

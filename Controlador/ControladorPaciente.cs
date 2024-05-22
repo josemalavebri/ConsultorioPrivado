@@ -10,21 +10,27 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Controlador
 {
-    public class ControladorPaciente
+    public class ControladorPaciente : I_Controlador<Paciente>
     {
         private InterfaceDatos interfaceDatos;
+
 
         private string rol;
         public ControladorPaciente()
         {
 
             interfaceDatos = new ExecuteSP();
-            rol = ROL._PACIENTE.ToString();
+            rol = E_ROL._PACIENTE.ToString();
+        }
+
+        public DataTable getId(Paciente paciente)
+        {
+            throw new NotImplementedException();
         }
 
         public DataTable get()
         {
-            return interfaceDatos.get(ROL._PACIENTE);
+            return interfaceDatos.get(E_ROL._PACIENTE);
         }
 
         public bool crear(Paciente paciente)
@@ -35,7 +41,19 @@ namespace ConsultorioPrivado.Controlador
             lista.Add(new CD_Parameter_SP("@parametro3", paciente.Apellido, SqlDbType.Text));
             lista.Add(new CD_Parameter_SP("@parametro4", paciente.Correo, SqlDbType.Text));
             InterfaceDatos interfaceDatos = new ExecuteSP();
-            return interfaceDatos.crear(ROL._PACIENTE, lista);
+            return interfaceDatos.crear(E_ROL._PACIENTE, lista);
         }
+
+        public bool modificar(Paciente objeto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool eliminar(Paciente objeto)
+        {
+            throw new NotImplementedException();
+        }
+
+       
     }
 }

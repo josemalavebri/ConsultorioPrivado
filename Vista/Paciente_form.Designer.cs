@@ -39,6 +39,7 @@
             paciente_dgv.Name = "paciente_dgv";
             paciente_dgv.Size = new Size(553, 178);
             paciente_dgv.TabIndex = 0;
+            paciente_dgv.CellContentClick += paciente_dgv_CellContentClick;
             // 
             // Paciente_form
             // 

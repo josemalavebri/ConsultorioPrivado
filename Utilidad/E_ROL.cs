@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
-    public enum ROL
+    public enum E_ROL
     {
         _PACIENTE,
         _DOCTOR,
-        _CITA
+        _CITA,
+
     }
 }

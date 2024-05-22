@@ -26,7 +26,6 @@ namespace ConsultorioPrivado.Datos
                 Console.WriteLine("Error al abrir la conexión: " + ex.Message);
                 throw;
             }
-
             return conexion;
         }
 

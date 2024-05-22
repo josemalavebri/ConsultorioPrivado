@@ -37,6 +37,7 @@
             cedula_text = new TextBox();
             correoText = new TextBox();
             agregar_button = new Button();
+            resetear_button = new Button();
             SuspendLayout();
             // 
             // label1
@@ -105,18 +106,30 @@
             // 
             // agregar_button
             // 
-            agregar_button.Location = new Point(104, 190);
+            agregar_button.Location = new Point(51, 190);
             agregar_button.Name = "agregar_button";
             agregar_button.Size = new Size(75, 23);
             agregar_button.TabIndex = 8;
             agregar_button.Text = "Agregar";
             agregar_button.UseVisualStyleBackColor = true;
+            agregar_button.Click += agregar_button_Click;
+            // 
+            // resetear_button
+            // 
+            resetear_button.Location = new Point(149, 190);
+            resetear_button.Name = "resetear_button";
+            resetear_button.Size = new Size(75, 23);
+            resetear_button.TabIndex = 9;
+            resetear_button.Text = "Resetear";
+            resetear_button.UseVisualStyleBackColor = true;
+            resetear_button.Click += button1_Click;
             // 
             // AgregarPaciente_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(293, 290);
+            Controls.Add(resetear_button);
             Controls.Add(agregar_button);
             Controls.Add(correoText);
             Controls.Add(cedula_text);
@@ -143,5 +156,6 @@
         private TextBox cedula_text;
         private TextBox correoText;
         private Button agregar_button;
+        private Button resetear_button;
     }
 }

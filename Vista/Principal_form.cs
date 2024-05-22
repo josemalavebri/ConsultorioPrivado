@@ -2,12 +2,12 @@ using ConsultorioPrivado.Vista;
 
 namespace ConsultorioPrivado
 {
-    public partial class Form1 : Form
+    public partial class Principal_form : Form
     {
-        public Form1()
+        public Principal_form()
         {
             InitializeComponent();
-            abrirFormulario(new Paciente_form());
+            abrirFormulario(new AgregarPaciente_form());
         }
 
         private void abrirFormulario(Form form)

@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Modelo
 {
-    public class Paciente
+    public class Paciente : IEntidad
     {
         private int id;
         private int cedula;
         private string nombre;
         private string apellido;
         private string correo;
+
+        public Paciente()
+        {
+        }
 
         public Paciente(int id, int cedula, string nombre, string apellido, string correo)
         {

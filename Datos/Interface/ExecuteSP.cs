@@ -17,37 +17,36 @@ namespace ConsultorioPrivado.Datos.Interface
             obj_bd = new ExecuteQuery();
         }
 
-        public string crearCadenaFinal(CODIGO_SP codigo, ROL rol) { return "" + codigo + rol; }
+        public string crearCadenaFinal(E_CODIGO_SP codigo, E_ROL rol) { return "" + codigo + rol; }
 
-        public DataTable get(ROL rol)
+        public DataTable get(E_ROL rol)
         {
-            crearCadenaFinal(CODIGO_SP.SP_GET, rol);
             List<CD_Parameter_SP> lista = new List<CD_Parameter_SP>();
-            cadenaFinal = crearCadenaFinal(CODIGO_SP.SP_GET, rol);
+            cadenaFinal = crearCadenaFinal(E_CODIGO_SP.SP_GET, rol);
             return obj_bd.ExecuteSPQuery(cadenaFinal, lista);
         }
 
-        public bool getId(ROL rol, List<CD_Parameter_SP> lista)
+        public bool getId(E_ROL rol, List<CD_Parameter_SP> lista)
         {
-            cadenaFinal = crearCadenaFinal(CODIGO_SP.SP_GET_ID, rol);
+            cadenaFinal = crearCadenaFinal(E_CODIGO_SP.SP_GET_ID, rol);
             return obj_bd.ExecuteSPNonQuery(cadenaFinal, lista);
         }
 
-        public bool crear(ROL rol, List<CD_Parameter_SP> lista)
+        public bool crear(E_ROL rol, List<CD_Parameter_SP> lista)
         {
-            cadenaFinal = crearCadenaFinal(CODIGO_SP.SP_CREA, rol);
+            cadenaFinal = crearCadenaFinal(E_CODIGO_SP.SP_CREA, rol);
             return obj_bd.ExecuteSPNonQuery(cadenaFinal, lista);
         }
 
-        public bool actualiza(ROL rol, List<CD_Parameter_SP> lista)
+        public bool actualiza(E_ROL rol, List<CD_Parameter_SP> lista)
         {
-            cadenaFinal = crearCadenaFinal(CODIGO_SP.SP_ACTUALIZA, rol);
+            cadenaFinal = crearCadenaFinal(E_CODIGO_SP.SP_ACTUALIZA, rol);
             return obj_bd.ExecuteSPNonQuery(cadenaFinal, lista);
         }
 
-        public bool elimina( ROL rol, List<CD_Parameter_SP> lista)
+        public bool elimina( E_ROL rol, List<CD_Parameter_SP> lista)
         {
-            cadenaFinal = crearCadenaFinal(CODIGO_SP.SP_ELIMINA, rol);
+            cadenaFinal = crearCadenaFinal(E_CODIGO_SP.SP_ELIMINA, rol);
             return obj_bd.ExecuteSPNonQuery(cadenaFinal, lista);
         }
 

@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Controlador
 {
-    internal interface IControlador<T>
+    public interface I_Controlador<T>
     {
         DataTable get();
+
+        DataTable getId(T objeto);
 
         bool crear(T objeto);
 

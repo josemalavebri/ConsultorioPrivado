@@ -10,9 +10,9 @@ namespace ConsultorioPrivado.Datos.Interface
 {
     public interface InterfaceDatos
     {
-        DataTable get(ROL rol);
-        bool getId(ROL rol, List<CD_Parameter_SP> lista);
-        bool crear(ROL rol, List<CD_Parameter_SP> lista);
-        bool elimina(ROL rol, List<CD_Parameter_SP> lista);
+        DataTable get(E_ROL rol);
+        bool getId(E_ROL rol, List<CD_Parameter_SP> lista);
+        bool crear(E_ROL rol, List<CD_Parameter_SP> lista);
+        bool elimina(E_ROL rol, List<CD_Parameter_SP> lista);
     }
 }

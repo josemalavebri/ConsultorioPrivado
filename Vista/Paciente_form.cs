@@ -1,4 +1,5 @@
 ﻿using ConsultorioPrivado.Controlador;
+using ConsultorioPrivado.Modelo;
 using Microsoft.Identity.Client.NativeInterop;
 using System;
 using System.Collections.Generic;
@@ -14,18 +15,25 @@ namespace ConsultorioPrivado.Vista
 {
     public partial class Paciente_form : Form
     {
-        ControladorPaciente controladorPaciente;
+        I_Controlador<Paciente> iControlador;
         public Paciente_form()
         {
             InitializeComponent();
-            controladorPaciente = new ControladorPaciente();
+            iControlador = new ControladorPaciente();
+
         }
 
         private void Paciente_form_Load(object sender, EventArgs e)
         {
             paciente_dgv.Rows.Clear();
-            paciente_dgv.DataSource = controladorPaciente.get();
-            Console.WriteLine(controladorPaciente.ToString());
+            paciente_dgv.DataSource = iControlador.get();
+
+
+        }
+
+        private void paciente_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
