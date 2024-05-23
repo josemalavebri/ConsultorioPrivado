@@ -1,4 +1,4 @@
-﻿using ConsultorioPrivado.Utilidad;
+﻿using ConsultorioPrivado.Utilidad.Datos;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;

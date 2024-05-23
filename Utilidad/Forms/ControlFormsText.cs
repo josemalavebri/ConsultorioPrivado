@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Utilidad
+namespace ConsultorioPrivado.Utilidad.Forms
 {
-    public class ControlForms
+    public class ControlFormsText
     {
 
 
@@ -24,7 +24,7 @@ namespace ConsultorioPrivado.Utilidad
             }
         }
 
-        
+
         private static List<TextBox> agregarTextBoxLista1(TextBox tbx1, TextBox tbx2, TextBox tbx3, TextBox tbx4)
         {
             List<TextBox> tbxGeneral = new List<TextBox>();
@@ -35,7 +35,7 @@ namespace ConsultorioPrivado.Utilidad
             return tbxGeneral;
         }
 
-        private static List<TextBox> agregarTextBoxLista2(TextBox tbx1, TextBox tbx2, TextBox tbx3, TextBox tbx4,TextBox tbx5)
+        private static List<TextBox> agregarTextBoxLista2(TextBox tbx1, TextBox tbx2, TextBox tbx3, TextBox tbx4, TextBox tbx5)
         {
             List<TextBox> txtGeneral = agregarTextBoxLista1(tbx1, tbx2, tbx3, tbx4);
             txtGeneral.Add(tbx5);
@@ -49,7 +49,7 @@ namespace ConsultorioPrivado.Utilidad
 
         public static void eliminarCincoTextoBoxs(TextBox tbx1, TextBox tbx2, TextBox tbx3, TextBox tbx4, TextBox tbx5)
         {
-            quitarTextos(agregarTextBoxLista2(tbx1, tbx2, tbx3, tbx4,tbx5));
+            quitarTextos(agregarTextBoxLista2(tbx1, tbx2, tbx3, tbx4, tbx5));
         }
 
 

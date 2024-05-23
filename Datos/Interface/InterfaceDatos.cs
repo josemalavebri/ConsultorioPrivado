@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using ConsultorioPrivado.Utilidad;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsultorioPrivado.Utilidad.Datos;
 
 namespace ConsultorioPrivado.Datos.Interface
 {

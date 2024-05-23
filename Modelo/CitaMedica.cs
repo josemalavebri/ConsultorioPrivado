@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Modelo
 {
-    internal class CitaMedica
+    internal class CitaMedica : IEntidad
     {
         private int idCitaMedica;
         private Paciente paciente;

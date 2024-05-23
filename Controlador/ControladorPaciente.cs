@@ -1,6 +1,6 @@
 ﻿using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
-using ConsultorioPrivado.Utilidad;
+using ConsultorioPrivado.Utilidad.Datos;
 using System;
 using System.Collections.Generic;
 using System.Data;

@@ -82,6 +82,7 @@
             nombre_text.Name = "nombre_text";
             nombre_text.Size = new Size(100, 23);
             nombre_text.TabIndex = 4;
+            nombre_text.TextChanged += nombre_text_TextChanged;
             // 
             // apellido_text
             // 

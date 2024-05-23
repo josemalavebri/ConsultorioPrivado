@@ -1,6 +1,8 @@
 ﻿using ConsultorioPrivado.Controlador;
+using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
-using ConsultorioPrivado.Utilidad;
+using ConsultorioPrivado.Utilidad.Forms;
+using Microsoft.Identity.Client.NativeInterop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace ConsultorioPrivado.Vista
 {
@@ -21,13 +25,18 @@ namespace ConsultorioPrivado.Vista
         {
             InitializeComponent();
             controladorPaciente = new ControladorPaciente();
+            ControlFormsButton.desabilitarHabilitarBoton(false, resetear_button);
+            cedula_text.TextChanged += textBoxes_TextChanged;
+            nombre_text.TextChanged += textBoxes_TextChanged;
+            apellido_text.TextChanged += textBoxes_TextChanged;
+            correoText.TextChanged += textBoxes_TextChanged;
         }
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
-            controladorPaciente.crear(crearPacienteDatos());
+            Paciente paciente = crearPacienteDatos();
+            ControladorGeneral.CrearEntidad(true, paciente, E_ROL._PACIENTE);
             resetearControles();
-
         }
 
         private Paciente crearPacienteDatos()
@@ -40,18 +49,31 @@ namespace ConsultorioPrivado.Vista
             return paciente;
         }
 
-       
         private void button1_Click(object sender, EventArgs e)
         {
             resetearControles();
+            ControlFormsButton.desabilitarHabilitarBoton(false, resetear_button);
         }
 
-       private void resetearControles()
+        private void textBoxes_TextChanged(object sender, EventArgs e)
         {
-            ControlForms.eliminarCuatroTextoBoxs(cedula_text, nombre_text, apellido_text, correoText);
+            TextBox textBox = sender as TextBox;
+
+            if (textBox != null)
+            {
+                ControlFormsButton.desabilitarHabilitarBoton(true,resetear_button);
+            }
+        }
+
+        private void resetearControles()
+        {
+            ControlFormsText.eliminarCuatroTextoBoxs(cedula_text, nombre_text, apellido_text, correoText);
 
         }
 
-
+        private void nombre_text_TextChanged(object sender, EventArgs e)
+        {
+            ControlFormsButton.desabilitarHabilitarBoton(true, resetear_button);
+        }
     }
 }
