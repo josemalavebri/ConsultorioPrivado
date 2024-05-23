@@ -12,7 +12,7 @@ namespace ConsultorioPrivado.Modelo
         private string nombre;
         private string apellido;
         private Especialidad especialidad;
-        private string telefono;
+        private int telefono;
         private string correo;
 
         public Medico(int id, string nombre, string apellido, Especialidad especialidad, string telefono, string correo)

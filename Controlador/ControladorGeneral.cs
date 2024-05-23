@@ -12,12 +12,23 @@ namespace ConsultorioPrivado.Controlador
 {
     public class ControladorGeneral
     {
+        private static bool primeraIteracion;
 
-        public static bool CrearEntidad<T>(bool primeraIteracion, T entidad, E_ROL rol) where T : IEntidad
+        private static InterfaceDatos interfaceDatos;
+
+        public static bool modificarEntidad<T>( T entidad, E_ROL rol) where T : IEntidad
         {
+            primeraIteracion = true;
+            List<CD_Parameter_SP> lista = crearListaPropiedades(primeraIteracion, entidad);
+            interfaceDatos = new ExecuteSP();
+            return interfaceDatos.crear(rol, lista);
+        }
 
+        public static bool crearEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
+        {
+            bool primeraIteracion = false;
             List<CD_Parameter_SP> lista = crearListaPropiedades(primeraIteracion,entidad);
-            InterfaceDatos interfaceDatos = new ExecuteSP();
+            interfaceDatos = new ExecuteSP();
             return interfaceDatos.crear(rol, lista);
         }
 
@@ -35,12 +46,12 @@ namespace ConsultorioPrivado.Controlador
                 }
                 var nombreParametro = $"@{propiedad.Name}";
                 var valor = propiedad.GetValue(entidad);
-                var tipo = MapearTipo(propiedad.PropertyType);
+                var tipo = mapearTipo(propiedad.PropertyType);
                 lista.Add(new CD_Parameter_SP(nombreParametro, valor, tipo));
             }
             return lista;
         }
-        private static SqlDbType MapearTipo(Type tipo)
+        private static SqlDbType mapearTipo(Type tipo)
         {
             if (tipo == typeof(string))
                 return SqlDbType.Text;
@@ -48,6 +59,22 @@ namespace ConsultorioPrivado.Controlador
                 return SqlDbType.Int;
 
             throw new ArgumentException("Tipo no soportado");
+        }
+
+        public static DataTable obtenerEntidad(E_ROL rol) 
+        {
+            interfaceDatos = new ExecuteSP();
+            return interfaceDatos.get(rol);
+
+        }
+
+        public static DataTable obtenerPorId<T>(T entidad, E_ROL rol) where T : IEntidad
+        {
+            primeraIteracion = true;
+            interfaceDatos = new ExecuteSP();
+            List<CD_Parameter_SP> lista = crearListaPropiedades<T>( primeraIteracion, entidad);
+            return interfaceDatos.getId(rol,lista);
+
         }
     }
 }

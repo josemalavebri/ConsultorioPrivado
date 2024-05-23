@@ -16,5 +16,10 @@ namespace ConsultorioPrivado.Vista
         {
             InitializeComponent();
         }
+
+        private void AgendarCita_form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

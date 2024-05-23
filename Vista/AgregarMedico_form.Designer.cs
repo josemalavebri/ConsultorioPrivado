@@ -1,6 +1,6 @@
 ﻿namespace ConsultorioPrivado.Vista
 {
-    partial class AgregarPaciente_form
+    partial class AgregarMedico_form
     {
         /// <summary>
         /// Required designer variable.
@@ -36,21 +36,18 @@
             apellido_text = new TextBox();
             cedula_text = new TextBox();
             correoText = new TextBox();
-            aceptar_button = new Button();
+            agregar_button = new Button();
             resetear_button = new Button();
-            cancelar_button = new Button();
-            dataGridView1 = new DataGridView();
             telefono_text = new TextBox();
-            label5 = new Label();
-            label6 = new Label();
-            modificar_button = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            telefono_label = new Label();
+            especialidad = new Label();
+            especialidad_combo = new ComboBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(33, 21);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 0;
@@ -59,7 +56,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 48);
+            label2.Location = new Point(33, 60);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 1;
@@ -68,7 +65,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 88);
+            label3.Location = new Point(33, 145);
             label3.Name = "label3";
             label3.Size = new Size(44, 15);
             label3.TabIndex = 2;
@@ -77,7 +74,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 129);
+            label4.Location = new Point(33, 186);
             label4.Name = "label4";
             label4.Size = new Size(43, 15);
             label4.TabIndex = 3;
@@ -85,7 +82,7 @@
             // 
             // nombre_text
             // 
-            nombre_text.Location = new Point(117, 9);
+            nombre_text.Location = new Point(138, 21);
             nombre_text.Name = "nombre_text";
             nombre_text.Size = new Size(100, 23);
             nombre_text.TabIndex = 4;
@@ -93,38 +90,38 @@
             // 
             // apellido_text
             // 
-            apellido_text.Location = new Point(117, 48);
+            apellido_text.Location = new Point(138, 60);
             apellido_text.Name = "apellido_text";
             apellido_text.Size = new Size(100, 23);
             apellido_text.TabIndex = 5;
             // 
             // cedula_text
             // 
-            cedula_text.Location = new Point(117, 88);
+            cedula_text.Location = new Point(138, 145);
             cedula_text.Name = "cedula_text";
             cedula_text.Size = new Size(100, 23);
             cedula_text.TabIndex = 6;
             // 
             // correoText
             // 
-            correoText.Location = new Point(117, 129);
+            correoText.Location = new Point(138, 186);
             correoText.Name = "correoText";
             correoText.Size = new Size(100, 23);
             correoText.TabIndex = 7;
             // 
-            // aceptar_button
+            // agregar_button
             // 
-            aceptar_button.Location = new Point(253, 12);
-            aceptar_button.Name = "aceptar_button";
-            aceptar_button.Size = new Size(75, 23);
-            aceptar_button.TabIndex = 8;
-            aceptar_button.Text = "Aceptar";
-            aceptar_button.UseVisualStyleBackColor = true;
-            aceptar_button.Click += agregar_button_Click;
+            agregar_button.Location = new Point(50, 280);
+            agregar_button.Name = "agregar_button";
+            agregar_button.Size = new Size(75, 23);
+            agregar_button.TabIndex = 8;
+            agregar_button.Text = "Agregar";
+            agregar_button.UseVisualStyleBackColor = true;
+            agregar_button.Click += agregar_button_Click;
             // 
             // resetear_button
             // 
-            resetear_button.Location = new Point(253, 161);
+            resetear_button.Location = new Point(148, 280);
             resetear_button.Name = "resetear_button";
             resetear_button.Size = new Size(75, 23);
             resetear_button.TabIndex = 9;
@@ -132,70 +129,50 @@
             resetear_button.UseVisualStyleBackColor = true;
             resetear_button.Click += button1_Click;
             // 
-            // cancelar_button
-            // 
-            cancelar_button.Location = new Point(253, 63);
-            cancelar_button.Name = "cancelar_button";
-            cancelar_button.Size = new Size(75, 23);
-            cancelar_button.TabIndex = 10;
-            cancelar_button.Text = "Cancelar";
-            cancelar_button.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 243);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(365, 126);
-            dataGridView1.TabIndex = 11;
-            // 
             // telefono_text
             // 
-            telefono_text.Location = new Point(117, 169);
+            telefono_text.Location = new Point(138, 228);
             telefono_text.Name = "telefono_text";
             telefono_text.Size = new Size(100, 23);
-            telefono_text.TabIndex = 13;
+            telefono_text.TabIndex = 11;
             // 
-            // label5
+            // telefono_label
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 169);
-            label5.Name = "label5";
-            label5.Size = new Size(52, 15);
-            label5.TabIndex = 12;
-            label5.Text = "Telefono";
+            telefono_label.AutoSize = true;
+            telefono_label.Location = new Point(33, 228);
+            telefono_label.Name = "telefono_label";
+            telefono_label.Size = new Size(52, 15);
+            telefono_label.TabIndex = 10;
+            telefono_label.Text = "Telefono";
             // 
-            // label6
+            // especialidad
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(12, 215);
-            label6.Name = "label6";
-            label6.Size = new Size(149, 15);
-            label6.TabIndex = 14;
-            label6.Text = "Ultimo Paciente Agregado:";
+            especialidad.AutoSize = true;
+            especialidad.Location = new Point(33, 104);
+            especialidad.Name = "especialidad";
+            especialidad.Size = new Size(72, 15);
+            especialidad.TabIndex = 12;
+            especialidad.Text = "Especialidad";
             // 
-            // modificar_button
+            // especialidad_combo
             // 
-            modificar_button.Location = new Point(253, 111);
-            modificar_button.Name = "modificar_button";
-            modificar_button.Size = new Size(75, 23);
-            modificar_button.TabIndex = 15;
-            modificar_button.Text = "Modificar";
-            modificar_button.UseVisualStyleBackColor = true;
+            especialidad_combo.FormattingEnabled = true;
+            especialidad_combo.Location = new Point(138, 107);
+            especialidad_combo.Name = "especialidad_combo";
+            especialidad_combo.Size = new Size(121, 23);
+            especialidad_combo.TabIndex = 13;
             // 
-            // AgregarPaciente_form
+            // AgregarMedico_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(395, 381);
-            Controls.Add(modificar_button);
-            Controls.Add(label6);
+            ClientSize = new Size(290, 316);
+            Controls.Add(especialidad_combo);
+            Controls.Add(especialidad);
             Controls.Add(telefono_text);
-            Controls.Add(label5);
-            Controls.Add(dataGridView1);
-            Controls.Add(cancelar_button);
+            Controls.Add(telefono_label);
             Controls.Add(resetear_button);
-            Controls.Add(aceptar_button);
+            Controls.Add(agregar_button);
             Controls.Add(correoText);
             Controls.Add(cedula_text);
             Controls.Add(apellido_text);
@@ -204,9 +181,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "AgregarPaciente_form";
-            Text = "AgregarPaciente_form";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Name = "AgregarMedico_form";
+            Text = "AgregarMedico_form";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -221,13 +197,11 @@
         private TextBox apellido_text;
         private TextBox cedula_text;
         private TextBox correoText;
-        private Button aceptar_button;
+        private Button agregar_button;
         private Button resetear_button;
-        private Button cancelar_button;
-        private DataGridView dataGridView1;
         private TextBox telefono_text;
-        private Label label5;
-        private Label label6;
-        private Button modificar_button;
+        private Label telefono_label;
+        private Label especialidad;
+        private ComboBox especialidad_combo;
     }
 }
