@@ -12,28 +12,54 @@ namespace ConsultorioPrivado.Controlador
 {
     public class ControladorGeneral
     {
-        private static bool primeraIteracion;
+        private bool primeraIteracion;
 
-        private static InterfaceDatos interfaceDatos;
+        private DataAccess operacionesDB;
 
-        public static bool modificarEntidad<T>( T entidad, E_ROL rol) where T : IEntidad
+        public ControladorGeneral()
+        {
+            operacionesDB = new ExecuteSP();
+        }
+
+        public  bool modificar<T>( T entidad, E_ROL rol) where T : IEntidad
         {
             primeraIteracion = true;
             List<CD_Parameter_SP> lista = crearListaPropiedades(primeraIteracion, entidad);
-            interfaceDatos = new ExecuteSP();
-            return interfaceDatos.crear(rol, lista);
+            return operacionesDB.crear(rol, lista);
         }
 
-        public static bool crearEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
+        public  bool crear<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             bool primeraIteracion = false;
             List<CD_Parameter_SP> lista = crearListaPropiedades(primeraIteracion,entidad);
-            interfaceDatos = new ExecuteSP();
-            return interfaceDatos.crear(rol, lista);
+            return operacionesDB.crear(rol, lista);
         }
 
 
-        private static List<CD_Parameter_SP> crearListaPropiedades<T>(bool primeraIteracion,T entidad)
+        public  DataTable getId<T>(T entidad, E_ROL rol) where T : IEntidad
+        {
+            primeraIteracion = true;
+            List<CD_Parameter_SP> lista = crearListaPropiedades<T>( primeraIteracion, entidad);
+            return operacionesDB.getId(rol,lista);
+
+        }
+
+        public  bool Eliminar<T>(T entidad, E_ROL rol) where T : IEntidad
+        {
+            primeraIteracion = true;
+            List<CD_Parameter_SP> lista = crearListaPropiedades<T>(primeraIteracion, entidad);
+            return operacionesDB.elimina(rol, lista);
+
+        }
+
+        public  DataTable get(E_ROL rol)
+        {
+            operacionesDB = new ExecuteSP();
+            return operacionesDB.get(rol);
+
+        }
+
+        private static List<CD_Parameter_SP> crearListaPropiedades<T>(bool primeraIteracion, T entidad)
         {
             List<CD_Parameter_SP> lista = new List<CD_Parameter_SP>();
             var propiedades = typeof(T).GetProperties();
@@ -51,6 +77,7 @@ namespace ConsultorioPrivado.Controlador
             }
             return lista;
         }
+
         private static SqlDbType mapearTipo(Type tipo)
         {
             if (tipo == typeof(string))
@@ -60,21 +87,6 @@ namespace ConsultorioPrivado.Controlador
 
             throw new ArgumentException("Tipo no soportado");
         }
-
-        public static DataTable obtenerEntidad(E_ROL rol) 
-        {
-            interfaceDatos = new ExecuteSP();
-            return interfaceDatos.get(rol);
-
-        }
-
-        public static DataTable obtenerPorId<T>(T entidad, E_ROL rol) where T : IEntidad
-        {
-            primeraIteracion = true;
-            interfaceDatos = new ExecuteSP();
-            List<CD_Parameter_SP> lista = crearListaPropiedades<T>( primeraIteracion, entidad);
-            return interfaceDatos.getId(rol,lista);
-
-        }
+      
     }
 }

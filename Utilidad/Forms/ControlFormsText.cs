@@ -10,13 +10,7 @@ namespace ConsultorioPrivado.Utilidad.Forms
     {
 
 
-        public static void eliminarTextoBox(TextBox textBox)
-        {
-            textBox.Text = string.Empty;
-
-        }
-
-        private static void quitarTextos(List<TextBox> tbxGeneral)
+        private static void QuitarTextos(List<TextBox> tbxGeneral)
         {
             foreach (TextBox item in tbxGeneral)
             {
@@ -24,33 +18,16 @@ namespace ConsultorioPrivado.Utilidad.Forms
             }
         }
 
-
-        private static List<TextBox> agregarTextBoxLista1(TextBox tbx1, TextBox tbx2, TextBox tbx3, TextBox tbx4)
+        private static List<TextBox> CrearListaTextBox(params TextBox[] textBoxes)
         {
-            List<TextBox> tbxGeneral = new List<TextBox>();
-            tbxGeneral.Add(tbx1);
-            tbxGeneral.Add(tbx2);
-            tbxGeneral.Add(tbx3);
-            tbxGeneral.Add(tbx4);
-            return tbxGeneral;
+            return new List<TextBox>(textBoxes);
         }
 
-        private static List<TextBox> agregarTextBoxLista2(TextBox tbx1, TextBox tbx2, TextBox tbx3, TextBox tbx4, TextBox tbx5)
+        public static void EliminarTextos(params TextBox[] textBoxes)
         {
-            List<TextBox> txtGeneral = agregarTextBoxLista1(tbx1, tbx2, tbx3, tbx4);
-            txtGeneral.Add(tbx5);
-            return txtGeneral;
+            QuitarTextos(CrearListaTextBox(textBoxes));
         }
 
-        public static void eliminarCuatroTextoBoxs(TextBox tbx1, TextBox tbx2, TextBox tbx3, TextBox tbx4)
-        {
-            quitarTextos(agregarTextBoxLista1(tbx1, tbx2, tbx3, tbx4));
-        }
-
-        public static void eliminarCincoTextoBoxs(TextBox tbx1, TextBox tbx2, TextBox tbx3, TextBox tbx4, TextBox tbx5)
-        {
-            quitarTextos(agregarTextBoxLista2(tbx1, tbx2, tbx3, tbx4, tbx5));
-        }
 
 
     }

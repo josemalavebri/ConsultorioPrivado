@@ -4,13 +4,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsultorioPrivado.Datos.DbOpeaciones;
 using ConsultorioPrivado.Utilidad.Datos;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
-    internal class ExecuteSP : InterfaceDatos
+    internal class ExecuteSP : DataAccess
     {
-        private StringBuilder  cadenaFinal;
+        private StringBuilder cadenaFinal;
         private ExecuteQuery obj_bd;
 
         public ExecuteSP() {

@@ -9,26 +9,33 @@ namespace ConsultorioPrivado.Utilidad.Forms
     public class ControlFormsButton
     {
 
-        public static void desabilitarHabilitarBoton(bool estado,Button button1)
+
+        public static void desabilitarHabilitarboton(bool estado,  Button button)
         {
-            button1.Enabled = estado;
+            button.Enabled = estado;
+        }
+        public static void desabilitarHabilitarBotones(bool estado, params Button[] buttons)
+        {
+            List<Button> botones = crearListaTextBox(buttons);
+            iterarBotones(estado, botones);
         }
 
-        public static void desabilitarHabilitarBotones(bool estado, Button button1, Button button2, Button button3)
+
+        private static List<Button> crearListaTextBox(params Button[] botones)
         {
-            List<Button> buttons = new List<Button>();
-            buttons.Add(button1);
-            buttons.Add(button2);
-            buttons.Add(button3);
-            iterarBotones(estado,buttons);
+            return new List<Button>(botones);
         }
 
-        private static void iterarBotones(bool estado,List<Button> buttons)
+        private static void iterarBotones(bool estado,List<Button> botones)
         {
-            foreach (Button button in buttons)
+            foreach (Button button in botones)
             {
                 button.Enabled = estado;
             }
         }
+
+        //metodos que detectan los cambios en los botones
+
     }
 }
+

@@ -24,7 +24,15 @@ namespace ConsultorioPrivado
             formularioHijo.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form formCita = new AgendarCita_form();
+            abrirFormulario(formCita);
+        }
 
-
+        private void pacientes_button_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new Paciente_form());
+        }
     }
 }

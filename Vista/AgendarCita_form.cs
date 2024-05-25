@@ -21,5 +21,7 @@ namespace ConsultorioPrivado.Vista
         {
 
         }
+
+        
     }
 }

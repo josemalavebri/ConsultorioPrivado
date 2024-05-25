@@ -1,6 +1,6 @@
 ﻿namespace ConsultorioPrivado.Vista
 {
-    partial class Paciente_form
+    partial class Medico_form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,60 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            paciente_dgv = new DataGridView();
+            medico_dgv = new DataGridView();
             label1 = new Label();
-            nuevoPaciente_Button = new Button();
-            ((System.ComponentModel.ISupportInitialize)paciente_dgv).BeginInit();
+            nuevoMedico_Button = new Button();
+            ((System.ComponentModel.ISupportInitialize)medico_dgv).BeginInit();
             SuspendLayout();
             // 
-            // paciente_dgv
+            // medico_dgv
             // 
-            paciente_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            paciente_dgv.Location = new Point(43, 104);
-            paciente_dgv.Name = "paciente_dgv";
-            paciente_dgv.Size = new Size(666, 178);
-            paciente_dgv.TabIndex = 0;
-            paciente_dgv.CellContentClick += paciente_dgv_CellContentClick;
+            medico_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            medico_dgv.Location = new Point(43, 104);
+            medico_dgv.Name = "medico_dgv";
+            medico_dgv.Size = new Size(666, 178);
+            medico_dgv.TabIndex = 0;
+            medico_dgv.CellContentClick += paciente_dgv_CellContentClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(52, 60);
             label1.Name = "label1";
-            label1.Size = new Size(120, 15);
+            label1.Size = new Size(115, 15);
             label1.TabIndex = 1;
-            label1.Text = "Pacientes Agregados:";
+            label1.Text = "Medicos Agregados:";
             // 
-            // nuevoPaciente_Button
+            // nuevoMedico_Button
             // 
-            nuevoPaciente_Button.Location = new Point(519, 60);
-            nuevoPaciente_Button.Name = "nuevoPaciente_Button";
-            nuevoPaciente_Button.Size = new Size(100, 25);
-            nuevoPaciente_Button.TabIndex = 2;
-            nuevoPaciente_Button.Text = "Nuevo Paciente";
-            nuevoPaciente_Button.UseVisualStyleBackColor = true;
-            nuevoPaciente_Button.Click += nuevoPaciente_Button_Click;
+            nuevoMedico_Button.Location = new Point(519, 60);
+            nuevoMedico_Button.Name = "nuevoMedico_Button";
+            nuevoMedico_Button.Size = new Size(100, 35);
+            nuevoMedico_Button.TabIndex = 2;
+            nuevoMedico_Button.Text = "Nuevo Medico";
+            nuevoMedico_Button.UseVisualStyleBackColor = true;
+            nuevoMedico_Button.Click += nuevoPaciente_Button_Click;
             // 
-            // Paciente_form
+            // Medico_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(808, 405);
-            Controls.Add(nuevoPaciente_Button);
+            Controls.Add(nuevoMedico_Button);
             Controls.Add(label1);
-            Controls.Add(paciente_dgv);
-            Name = "Paciente_form";
+            Controls.Add(medico_dgv);
+            Name = "Medico_form";
             Text = "Paciente_form";
             Load += Paciente_form_Load;
-            ((System.ComponentModel.ISupportInitialize)paciente_dgv).EndInit();
+            ((System.ComponentModel.ISupportInitialize)medico_dgv).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView paciente_dgv;
+        private DataGridView medico_dgv;
         private Label label1;
-        protected Button nuevoPaciente_Button;
+        protected Button nuevoMedico_Button;
     }
 }

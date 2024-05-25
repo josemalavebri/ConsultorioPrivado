@@ -20,23 +20,24 @@ namespace ConsultorioPrivado.Vista
     public partial class AgregarMedico_form : Form
     {
 
-        ControladorPaciente controladorPaciente;
+        ControladorGeneral controlador;
         public AgregarMedico_form()
         {
             InitializeComponent();
-            controladorPaciente = new ControladorPaciente();
-            ControlFormsButton.desabilitarHabilitarBoton(false, resetear_button);
             cedula_text.TextChanged += textBoxes_TextChanged;
             nombre_text.TextChanged += textBoxes_TextChanged;
             apellido_text.TextChanged += textBoxes_TextChanged;
             correoText.TextChanged += textBoxes_TextChanged;
+            controlador = new ControladorGeneral();
+            ControlFormsButton.desabilitarHabilitarBotones(false, resetear_button);
+
         }
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
             Paciente paciente = crearPacienteDatos();
-            ControladorGeneral.CrearEntidad(true, paciente, E_ROL._PACIENTE);
-            resetearControles();
+            controlador.crear( paciente, E_ROL._PACIENTE);
+            vaciarTexts();
         }
 
         private Paciente crearPacienteDatos()
@@ -51,8 +52,8 @@ namespace ConsultorioPrivado.Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            resetearControles();
-            ControlFormsButton.desabilitarHabilitarBoton(false, resetear_button);
+            vaciarTexts();
+            ControlFormsButton.desabilitarHabilitarBotones(false, resetear_button);
         }
 
         private void textBoxes_TextChanged(object sender, EventArgs e)
@@ -61,19 +62,20 @@ namespace ConsultorioPrivado.Vista
 
             if (textBox != null)
             {
-                ControlFormsButton.desabilitarHabilitarBoton(true,resetear_button);
+                resetearButtonEstado(true);
             }
         }
 
-        private void resetearControles()
+        private void vaciarTexts()
         {
-            ControlFormsText.eliminarCuatroTextoBoxs(cedula_text, nombre_text, apellido_text, correoText);
-
+            ControlFormsText.EliminarTextos(cedula_text, nombre_text, apellido_text, correoText);
         }
 
-        private void nombre_text_TextChanged(object sender, EventArgs e)
+
+        private void resetearButtonEstado(bool estado)
         {
-            ControlFormsButton.desabilitarHabilitarBoton(true, resetear_button);
+            ControlFormsButton.desabilitarHabilitarBotones(estado, resetear_button);
+
         }
     }
 }

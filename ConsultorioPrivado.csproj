@@ -16,6 +16,9 @@
     <Compile Update="Vista\AgregarMedico_form.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Vista\Medico_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using ConsultorioPrivado.Controlador;
+using ConsultorioPrivado.Datos.DbOpeaciones;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
 using ConsultorioPrivado.Utilidad.Forms;
@@ -20,22 +21,23 @@ namespace ConsultorioPrivado.Vista
     public partial class AgregarPaciente_form : Form
     {
 
-        ControladorPaciente controladorPaciente;
+        ControladorGeneral controlador;
         public AgregarPaciente_form()
         {
             InitializeComponent();
-            controladorPaciente = new ControladorPaciente();
-            ControlFormsButton.desabilitarHabilitarBoton(false, resetear_button);
-            cedula_text.TextChanged += textBoxes_TextChanged;
-            nombre_text.TextChanged += textBoxes_TextChanged;
-            apellido_text.TextChanged += textBoxes_TextChanged;
-            correoText.TextChanged += textBoxes_TextChanged;
+            controlador = new ControladorGeneral();
+            /* cedula_text.TextChanged += textBoxes_TextChanged;
+             nombre_text.TextChanged += textBoxes_TextChanged;
+             apellido_text.TextChanged += textBoxes_TextChanged;
+             correoText.TextChanged += textBoxes_TextChanged;
+            */
+            ControlFormsReset.TextBoxChangeListener(resetear_button, cedula_text, nombre_text, apellido_text, correoText, apellido_text);
         }
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
             Paciente paciente = crearPacienteDatos();
-            ControladorGeneral.CrearEntidad(true, paciente, E_ROL._PACIENTE);
+            controlador.crear(paciente, E_ROL._PACIENTE);
             resetearControles();
         }
 
@@ -49,11 +51,8 @@ namespace ConsultorioPrivado.Vista
             return paciente;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            resetearControles();
-            ControlFormsButton.desabilitarHabilitarBoton(false, resetear_button);
-        }
+
+        /*
 
         private void textBoxes_TextChanged(object sender, EventArgs e)
         {
@@ -61,19 +60,24 @@ namespace ConsultorioPrivado.Vista
 
             if (textBox != null)
             {
-                ControlFormsButton.desabilitarHabilitarBoton(true,resetear_button);
+                ControlFormsButton.desabilitarHabilitarBotones(true,resetear_button);
             }
         }
+        */
 
         private void resetearControles()
         {
-            ControlFormsText.eliminarCuatroTextoBoxs(cedula_text, nombre_text, apellido_text, correoText);
+            ControlFormsText.EliminarTextos(cedula_text, nombre_text, apellido_text, correoText, telefono_text);
 
         }
 
-        private void nombre_text_TextChanged(object sender, EventArgs e)
+        private void AgregarPaciente_form_Load(object sender, EventArgs e)
         {
-            ControlFormsButton.desabilitarHabilitarBoton(true, resetear_button);
+        }
+
+        private void resetear_button_Click(object sender, EventArgs e)
+        {
+            resetearControles();
         }
     }
 }

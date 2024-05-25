@@ -12,7 +12,7 @@ namespace ConsultorioPrivado.Controlador
 {
     public class ControladorPaciente : I_Controlador<Paciente>
     {
-        private InterfaceDatos interfaceDatos;
+        private DataAccess interfaceDatos;
 
 
         private string rol;
@@ -40,7 +40,7 @@ namespace ConsultorioPrivado.Controlador
             lista.Add(new CD_Parameter_SP("@parametro2", paciente.Nombre, SqlDbType.Text));
             lista.Add(new CD_Parameter_SP("@parametro3", paciente.Apellido, SqlDbType.Text));
             lista.Add(new CD_Parameter_SP("@parametro4", paciente.Correo, SqlDbType.Text));
-            InterfaceDatos interfaceDatos = new ExecuteSP();
+            DataAccess interfaceDatos = new ExecuteSP();
             return interfaceDatos.crear(E_ROL._PACIENTE, lista);
         }
 

@@ -14,8 +14,6 @@ namespace ConsultorioPrivado.Modelo
         private string apellido;
         private string correo;
         private int telefono;
-
-
         public Paciente()
         {
         }

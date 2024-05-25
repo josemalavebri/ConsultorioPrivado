@@ -1,4 +1,5 @@
 ﻿using ConsultorioPrivado.Controlador;
+using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
 using Microsoft.Identity.Client.NativeInterop;
 using System;
@@ -13,20 +14,20 @@ using System.Windows.Forms;
 
 namespace ConsultorioPrivado.Vista
 {
-    public partial class Paciente_form : Form
+    public partial class Medico_form : Form
     {
-        I_Controlador<Paciente> iControlador;
-        public Paciente_form()
+        ControladorGeneral controladorGeneral;
+        public Medico_form()
         {
             InitializeComponent();
-            iControlador = new ControladorPaciente();
+             controladorGeneral = new ControladorGeneral();
 
         }
 
         private void Paciente_form_Load(object sender, EventArgs e)
         {
-            paciente_dgv.Rows.Clear();
-            paciente_dgv.DataSource = iControlador.get();
+            medico_dgv.Rows.Clear();
+            controladorGeneral.get(E_ROL._DOCTOR);
 
 
         }

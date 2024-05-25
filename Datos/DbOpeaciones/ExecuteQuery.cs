@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Datos
+namespace ConsultorioPrivado.Datos.DbOpeaciones
 {
     internal class ExecuteQuery
     {

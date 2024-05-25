@@ -8,7 +8,7 @@ using ConsultorioPrivado.Utilidad.Datos;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
-    public interface InterfaceDatos
+    public interface DataAccess
     {
         DataTable get(E_ROL rol);
         DataTable getId(E_ROL rol, List<CD_Parameter_SP> lista);

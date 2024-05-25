@@ -37,13 +37,12 @@
             cedula_text = new TextBox();
             correoText = new TextBox();
             aceptar_button = new Button();
-            resetear_button = new Button();
             cancelar_button = new Button();
             dataGridView1 = new DataGridView();
             telefono_text = new TextBox();
             label5 = new Label();
             label6 = new Label();
-            modificar_button = new Button();
+            resetear_button = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -89,7 +88,6 @@
             nombre_text.Name = "nombre_text";
             nombre_text.Size = new Size(100, 23);
             nombre_text.TabIndex = 4;
-            nombre_text.TextChanged += nombre_text_TextChanged;
             // 
             // apellido_text
             // 
@@ -114,7 +112,7 @@
             // 
             // aceptar_button
             // 
-            aceptar_button.Location = new Point(253, 12);
+            aceptar_button.Location = new Point(257, 40);
             aceptar_button.Name = "aceptar_button";
             aceptar_button.Size = new Size(75, 23);
             aceptar_button.TabIndex = 8;
@@ -122,19 +120,9 @@
             aceptar_button.UseVisualStyleBackColor = true;
             aceptar_button.Click += agregar_button_Click;
             // 
-            // resetear_button
-            // 
-            resetear_button.Location = new Point(253, 161);
-            resetear_button.Name = "resetear_button";
-            resetear_button.Size = new Size(75, 23);
-            resetear_button.TabIndex = 9;
-            resetear_button.Text = "Resetear";
-            resetear_button.UseVisualStyleBackColor = true;
-            resetear_button.Click += button1_Click;
-            // 
             // cancelar_button
             // 
-            cancelar_button.Location = new Point(253, 63);
+            cancelar_button.Location = new Point(257, 92);
             cancelar_button.Name = "cancelar_button";
             cancelar_button.Size = new Size(75, 23);
             cancelar_button.TabIndex = 10;
@@ -146,7 +134,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 243);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(365, 126);
+            dataGridView1.Size = new Size(506, 126);
             dataGridView1.TabIndex = 11;
             // 
             // telefono_text
@@ -174,27 +162,28 @@
             label6.TabIndex = 14;
             label6.Text = "Ultimo Paciente Agregado:";
             // 
-            // modificar_button
+            // resetear_button
             // 
-            modificar_button.Location = new Point(253, 111);
-            modificar_button.Name = "modificar_button";
-            modificar_button.Size = new Size(75, 23);
-            modificar_button.TabIndex = 15;
-            modificar_button.Text = "Modificar";
-            modificar_button.UseVisualStyleBackColor = true;
+            resetear_button.Enabled = false;
+            resetear_button.Location = new Point(257, 146);
+            resetear_button.Name = "resetear_button";
+            resetear_button.Size = new Size(75, 23);
+            resetear_button.TabIndex = 15;
+            resetear_button.Text = "Resetear";
+            resetear_button.UseVisualStyleBackColor = true;
+            resetear_button.Click += resetear_button_Click;
             // 
             // AgregarPaciente_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(395, 381);
-            Controls.Add(modificar_button);
+            ClientSize = new Size(598, 381);
+            Controls.Add(resetear_button);
             Controls.Add(label6);
             Controls.Add(telefono_text);
             Controls.Add(label5);
             Controls.Add(dataGridView1);
             Controls.Add(cancelar_button);
-            Controls.Add(resetear_button);
             Controls.Add(aceptar_button);
             Controls.Add(correoText);
             Controls.Add(cedula_text);
@@ -206,6 +195,7 @@
             Controls.Add(label1);
             Name = "AgregarPaciente_form";
             Text = "AgregarPaciente_form";
+            Load += AgregarPaciente_form_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -222,12 +212,11 @@
         private TextBox cedula_text;
         private TextBox correoText;
         private Button aceptar_button;
-        private Button resetear_button;
         private Button cancelar_button;
         private DataGridView dataGridView1;
         private TextBox telefono_text;
         private Label label5;
         private Label label6;
-        private Button modificar_button;
+        private Button resetear_button;
     }
 }
