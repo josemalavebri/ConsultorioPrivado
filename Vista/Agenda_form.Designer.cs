@@ -28,14 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             citas_panel = new TableLayoutPanel();
             SuspendLayout();
-            // 
-            // sqlCommand1
-            // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // citas_panel
             // 
@@ -63,8 +57,6 @@
         }
 
         #endregion
-
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private TableLayoutPanel citas_panel;
     }
 }

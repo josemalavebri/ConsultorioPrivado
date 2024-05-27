@@ -31,27 +31,21 @@ namespace ConsultorioPrivado.Vista
             Label label4 = new Label();
             Label label5 = new Label();
 
-
-
-            label.Text = "0";
-            label1.Text = "1";
-            label2.Text = "2";
-            label3.Text = "3";
-            label4.Text = "4";
-            label5.Text = "5";
+            label.Text = "1";
+            label1.Text = "2";
+            label2.Text = "3";
+            label3.Text = "4";
+            label4.Text = "5";
+            label5.Text = "6";
 
 
 
             citas_panel.Controls.Add(label,0,0);
             citas_panel.Controls.Add(label1, 0, 1);
-            citas_panel.Controls.Add(label2, 1, 0);
-            citas_panel.Controls.Add(label3, 1, 1);
-            citas_panel.Controls.Add(label4, 2, 0);
-            citas_panel.Controls.Add(label5, 2, 1);
-
-
-
-
+            citas_panel.Controls.Add(label2, 0, 2);
+            citas_panel.Controls.Add(label3, 1, 0);
+            citas_panel.Controls.Add(label4, 1, 1);
+            citas_panel.Controls.Add(label5, 1, 2);
         }
     }
 }

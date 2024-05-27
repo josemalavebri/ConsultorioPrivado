@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Modelo
 {
-    public enum Especialidad
-    {
-        MEDICINA_GENERAL, DERMATOLOGIA, CARDIOLOGIA
-    }
+        public enum Especialidad
+        {
+            MEDICINA_GENERAL, DERMATOLOGIA, CARDIOLOGIA
+        }
 }

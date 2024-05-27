@@ -37,6 +37,9 @@
             label2 = new Label();
             label1 = new Label();
             medicos_dgv = new DataGridView();
+            nuevo_button = new Button();
+            modificar_button = new Button();
+            resetear_button = new Button();
             ((System.ComponentModel.ISupportInitialize)medicos_dgv).BeginInit();
             SuspendLayout();
             // 
@@ -64,6 +67,7 @@
             buscar_button.TabIndex = 17;
             buscar_button.Text = "Buscar";
             buscar_button.UseVisualStyleBackColor = true;
+            buscar_button.Click += buscar_button_Click;
             // 
             // cedula_text
             // 
@@ -113,12 +117,44 @@
             medicos_dgv.Name = "medicos_dgv";
             medicos_dgv.Size = new Size(596, 191);
             medicos_dgv.TabIndex = 11;
+            medicos_dgv.CellContentClick += medicos_dgv_CellContentClick;
+            // 
+            // nuevo_button
+            // 
+            nuevo_button.Location = new Point(329, 10);
+            nuevo_button.Name = "nuevo_button";
+            nuevo_button.Size = new Size(75, 23);
+            nuevo_button.TabIndex = 20;
+            nuevo_button.Text = "Nuevo";
+            nuevo_button.UseVisualStyleBackColor = true;
+            // 
+            // modificar_button
+            // 
+            modificar_button.Location = new Point(439, 10);
+            modificar_button.Name = "modificar_button";
+            modificar_button.Size = new Size(75, 23);
+            modificar_button.TabIndex = 21;
+            modificar_button.Text = "Modificar";
+            modificar_button.UseVisualStyleBackColor = true;
+            // 
+            // resetear_button
+            // 
+            resetear_button.Location = new Point(439, 60);
+            resetear_button.Name = "resetear_button";
+            resetear_button.Size = new Size(75, 23);
+            resetear_button.TabIndex = 22;
+            resetear_button.Text = "Resetear";
+            resetear_button.UseVisualStyleBackColor = true;
+            resetear_button.Click += resetear_button_Click;
             // 
             // Medico_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(644, 381);
+            Controls.Add(resetear_button);
+            Controls.Add(modificar_button);
+            Controls.Add(nuevo_button);
             Controls.Add(label3);
             Controls.Add(apellido_text);
             Controls.Add(buscar_button);
@@ -129,8 +165,8 @@
             Controls.Add(label1);
             Controls.Add(medicos_dgv);
             Name = "Medico_form";
-            Text = "Paciente_form";
-            Load += Paciente_form_Load;
+            Text = "Medico";
+            Load += Medico_form_Load;
             ((System.ComponentModel.ISupportInitialize)medicos_dgv).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -147,5 +183,8 @@
         private Label label2;
         private Label label1;
         private DataGridView medicos_dgv;
+        private Button nuevo_button;
+        private Button modificar_button;
+        private Button resetear_button;
     }
 }

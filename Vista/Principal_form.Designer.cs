@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal_form));
             flowLayoutPanel1 = new FlowLayoutPanel();
             agendacitas_button = new Button();
             agendarCitas_button = new Button();
@@ -103,8 +104,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(principal_panel);
             Controls.Add(flowLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Principal_form";
-            Text = "Form1";
+            Text = "Consultorio";
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }

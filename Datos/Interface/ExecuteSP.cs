@@ -20,6 +20,7 @@ namespace ConsultorioPrivado.Datos.Interface
         }
 
         public string crearCadenaFinal(E_CODIGO_SP codigo, E_ROL rol) {
+            cadenaFinal.Clear();
             cadenaFinal.Append(codigo);
             cadenaFinal.Append(rol);
             return cadenaFinal.ToString();
@@ -40,17 +41,23 @@ namespace ConsultorioPrivado.Datos.Interface
         {
             return obj_bd.ExecuteSPNonQuery(crearCadenaFinal(E_CODIGO_SP.SP_CREA, rol), lista);
         }
-
-        public bool actualiza(E_ROL rol, List<CD_Parameter_SP> lista)
-        {
-            return obj_bd.ExecuteSPNonQuery(crearCadenaFinal(E_CODIGO_SP.SP_ACTUALIZA, rol), lista);
-        }
-
-        public bool elimina( E_ROL rol, List<CD_Parameter_SP> lista)
+       
+        public bool eliminar( E_ROL rol, List<CD_Parameter_SP> lista)
         {
             return obj_bd.ExecuteSPNonQuery(crearCadenaFinal(E_CODIGO_SP.SP_ELIMINA, rol), lista);
         }
 
-        
+        public bool actualizar(E_ROL rol, List<CD_Parameter_SP> lista)
+        {
+            return obj_bd.ExecuteSPNonQuery(crearCadenaFinal(E_CODIGO_SP.SP_ACTUALIZA, rol), lista);
+        }
+
+        public DataTable getCedula(E_ROL rol, List<CD_Parameter_SP> lista)
+        {
+            return obj_bd.ExecuteSPQuery(crearCadenaFinal(E_CODIGO_SP.SP_GET_CEDULA, rol), lista);
+
+        }
+
+       
     }
 }

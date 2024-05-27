@@ -10,8 +10,7 @@ namespace ConsultorioPrivado.Datos.Interface
     public enum E_ROL
     {
         _PACIENTE,
-        _DOCTOR,
+        _MEDICO,
         _CITA,
-
     }
 }

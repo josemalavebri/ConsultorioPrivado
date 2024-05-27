@@ -12,7 +12,9 @@ namespace ConsultorioPrivado.Datos.Interface
     {
         DataTable get(E_ROL rol);
         DataTable getId(E_ROL rol, List<CD_Parameter_SP> lista);
+        DataTable getCedula(E_ROL rol, List<CD_Parameter_SP> lista);
         bool crear(E_ROL rol, List<CD_Parameter_SP> lista);
-        bool elimina(E_ROL rol, List<CD_Parameter_SP> lista);
+        bool actualizar(E_ROL rol, List<CD_Parameter_SP> lista);
+        bool eliminar(E_ROL rol, List<CD_Parameter_SP> lista);
     }
 }

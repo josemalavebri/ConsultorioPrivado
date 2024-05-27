@@ -10,6 +10,7 @@ namespace ConsultorioPrivado.Utilidad.Datos
     {
         SP_GET,
         SP_GET_ID,
+        SP_GET_CEDULA,
         SP_ELIMINA,
         SP_CREA,
         SP_ACTUALIZA

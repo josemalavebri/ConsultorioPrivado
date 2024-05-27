@@ -1,6 +1,7 @@
 ﻿using ConsultorioPrivado.Controlador;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
+using ConsultorioPrivado.Utilidad.Forms;
 using Microsoft.Identity.Client.NativeInterop;
 using System;
 using System.Collections.Generic;
@@ -20,29 +21,31 @@ namespace ConsultorioPrivado.Vista
         public Medico_form()
         {
             InitializeComponent();
-             controladorGeneral = new ControladorGeneral();
+            controladorGeneral = new ControladorGeneral();
+
+        }
+        private void Medico_form_Load(object sender, EventArgs e)
+        {
+            medicos_dgv.Rows.Clear();
+            medicos_dgv.DataSource = controladorGeneral.get(E_ROL._MEDICO); ;
+        }
+
+        private void medicos_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
 
         }
 
-        private void Paciente_form_Load(object sender, EventArgs e)
+        private void resetear_button_Click(object sender, EventArgs e)
         {
-
-            //TERMINAR EL SP PACIENTE
-          /*  medico_dgv.Rows.Clear();
-            controladorGeneral.get(E_ROL._DOCTOR);
-
-            */
+            ControlFormsText.EliminarTextos(nombre_text, apellido_text, cedula_text);
         }
 
-        private void paciente_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buscar_button_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void nuevoPaciente_Button_Click(object sender, EventArgs e)
-        {
-            Form nuevoPaciente = new  AgregarPaciente_form();
-            nuevoPaciente.Show();
+            Medico medico = new Medico();
+            medico.Cedula = Convert.ToInt32(cedula_text.Text);
+            controladorGeneral.getCedula(medico,E_ROL._MEDICO);
         }
     }
 }
