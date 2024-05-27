@@ -34,5 +34,15 @@ namespace ConsultorioPrivado
         {
             abrirFormulario(new Paciente_form());
         }
+
+        private void medicos_Button_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new Medico_form());
+        }
+
+        private void agendacitas_button_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new Agenda_form());
+        }
     }
 }

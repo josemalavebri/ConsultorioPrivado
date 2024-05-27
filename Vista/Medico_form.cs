@@ -26,10 +26,12 @@ namespace ConsultorioPrivado.Vista
 
         private void Paciente_form_Load(object sender, EventArgs e)
         {
-            medico_dgv.Rows.Clear();
+
+            //TERMINAR EL SP PACIENTE
+          /*  medico_dgv.Rows.Clear();
             controladorGeneral.get(E_ROL._DOCTOR);
 
-
+            */
         }
 
         private void paciente_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)

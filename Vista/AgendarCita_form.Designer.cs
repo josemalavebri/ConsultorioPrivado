@@ -90,6 +90,7 @@
             buscarPaciente_button.TabIndex = 4;
             buscarPaciente_button.Text = "Buscar";
             buscarPaciente_button.UseVisualStyleBackColor = true;
+            buscarPaciente_button.Click += buscarPaciente_button_Click;
             // 
             // datosPaciente
             // 
@@ -170,7 +171,7 @@
             // 
             // modificarPaciente_button
             // 
-            modificarPaciente_button.Location = new Point(504, 9);
+            modificarPaciente_button.Location = new Point(255, 143);
             modificarPaciente_button.Name = "modificarPaciente_button";
             modificarPaciente_button.Size = new Size(75, 23);
             modificarPaciente_button.TabIndex = 14;

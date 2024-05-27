@@ -79,5 +79,10 @@ namespace ConsultorioPrivado.Vista
         {
             resetearControles();
         }
+
+        private void cancelar_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

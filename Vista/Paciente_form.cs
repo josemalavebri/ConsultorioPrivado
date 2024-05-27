@@ -25,8 +25,8 @@ namespace ConsultorioPrivado.Vista
 
         private void Paciente_form_Load(object sender, EventArgs e)
         {
-            paciente_dgv.Rows.Clear();
-            paciente_dgv.DataSource = iControlador.get();
+            pacientes_dgv.Rows.Clear();
+            pacientes_dgv.DataSource = iControlador.get();
 
 
         }

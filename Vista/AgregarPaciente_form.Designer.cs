@@ -128,6 +128,7 @@
             cancelar_button.TabIndex = 10;
             cancelar_button.Text = "Cancelar";
             cancelar_button.UseVisualStyleBackColor = true;
+            cancelar_button.Click += cancelar_button_Click;
             // 
             // dataGridView1
             // 

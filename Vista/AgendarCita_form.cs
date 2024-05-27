@@ -22,6 +22,9 @@ namespace ConsultorioPrivado.Vista
 
         }
 
-        
+        private void buscarPaciente_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

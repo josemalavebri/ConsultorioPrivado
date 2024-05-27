@@ -8,7 +8,6 @@ namespace ConsultorioPrivado.Modelo
 {
     public enum Especialidad
     {
-
         MEDICINA_GENERAL, DERMATOLOGIA, CARDIOLOGIA
     }
 }

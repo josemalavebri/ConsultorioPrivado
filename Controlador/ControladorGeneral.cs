@@ -49,14 +49,12 @@ namespace ConsultorioPrivado.Controlador
             primeraIteracion = true;
             List<CD_Parameter_SP> lista = crearListaPropiedades<T>(primeraIteracion, entidad);
             return operacionesDB.elimina(rol, lista);
-
         }
 
         public  DataTable get(E_ROL rol)
         {
             operacionesDB = new ExecuteSP();
             return operacionesDB.get(rol);
-
         }
 
         private static List<CD_Parameter_SP> crearListaPropiedades<T>(bool primeraIteracion, T entidad)
