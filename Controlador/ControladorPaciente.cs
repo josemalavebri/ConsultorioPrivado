@@ -14,7 +14,6 @@ namespace ConsultorioPrivado.Controlador
     {
         private DataAccess interfaceDatos;
 
-
         private string rol;
         public ControladorPaciente()
         {
