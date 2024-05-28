@@ -16,11 +16,13 @@ namespace ConsultorioPrivado.Controlador
 
 
         private string rol;
+        private string paciente;
         public ControladorPaciente()
         {
 
             interfaceDatos = new ExecuteSP();
             rol = E_ROL._PACIENTE.ToString();
+            paciente = string.Empty;
         }
 
         public DataTable getId(Paciente paciente)
