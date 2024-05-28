@@ -21,7 +21,6 @@ namespace ConsultorioPrivado.Controlador
         {
             operacionesDB = new ExecuteSP();
             lista = new List<CD_Parameter_SP>();
-
         }
 
         public bool crear<T>(T entidad, E_ROL rol) where T : IEntidad

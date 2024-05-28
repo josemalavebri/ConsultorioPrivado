@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Modelo
 {
-    public interface IEntidad
+    internal class Turno 
     {
-
     }
 }
