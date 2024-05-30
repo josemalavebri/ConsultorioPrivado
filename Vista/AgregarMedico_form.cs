@@ -36,7 +36,7 @@ namespace ConsultorioPrivado.Vista
         private void agregar_button_Click(object sender, EventArgs e)
         {
             Paciente paciente = crearPacienteDatos();
-            controlador.crear( paciente, E_ROL._PACIENTE);
+            controlador.crear(paciente, E_ROL._PACIENTE);
             vaciarTexts();
         }
 
@@ -77,5 +77,11 @@ namespace ConsultorioPrivado.Vista
             ControlFormsButton.desabilitarHabilitarBotones(estado, resetear_button);
 
         }
+
+        private void cancelar_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

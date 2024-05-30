@@ -8,5 +8,6 @@ namespace ConsultorioPrivado.Modelo
 {
     internal class Turno 
     {
+
     }
 }

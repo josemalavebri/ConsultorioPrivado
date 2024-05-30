@@ -45,7 +45,23 @@ namespace ConsultorioPrivado.Vista
         {
             Medico medico = new Medico();
             medico.Cedula = Convert.ToInt32(cedula_text.Text);
-            controladorGeneral.getCedula(medico,E_ROL._MEDICO);
+            controladorGeneral.getCedula(medico, E_ROL._MEDICO);
+        }
+
+        private void nuevo_button_Click(object sender, EventArgs e)
+        {
+            abrirAgregarMedico();
+        }
+
+        private void modificar_button_Click(object sender, EventArgs e)
+        {
+            abrirAgregarMedico();
+        }
+
+        private void abrirAgregarMedico()
+        {
+            Form form = new AgregarMedico_form();
+            form.Show();
         }
     }
 }

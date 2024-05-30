@@ -51,6 +51,7 @@
             ClientSize = new Size(624, 381);
             Controls.Add(citas_panel);
             Name = "Agenda_form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Agenda_form";
             Load += Agenda_form_Load;
             ResumeLayout(false);

@@ -45,9 +45,7 @@ namespace ConsultorioPrivado.Datos.DbOpeaciones
             }
 
             comando.Connection = conn.AbrirConexion();
-
             SqlDataReader reader = comando.ExecuteReader();
-
             using (var tabla = new DataTable())
             {
                 tabla.Load(reader);
@@ -56,6 +54,5 @@ namespace ConsultorioPrivado.Datos.DbOpeaciones
                 return tabla;
             }
         }
-
     }
 }

@@ -42,6 +42,7 @@
             telefono_label = new Label();
             especialidad = new Label();
             especialidad_combo = new ComboBox();
+            cancelar_button = new Button();
             SuspendLayout();
             // 
             // label1
@@ -110,7 +111,7 @@
             // 
             // agregar_button
             // 
-            agregar_button.Location = new Point(50, 280);
+            agregar_button.Location = new Point(47, 280);
             agregar_button.Name = "agregar_button";
             agregar_button.Size = new Size(75, 23);
             agregar_button.TabIndex = 8;
@@ -120,7 +121,7 @@
             // 
             // resetear_button
             // 
-            resetear_button.Location = new Point(148, 280);
+            resetear_button.Location = new Point(138, 280);
             resetear_button.Name = "resetear_button";
             resetear_button.Size = new Size(75, 23);
             resetear_button.TabIndex = 9;
@@ -161,11 +162,22 @@
             especialidad_combo.Size = new Size(121, 23);
             especialidad_combo.TabIndex = 13;
             // 
+            // cancelar_button
+            // 
+            cancelar_button.Location = new Point(107, 319);
+            cancelar_button.Name = "cancelar_button";
+            cancelar_button.Size = new Size(75, 23);
+            cancelar_button.TabIndex = 14;
+            cancelar_button.Text = "Cancelar";
+            cancelar_button.UseVisualStyleBackColor = true;
+            cancelar_button.Click += cancelar_button_Click;
+            // 
             // AgregarMedico_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(290, 316);
+            ClientSize = new Size(293, 370);
+            Controls.Add(cancelar_button);
             Controls.Add(especialidad_combo);
             Controls.Add(especialidad);
             Controls.Add(telefono_text);
@@ -181,7 +193,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "AgregarMedico_form";
-            Text = "AgregarMedico_form";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Agregar Medico";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -202,5 +215,6 @@
         private Label telefono_label;
         private Label especialidad;
         private ComboBox especialidad_combo;
+        private Button cancelar_button;
     }
 }

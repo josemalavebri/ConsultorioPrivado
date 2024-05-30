@@ -19,6 +19,7 @@ namespace ConsultorioPrivado.Modelo
 
         public Medico()
         {
+
         }
 
         public Medico(int id,int cedula, string nombre, string apellido, Especialidad especialidad, int telefono, string correo)

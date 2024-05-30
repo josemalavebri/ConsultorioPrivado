@@ -26,5 +26,16 @@ namespace ConsultorioPrivado.Vista
         {
 
         }
+
+        private void agregarPaciente_button_Click(object sender, EventArgs e)
+        {
+            Form form = new AgregarPaciente_form();
+            form.Show();
+        }
+
+        private void buscarMedico_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

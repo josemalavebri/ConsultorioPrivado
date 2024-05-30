@@ -37,7 +37,6 @@ namespace ConsultorioPrivado.Controlador
             primeraIteracion = true;
             lista = crearListaPropiedades<T>(primeraIteracion, entidad);
             return operacionesDB.getId(rol, lista);
-
         }
 
         public DataTable getCedula<T>(T entidad, E_ROL rol) where T : IEntidad

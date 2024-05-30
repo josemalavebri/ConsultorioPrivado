@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal_form));
             flowLayoutPanel1 = new FlowLayoutPanel();
-            agendacitas_button = new Button();
+            agendaCitas_button = new Button();
             agendarCitas_button = new Button();
             pacientes_button = new Button();
             medicos_Button = new Button();
@@ -40,7 +40,7 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(agendacitas_button);
+            flowLayoutPanel1.Controls.Add(agendaCitas_button);
             flowLayoutPanel1.Controls.Add(agendarCitas_button);
             flowLayoutPanel1.Controls.Add(pacientes_button);
             flowLayoutPanel1.Controls.Add(medicos_Button);
@@ -50,15 +50,15 @@
             flowLayoutPanel1.Size = new Size(109, 349);
             flowLayoutPanel1.TabIndex = 0;
             // 
-            // agendacitas_button
+            // agendaCitas_button
             // 
-            agendacitas_button.Location = new Point(3, 3);
-            agendacitas_button.Name = "agendacitas_button";
-            agendacitas_button.Size = new Size(100, 35);
-            agendacitas_button.TabIndex = 4;
-            agendacitas_button.Text = "Agenda";
-            agendacitas_button.UseVisualStyleBackColor = true;
-            agendacitas_button.Click += agendacitas_button_Click;
+            agendaCitas_button.Location = new Point(3, 3);
+            agendaCitas_button.Name = "agendaCitas_button";
+            agendaCitas_button.Size = new Size(100, 35);
+            agendaCitas_button.TabIndex = 4;
+            agendaCitas_button.Text = "Agenda";
+            agendaCitas_button.UseVisualStyleBackColor = true;
+            agendaCitas_button.Click += agendacitas_button_Click;
             // 
             // agendarCitas_button
             // 
@@ -106,6 +106,7 @@
             Controls.Add(flowLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Principal_form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Consultorio";
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -118,6 +119,6 @@
         private Panel principal_panel;
         private Button pacientes_button;
         private Button medicos_Button;
-        private Button agendacitas_button;
+        private Button agendaCitas_button;
     }
 }

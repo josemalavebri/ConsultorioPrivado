@@ -127,6 +127,7 @@
             nuevo_button.TabIndex = 20;
             nuevo_button.Text = "Nuevo";
             nuevo_button.UseVisualStyleBackColor = true;
+            nuevo_button.Click += nuevo_button_Click;
             // 
             // modificar_button
             // 
@@ -136,6 +137,7 @@
             modificar_button.TabIndex = 21;
             modificar_button.Text = "Modificar";
             modificar_button.UseVisualStyleBackColor = true;
+            modificar_button.Click += modificar_button_Click;
             // 
             // resetear_button
             // 
@@ -165,6 +167,7 @@
             Controls.Add(label1);
             Controls.Add(medicos_dgv);
             Name = "Medico_form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Medico";
             Load += Medico_form_Load;
             ((System.ComponentModel.ISupportInitialize)medicos_dgv).EndInit();

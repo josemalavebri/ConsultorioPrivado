@@ -130,6 +130,7 @@
             Controls.Add(label1);
             Controls.Add(pacientes_dgv);
             Name = "Paciente_form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Paciente_form";
             Load += Paciente_form_Load;
             ((System.ComponentModel.ISupportInitialize)pacientes_dgv).EndInit();

@@ -36,8 +36,8 @@
             datosPaciente = new TextBox();
             buscarMedico_button = new Button();
             comboBox1 = new ComboBox();
-            button1 = new Button();
-            button2 = new Button();
+            agendarCita_button = new Button();
+            resetear_button = new Button();
             ultimasCitas_dgv = new DataGridView();
             label4 = new Label();
             eliminarCita_button = new Button();
@@ -81,6 +81,7 @@
             agregarPaciente_button.TabIndex = 3;
             agregarPaciente_button.Text = "Nuevo";
             agregarPaciente_button.UseVisualStyleBackColor = true;
+            agregarPaciente_button.Click += agregarPaciente_button_Click;
             // 
             // buscarPaciente_button
             // 
@@ -108,6 +109,7 @@
             buscarMedico_button.TabIndex = 6;
             buscarMedico_button.Text = "Seleccionar Medico";
             buscarMedico_button.UseVisualStyleBackColor = true;
+            buscarMedico_button.Click += buscarMedico_button_Click;
             // 
             // comboBox1
             // 
@@ -117,23 +119,23 @@
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 7;
             // 
-            // button1
+            // agendarCita_button
             // 
-            button1.Location = new Point(19, 143);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 23);
-            button1.TabIndex = 8;
-            button1.Text = "Agendar Cita";
-            button1.UseVisualStyleBackColor = true;
+            agendarCita_button.Location = new Point(19, 143);
+            agendarCita_button.Name = "agendarCita_button";
+            agendarCita_button.Size = new Size(99, 23);
+            agendarCita_button.TabIndex = 8;
+            agendarCita_button.Text = "Agendar Cita";
+            agendarCita_button.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // resetear_button
             // 
-            button2.Location = new Point(143, 143);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 9;
-            button2.Text = "Resetear";
-            button2.UseVisualStyleBackColor = true;
+            resetear_button.Location = new Point(153, 143);
+            resetear_button.Name = "resetear_button";
+            resetear_button.Size = new Size(75, 23);
+            resetear_button.TabIndex = 9;
+            resetear_button.Text = "Resetear";
+            resetear_button.UseVisualStyleBackColor = true;
             // 
             // ultimasCitas_dgv
             // 
@@ -188,8 +190,8 @@
             Controls.Add(eliminarCita_button);
             Controls.Add(label4);
             Controls.Add(ultimasCitas_dgv);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(resetear_button);
+            Controls.Add(agendarCita_button);
             Controls.Add(comboBox1);
             Controls.Add(buscarMedico_button);
             Controls.Add(datosPaciente);
@@ -200,7 +202,8 @@
             Controls.Add(label1);
             MaximumSize = new Size(660, 420);
             Name = "AgendarCita_form";
-            Text = "AgendarCita_form";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Agendar Cita";
             Load += AgendarCita_form_Load;
             ((System.ComponentModel.ISupportInitialize)ultimasCitas_dgv).EndInit();
             ResumeLayout(false);
@@ -217,8 +220,8 @@
         private TextBox datosPaciente;
         private Button buscarMedico_button;
         private ComboBox comboBox1;
-        private Button button1;
-        private Button button2;
+        private Button agendarCita_button;
+        private Button resetear_button;
         private DataGridView ultimasCitas_dgv;
         private Label label4;
         private Button eliminarCita_button;

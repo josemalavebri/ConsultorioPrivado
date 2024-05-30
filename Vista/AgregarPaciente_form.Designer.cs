@@ -38,18 +38,15 @@
             correoText = new TextBox();
             aceptar_button = new Button();
             cancelar_button = new Button();
-            dataGridView1 = new DataGridView();
             telefono_text = new TextBox();
             label5 = new Label();
-            label6 = new Label();
             resetear_button = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(12, 30);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 0;
@@ -58,7 +55,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 48);
+            label2.Location = new Point(12, 69);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 1;
@@ -67,7 +64,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 88);
+            label3.Location = new Point(12, 109);
             label3.Name = "label3";
             label3.Size = new Size(44, 15);
             label3.TabIndex = 2;
@@ -76,7 +73,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 129);
+            label4.Location = new Point(12, 150);
             label4.Name = "label4";
             label4.Size = new Size(43, 15);
             label4.TabIndex = 3;
@@ -84,35 +81,35 @@
             // 
             // nombre_text
             // 
-            nombre_text.Location = new Point(117, 9);
+            nombre_text.Location = new Point(117, 30);
             nombre_text.Name = "nombre_text";
             nombre_text.Size = new Size(100, 23);
             nombre_text.TabIndex = 4;
             // 
             // apellido_text
             // 
-            apellido_text.Location = new Point(117, 48);
+            apellido_text.Location = new Point(117, 69);
             apellido_text.Name = "apellido_text";
             apellido_text.Size = new Size(100, 23);
             apellido_text.TabIndex = 5;
             // 
             // cedula_text
             // 
-            cedula_text.Location = new Point(117, 88);
+            cedula_text.Location = new Point(117, 109);
             cedula_text.Name = "cedula_text";
             cedula_text.Size = new Size(100, 23);
             cedula_text.TabIndex = 6;
             // 
             // correoText
             // 
-            correoText.Location = new Point(117, 129);
+            correoText.Location = new Point(117, 150);
             correoText.Name = "correoText";
             correoText.Size = new Size(100, 23);
             correoText.TabIndex = 7;
             // 
             // aceptar_button
             // 
-            aceptar_button.Location = new Point(257, 40);
+            aceptar_button.Location = new Point(30, 238);
             aceptar_button.Name = "aceptar_button";
             aceptar_button.Size = new Size(75, 23);
             aceptar_button.TabIndex = 8;
@@ -122,7 +119,7 @@
             // 
             // cancelar_button
             // 
-            cancelar_button.Location = new Point(257, 92);
+            cancelar_button.Location = new Point(90, 280);
             cancelar_button.Name = "cancelar_button";
             cancelar_button.Size = new Size(75, 23);
             cancelar_button.TabIndex = 10;
@@ -130,17 +127,9 @@
             cancelar_button.UseVisualStyleBackColor = true;
             cancelar_button.Click += cancelar_button_Click;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 243);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(506, 126);
-            dataGridView1.TabIndex = 11;
-            // 
             // telefono_text
             // 
-            telefono_text.Location = new Point(117, 169);
+            telefono_text.Location = new Point(117, 190);
             telefono_text.Name = "telefono_text";
             telefono_text.Size = new Size(100, 23);
             telefono_text.TabIndex = 13;
@@ -148,25 +137,16 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 169);
+            label5.Location = new Point(12, 190);
             label5.Name = "label5";
             label5.Size = new Size(52, 15);
             label5.TabIndex = 12;
             label5.Text = "Telefono";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(12, 215);
-            label6.Name = "label6";
-            label6.Size = new Size(149, 15);
-            label6.TabIndex = 14;
-            label6.Text = "Ultimo Paciente Agregado:";
-            // 
             // resetear_button
             // 
             resetear_button.Enabled = false;
-            resetear_button.Location = new Point(257, 146);
+            resetear_button.Location = new Point(127, 238);
             resetear_button.Name = "resetear_button";
             resetear_button.Size = new Size(75, 23);
             resetear_button.TabIndex = 15;
@@ -178,12 +158,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(598, 381);
+            ClientSize = new Size(254, 355);
             Controls.Add(resetear_button);
-            Controls.Add(label6);
             Controls.Add(telefono_text);
             Controls.Add(label5);
-            Controls.Add(dataGridView1);
             Controls.Add(cancelar_button);
             Controls.Add(aceptar_button);
             Controls.Add(correoText);
@@ -195,9 +173,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "AgregarPaciente_form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AgregarPaciente_form";
             Load += AgregarPaciente_form_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,10 +192,8 @@
         private TextBox correoText;
         private Button aceptar_button;
         private Button cancelar_button;
-        private DataGridView dataGridView1;
         private TextBox telefono_text;
         private Label label5;
-        private Label label6;
         private Button resetear_button;
     }
 }

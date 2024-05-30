@@ -14,6 +14,5 @@ namespace ConsultorioPrivado.Utilidad.Datos
         SP_ELIMINA,
         SP_CREA,
         SP_ACTUALIZA
-
     }
 }
