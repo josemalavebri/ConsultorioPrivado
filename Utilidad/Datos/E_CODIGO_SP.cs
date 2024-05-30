@@ -13,6 +13,10 @@ namespace ConsultorioPrivado.Utilidad.Datos
         SP_GET_CEDULA,
         SP_ELIMINA,
         SP_CREA,
-        SP_ACTUALIZA
+
+        SP_ACTUALIZA,
+        SP_BUSCAR,
+        SP_VER,
+
     }
 }
