@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Modelo
 {
+    //Modelo paciente
     public class Paciente : IEntidad
     {
         private int id;
