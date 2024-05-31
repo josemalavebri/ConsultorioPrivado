@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Controlador
 {
+
+    // INTERFAZ CONTTROLADOR PRINCIPAL
     public interface I_Controlador<T>
     {
         DataTable get();

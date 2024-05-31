@@ -9,6 +9,8 @@ using ConsultorioPrivado.Utilidad.Datos;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
+
+    //CLASE QUE CREA LOS SP SEGUN LAS ESTRUCTURA DE LAS PETICIONES
     public class ExecuteSP : DataAccess
     {
         private StringBuilder cadenaFinal;

@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Datos.DbOpeaciones
 {
+
+    //CLASE QUE USA LA CONEXION Y EJECUTA LAS CONSULTAS EN LA BASE DE DATOS
     internal class ExecuteQuery
     {
 
         private ConexionDB conn = new ConexionDB();
 
+
+        //EJECUTA UN SP QUE NO RETORNA DATOS
         public bool ExecuteSPNonQuery(string nombre_sp, List<CD_Parameter_SP> lista_parametros)
         {
             SqlCommand comando = new SqlCommand();
@@ -33,6 +37,8 @@ namespace ConsultorioPrivado.Datos.DbOpeaciones
                 return false;
         }
 
+
+        //EJECUTA UN QUERY QUE RETORNA DATOS
         public DataTable ExecuteSPQuery(string nombre_sp, List<CD_Parameter_SP> lista_parametros)
         {
             SqlCommand comando = new SqlCommand();
