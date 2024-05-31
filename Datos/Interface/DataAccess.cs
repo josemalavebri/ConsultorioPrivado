@@ -8,6 +8,8 @@ using ConsultorioPrivado.Utilidad.Datos;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
+
+    //ITNERFAZ DE ACCESOS A DATOS
     public interface DataAccess
     {
 

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Controlador
 {
+    //controlador que se encarga de las operaciones tipo CRUD
     public class ControladorGeneral
     {
         private bool primeraIteracion;
@@ -22,7 +23,7 @@ namespace ConsultorioPrivado.Controlador
             operacionesDB = new ExecuteSP();
             lista = new List<CD_Parameter_SP>();
         }
-
+        //CREA LAS ENTIDADES
         public bool crear<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
@@ -31,6 +32,8 @@ namespace ConsultorioPrivado.Controlador
             return operacionesDB.crear(rol, lista);
         }
 
+
+        //OBTIENE TODAS LA ENTIDAD POR MEDIO DEL ID
         public DataTable getId<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
@@ -39,6 +42,8 @@ namespace ConsultorioPrivado.Controlador
             return operacionesDB.getId(rol, lista);
 
         }
+
+        //BUSCA LAS ENTIDADES SEGUN UN PARAMETRO ESPECIFICO
         public DataTable buscar<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
@@ -46,6 +51,8 @@ namespace ConsultorioPrivado.Controlador
             lista = obtenerCedula<T>(entidad);
             return operacionesDB.buscar(rol, lista);
         }
+
+        //BUSCA LAS ENTIDADES SEGUN LA CEDULA
         public DataTable getCedula<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
@@ -54,6 +61,8 @@ namespace ConsultorioPrivado.Controlador
             return operacionesDB.getCedula(rol, lista);
         }
 
+
+        //ACTUALIZA LAS ENTIDADES
         public bool actualizar<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
@@ -62,6 +71,8 @@ namespace ConsultorioPrivado.Controlador
             return operacionesDB.actualizar(rol, lista);
         }
 
+
+        //ELIMINA LAS ENTIDADES
         public bool eliminar<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
@@ -69,12 +80,16 @@ namespace ConsultorioPrivado.Controlador
             lista = crearListaPropiedades<T>(primeraIteracion, entidad);
             return operacionesDB.eliminar(rol, lista);
         }
+
+        //OBTIENE LOS NOMBRES COMPLETO DE LAS ENTIDADES
         public DataTable getNombresCompletos(E_ROL rol)
         {
             lista.Clear();
             operacionesDB = new ExecuteSP();
             return operacionesDB.getTabla(rol);
         }
+
+        //OBTIENE UN REGISTRO DE ENTIDAD COMPLETO
         public DataTable getTabla(E_ROL rol)
         {
             lista.Clear();
@@ -82,6 +97,8 @@ namespace ConsultorioPrivado.Controlador
             return operacionesDB.nombresCompletos(rol);
         }
 
+
+        //CREA UNA LISTA CON LAS PROPIEDADES 
         private List<CD_Parameter_SP> crearListaPropiedades<T>(bool primeraIteracion, T entidad)
         {
             lista.Clear();
@@ -101,6 +118,8 @@ namespace ConsultorioPrivado.Controlador
             }
             return lista;
         }
+
+        //OBTIENE LOS PARAMETROS POR MEDIO DE LA INFLEXION
         private List<CD_Parameter_SP> obtenerParametros<T1, T2>(T1 entidad1, T2 entidad2, string nombrePropiedad1, string nombrePropiedad2)
         {
             lista.Clear();
@@ -118,6 +137,8 @@ namespace ConsultorioPrivado.Controlador
             }
             return lista;
         }
+
+        //OBTEINE UN TURNO
         public DataTable obtenerTurno<T1, T2>(T1 entidad1, T2 entidad2, E_ROL rol, string propiedad1, string propiedad2)
             where T1 : IEntidad
             where T2 : IEntidad
@@ -129,7 +150,7 @@ namespace ConsultorioPrivado.Controlador
         }
 
 
-
+        //METODO AUN NO TERMINADO
         private List<CD_Parameter_SP> crearListaCedula<T>(bool primeraIteracion, T entidad)
         {
             lista.Clear();
@@ -148,6 +169,8 @@ namespace ConsultorioPrivado.Controlador
             }
             return lista;
         }
+
+        //O
         public List<CD_Parameter_SP> obtenerCedula<T>(T entidad)
         {
             //List<string> listaParametros=new List<string>();
@@ -166,6 +189,8 @@ namespace ConsultorioPrivado.Controlador
             return lista;
         }
 
+
+        //MAPEA LOS TIPOS DE LAS ENTIDADES
         private static SqlDbType mapearTipo(Type tipo)
         {
             if (tipo == typeof(string))
@@ -178,6 +203,9 @@ namespace ConsultorioPrivado.Controlador
                 return SqlDbType.Text;
             throw new ArgumentException("Tipo no soportado");
         }
+
+        //METODO AUN NO TERMINADO
+
         /*public List<string> cargarDias()
         {
             List<string> lista = new List<string>();
@@ -196,6 +224,8 @@ namespace ConsultorioPrivado.Controlador
             }
             return lista;
         }*/
+
+        //CREA UN DICCIONARIO DE ROLES
         private static readonly Dictionary<E_ROL, Type> RolEnum = new Dictionary<E_ROL, Type>
         {
             {E_ROL.ESPECIALIDAD, typeof(Especialidad)},
@@ -203,6 +233,8 @@ namespace ConsultorioPrivado.Controlador
             {E_ROL.DIA,typeof(Dias)},
             {E_ROL.ESTADO,typeof(Estado)}
         };
+
+        //CARGA LOS COMBO
         public List<string> cargarCombo(E_ROL rol)
         {
             List<string> lista = new List<string>();
@@ -216,5 +248,6 @@ namespace ConsultorioPrivado.Controlador
             }
             return lista;
         }
+
     }
 }

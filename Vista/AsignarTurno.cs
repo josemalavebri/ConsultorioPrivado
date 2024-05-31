@@ -87,6 +87,7 @@ namespace ConsultorioPrivado.Vista
         private Paciente buscarPacienteDatos()
         {
             Paciente paciente = new Paciente();
+            /*
             paciente.Cedula = txt_Cedula.Text.ToString();
             /*paciente.Nombres = txt_Nombre.Text.ToString();
             paciente.Apellidos = txt_Apellido.Text.ToString();
@@ -109,6 +110,7 @@ namespace ConsultorioPrivado.Vista
 
         private void btn_Asignar_Click(object sender, EventArgs e)
         {
+            /*
             estado = "Ocupado";
             Asignar asignar = new Asignar();
             Turno turno = new Turno();
@@ -118,6 +120,7 @@ namespace ConsultorioPrivado.Vista
             turno.Estado = estado;
             objcontrolador.crear(asignar, E_ROL._ASIGNA);
             objcontrolador.actualizarEstadoTurno(turno);
+            */
         }
         
     }

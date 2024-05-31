@@ -27,7 +27,7 @@ namespace ConsultorioPrivado.Vista
         private void Medico_form_Load(object sender, EventArgs e)
         {
             medicos_dgv.Rows.Clear();
-            medicos_dgv.DataSource = controladorGeneral.get(E_ROL._MEDICO); ;
+            medicos_dgv.DataSource = controladorGeneral.getTabla(E_ROL._MEDICO); ;
         }
 
         private void medicos_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,7 +44,7 @@ namespace ConsultorioPrivado.Vista
         private void buscar_button_Click(object sender, EventArgs e)
         {
             Medico medico = new Medico();
-            medico.Cedula = Convert.ToInt32(cedula_text.Text);
+            /*medico.Cedula = Convert.ToInt32(cedula_text.Text);*/
             controladorGeneral.getCedula(medico, E_ROL._MEDICO);
         }
 
