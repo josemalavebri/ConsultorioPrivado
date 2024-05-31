@@ -9,7 +9,7 @@ using ConsultorioPrivado.Utilidad.Datos;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
-    internal class ExecuteSP : DataAccess
+    public class ExecuteSP : DataAccess
     {
         private StringBuilder cadenaFinal;
         private ExecuteQuery obj_bd;

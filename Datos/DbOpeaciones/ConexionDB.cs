@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Datos
 {
-    internal class ConexionDB
+    public class ConexionDB
     {
         private SqlConnection conexion = new SqlConnection("server=Robert; database=Consultorio; Integrated Security=true; TrustServerCertificate=true");
 
