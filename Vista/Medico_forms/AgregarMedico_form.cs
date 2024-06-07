@@ -35,19 +35,20 @@ namespace ConsultorioPrivado.Vista
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
-            Paciente paciente = crearPacienteDatos();
-            controlador.crear(paciente, E_ROL._PACIENTE);
+            Medico paciente = crearMedicoEntidad();
+            controlador.Crear(paciente, E_ROL._PACIENTE);
             vaciarTexts();
         }
 
-        private Paciente crearPacienteDatos()
+        private Medico crearMedicoEntidad()
         {
-            Paciente paciente = new Paciente();
+            Medico paciente = new Medico();
             paciente.Cedula = Convert.ToInt32(cedula_text.Text.ToString());
             paciente.Nombre = nombre_text.Text.ToString();
             paciente.Apellido = apellido_text.Text.ToString();
             paciente.Correo = correoText.Text.ToString();
             return paciente;
+
         }
 
         private void button1_Click(object sender, EventArgs e)

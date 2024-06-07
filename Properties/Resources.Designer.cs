@@ -63,9 +63,29 @@ namespace ConsultorioPrivado.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2340337 {
+            get {
+                object obj = ResourceManager.GetObject("2340337", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2764452 {
             get {
                 object obj = ResourceManager.GetObject("2764452", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8188360 {
+            get {
+                object obj = ResourceManager.GetObject("8188360", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

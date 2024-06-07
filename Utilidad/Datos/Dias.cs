@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Utilidad.Datos
 {
-    public enum Dias
+    public enum DIAS
     {
-        Lunes, Martes, Miercoles, Jueves, Viernes
+        LUNES, MARTES, MIERCOLES, JUEVES, VIERNES, SABADO
     }
 }

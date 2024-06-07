@@ -35,7 +35,8 @@ namespace ConsultorioPrivado.Vista
 
         private void buscarMedico_button_Click(object sender, EventArgs e)
         {
-
+            Form form = new Medico_form();
+            form.Show();
         }
     }
 }

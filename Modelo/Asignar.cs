@@ -12,6 +12,7 @@ namespace ConsultorioPrivado.Modelo
         private int id_turno;
         private int id_asignar;
         private string estado;
+
         public Asignar() { }
         public Asignar(int id_paciente, int id_turno, int id_asignar, string estado)
         {

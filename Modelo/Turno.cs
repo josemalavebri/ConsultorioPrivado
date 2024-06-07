@@ -15,6 +15,7 @@ namespace ConsultorioPrivado.Modelo
         private string estado;
         private int id_medico;
         private DateTime fecha;
+
         public Turno()
         {
             id_medico = 0;

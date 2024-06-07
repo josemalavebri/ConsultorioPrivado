@@ -10,10 +10,10 @@ namespace ConsultorioPrivado.Utilidad.Forms
     {
         public static void TextBoxChangeListener(Button resetButton, params TextBox[] textBoxes)
         {
-            SubscribeToTextChangedEvents(resetButton,textBoxes);
+            EmpezarEventos(resetButton,textBoxes);
         }
 
-        private static void SubscribeToTextChangedEvents(Button resetButton, params TextBox[] textBoxes)
+        private static void EmpezarEventos(Button resetButton, params TextBox[] textBoxes)
         {
             foreach (TextBox textBox in textBoxes)
             {
@@ -23,7 +23,6 @@ namespace ConsultorioPrivado.Utilidad.Forms
                     ControlFormsButton.desabilitarHabilitarboton(true, resetButton);
                 }
             }
-
         }
 
         private static void TextBox_TextChanged(object sender, EventArgs e)

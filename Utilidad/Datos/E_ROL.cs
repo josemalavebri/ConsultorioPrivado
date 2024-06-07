@@ -12,13 +12,6 @@ namespace ConsultorioPrivado.Datos.Interface
         _PACIENTE,
         _MEDICO,
         _CITA,
-        _TURNO,
-        ESPECIALIDAD,
-        DIA,
-        JORNADA,
-        ESTADO,
-        _NOMBRES_PACIENTE,
-        _NOMBRES_MEDICO,
-        _ASIGNA
+        _MEDICO_TURNO,
     }
 }

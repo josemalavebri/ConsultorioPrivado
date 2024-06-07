@@ -9,50 +9,46 @@ namespace ConsultorioPrivado.Modelo
 {
     public class Medico : IEntidad
     {
-        private int id_medico;
-        private string cedula;
+        private int id;
+        private int cedula;
         private string nombre;
         private string apellido;
-        private string especialidad;
-        private string telefono;
         private string correo;
-        private string direccion;
+        private int telefono;
+        private int especialidad_id;
+
         public Medico()
         {
-            id_medico = 0;
-            cedula = string.Empty;
+            id= 0;
+            cedula = 0;
             nombre = string.Empty;
             apellido = string.Empty;
-            especialidad = string.Empty;
-            telefono = string.Empty;
+            Especialidad_id = 0;
+            telefono = 0;
             correo = string.Empty;
-            direccion = string.Empty;
-
         }
 
-        public Medico(int id_medico, string cedula,
+        public Medico(int id_medico, int cedula,
                       string nombre, string apellido,
-                      string especialidad, string telefono,
+                      int especialidad_id, string telefono,
                       string correo, string direccion)
         {
-            this.id_medico = id_medico;
+            this.id = id_medico;
             this.nombre = nombre;
-            this.cedula = cedula;
+            this.cedula = 0;
             this.apellido = apellido;
-            this.especialidad = especialidad;
-            this.telefono = telefono;
+            this.Especialidad_id = especialidad_id;
+            this.telefono = 0;
             this.correo = correo;
-            this.direccion = direccion;
         }
 
-        public int ID_Medico { get => id_medico; set => id_medico = value; }
-        public string Cedula { get => cedula; set => cedula = value; }
+        public int Id { get => id; set => id = value; }
+        public int Cedula { get => cedula; set => cedula = value; }
 
-        public string Nombres { get => nombre; set => nombre = value; }
-        public string Apellidos { get => apellido; set => apellido = value; }
-        public string Telefono { get => telefono; set => telefono = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public int Telefono { get => telefono; set => telefono = value; }
         public string Correo { get => correo; set => correo = value; }
-        public string Direccion { get => direccion; set => direccion = value; }
-        public string Especialidad { get => especialidad; set => especialidad = value; }
+        public int Especialidad_id { get => especialidad_id; set => especialidad_id = value; }
     }
 }

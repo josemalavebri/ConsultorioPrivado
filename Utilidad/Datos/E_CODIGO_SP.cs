@@ -8,15 +8,11 @@ namespace ConsultorioPrivado.Utilidad.Datos
 {
     public enum E_CODIGO_SP
     {
-        SP_GET,
-        SP_GET_ID,
-        SP_GET_CEDULA,
-        SP_ELIMINA,
-        SP_CREA,
-
-        SP_ACTUALIZA,
-        SP_BUSCAR,
-        SP_VER,
-
+        SP_OBTENER,
+        SP_OBTENER_POR_ID,
+        SP_OBTENER_POR_CEDULA,
+        SP_ELIMINAR,
+        SP_CREAR,
+        SP_ACTUALIZAR,
     }
 }
