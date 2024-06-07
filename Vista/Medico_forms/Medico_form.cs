@@ -41,7 +41,6 @@ namespace ConsultorioPrivado.Vista
 
             medicos_dgv.Columns["Editar"].Width = 75;
             medicos_dgv.Columns["Eliminar"].Width = 75;
-
         }
 
         private void medicos_dgv_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -128,7 +128,7 @@
             // 
             Editar.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             Editar.HeaderText = "Editar";
-            Editar.Image = (Image)resources.GetObject("Editar.Image");
+            Editar.Image = Properties.Resources._8188360;
             Editar.ImageLayout = DataGridViewImageCellLayout.Zoom;
             Editar.Name = "Editar";
             Editar.Width = 43;
