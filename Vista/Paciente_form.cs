@@ -27,7 +27,7 @@ namespace ConsultorioPrivado.Vista
         private void Paciente_form_Load(object sender, EventArgs e)
         {
             pacientes_dgv.Rows.Clear();
-            pacientes_dgv.DataSource = controladorGeneral.getTabla(E_ROL._PACIENTE);
+            pacientes_dgv.DataSource = controladorGeneral.ObtenerPorEntidad(E_ROL._PACIENTE);
 
 
         }

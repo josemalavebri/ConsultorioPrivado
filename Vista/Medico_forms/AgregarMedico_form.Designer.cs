@@ -115,13 +115,13 @@
             agregar_button.Name = "agregar_button";
             agregar_button.Size = new Size(75, 23);
             agregar_button.TabIndex = 8;
-            agregar_button.Text = "Agregar";
+            agregar_button.Text = "Aceptar";
             agregar_button.UseVisualStyleBackColor = true;
             agregar_button.Click += agregar_button_Click;
             // 
             // resetear_button
             // 
-            resetear_button.Location = new Point(138, 280);
+            resetear_button.Location = new Point(150, 280);
             resetear_button.Name = "resetear_button";
             resetear_button.Size = new Size(75, 23);
             resetear_button.TabIndex = 9;
@@ -157,6 +157,7 @@
             // especialidad_combo
             // 
             especialidad_combo.FormattingEnabled = true;
+            especialidad_combo.Items.AddRange(new object[] { "Cardiologia", "Dermatologia", "Pediatria" });
             especialidad_combo.Location = new Point(138, 107);
             especialidad_combo.Name = "especialidad_combo";
             especialidad_combo.Size = new Size(121, 23);

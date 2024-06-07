@@ -36,7 +36,6 @@
             label2 = new Label();
             nombre_text = new TextBox();
             apellido_text = new TextBox();
-            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pacientes_dgv).BeginInit();
             SuspendLayout();
             // 
@@ -106,21 +105,11 @@
             apellido_text.Size = new Size(100, 23);
             apellido_text.TabIndex = 9;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(218, 75);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 15);
-            label3.TabIndex = 10;
-            label3.Text = "Apellido";
-            // 
             // Paciente_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(644, 381);
-            Controls.Add(label3);
             Controls.Add(apellido_text);
             Controls.Add(buscar_button);
             Controls.Add(cedula_text);
@@ -148,6 +137,5 @@
         private Label label2;
         private TextBox nombre_text;
         private TextBox apellido_text;
-        private Label label3;
     }
 }

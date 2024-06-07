@@ -94,14 +94,14 @@
             // 
             principal_panel.Location = new Point(114, 29);
             principal_panel.Name = "principal_panel";
-            principal_panel.Size = new Size(660, 420);
+            principal_panel.Size = new Size(874, 420);
             principal_panel.TabIndex = 1;
             // 
             // Principal_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1000, 450);
             Controls.Add(principal_panel);
             Controls.Add(flowLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
