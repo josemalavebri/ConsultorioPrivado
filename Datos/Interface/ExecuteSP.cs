@@ -4,8 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsultorioPrivado.Controlador;
 using ConsultorioPrivado.Datos.DbOpeaciones;
-using ConsultorioPrivado.Utilidad.Datos;
+using ConsultorioPrivado.Utilidad.Forms;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
@@ -13,37 +14,28 @@ namespace ConsultorioPrivado.Datos.Interface
     //CLASE QUE CREA LOS SP SEGUN LAS ESTRUCTURA DE LAS PETICIONES
     public class ExecuteSP : AccesoDB
     {
-        private StringBuilder cadenaFinal;
         private ExecuteQuery obj_bd;
-        private string error;
         public ExecuteSP()
         {
             obj_bd = new ExecuteQuery();
-            cadenaFinal = new StringBuilder();
-            error = "Error";
+            
         }
-        public string crearCadenaFinal(E_CODIGO_SP codigo, E_ROL rol)
-        {
-            cadenaFinal.Clear();
-            cadenaFinal.Append(codigo);
-            cadenaFinal.Append(rol);
-            return cadenaFinal.ToString();
-        }
+       
+
         // Ver tabla entidad
-        public DataTable ObtenerPorEntidad(E_ROL rol)
+        public DataTable ObtenerPorEntidad(string sp_query)
         {
             try
             {
                 List<CD_Parameter_SP> lista = new List<CD_Parameter_SP>();
-                return obj_bd.ExecuteSPQuery(crearCadenaFinal(E_CODIGO_SP.SP_OBTENER, rol), lista);
+                return obj_bd.ExecuteSPQuery(sp_query, lista);
             }
             catch (Exception ex)
             {
-
-                throw new Exception(error + " al obtener tabla de " + rol + " " + ex.Message);
+                throw new Exception("error  al obtener tabla de "+sp_query+" " + ex.Message);
             }
         }
-
+        /*
         public DataTable ObtenerPorId(E_ROL rol, List<CD_Parameter_SP> lista)
         {
             //<CD_Parameter_SP> lista = new List<CD_Parameter_SP> ();
@@ -58,7 +50,7 @@ namespace ConsultorioPrivado.Datos.Interface
             }
             catch (Exception ex)
             {
-                throw new Exception(error + " al guardar un nuevo " + rol + " " + ex.Message);
+                throw new Exception("error al guardar un nuevo " + rol + " " + ex.Message);
             }
         }
         //Eliminar entidad
@@ -70,7 +62,7 @@ namespace ConsultorioPrivado.Datos.Interface
             }
             catch (Exception ex)
             {
-                throw new Exception(error + " al eliminar el " + rol + " " + ex.Message);
+                throw new Exception("error al eliminar el " + rol + " " + ex.Message);
             }
         }
         //Actualiza entidad
@@ -82,7 +74,7 @@ namespace ConsultorioPrivado.Datos.Interface
             }
             catch (Exception ex)
             {
-                throw new Exception(error + " al actualizar el " + rol + " " + ex.Message);
+                throw new Exception("error al actualizar el " + rol + " " + ex.Message);
             }
         }
 
@@ -94,8 +86,10 @@ namespace ConsultorioPrivado.Datos.Interface
             }
             catch (Exception ex)
             {
-                throw new Exception(error + " al buscar el " + rol + " " + ex.Message);
+                throw new Exception("error al buscar el " + rol + " " + ex.Message);
             }
         }
+
+        */
     }
 }

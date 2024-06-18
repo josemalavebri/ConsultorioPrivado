@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Utilidad.Datos
+namespace ConsultorioPrivado.Controlador
 {
     public class CD_Parameter_SP
     {

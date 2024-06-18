@@ -196,6 +196,7 @@
             Name = "AgregarMedico_form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Medico";
+            Load += AgregarMedico_form_Load;
             ResumeLayout(false);
             PerformLayout();
         }

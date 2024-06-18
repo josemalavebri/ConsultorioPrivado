@@ -1,4 +1,4 @@
-﻿using ConsultorioPrivado.Utilidad.Datos;
+﻿using ConsultorioPrivado.Controlador;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -28,6 +28,7 @@ namespace ConsultorioPrivado.Datos.DbOpeaciones
                 foreach (var parametro in lista_parametros)
                     comando.Parameters.Add(parametro.NombreParametro, parametro.TipoDato).Value = parametro.ValorParametro;
             }
+
             comando.Connection = conn.AbrirConexion();
             var resultado = comando.ExecuteNonQuery();
             conn.CerrarConexion();
