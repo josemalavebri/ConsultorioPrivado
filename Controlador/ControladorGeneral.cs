@@ -1,6 +1,6 @@
 ﻿using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
-using ConsultorioPrivado.Utilidad.Datos;
+using ConsultorioPrivado.Utilidad.Forms;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,41 +14,51 @@ namespace ConsultorioPrivado.Controlador
     //controlador que se encarga de las operaciones tipo CRUD
     public class ControladorGeneral 
     {
-        private bool primeraIteracion;
         private AccesoDB operacionesDB;
         private List<CD_Parameter_SP> lista;
+        private ExecuteRolDB executeRolDB;
 
         public ControladorGeneral()
         {
             operacionesDB = new ExecuteSP();
             lista = new List<CD_Parameter_SP>();
-            primeraIteracion = false;
+            executeRolDB = new ExecuteRolDB();
+
         }
+
+        public DataTable ObtenerPorMedico()
+        {
+            lista.Clear();
+            operacionesDB = new ExecuteSP();
+            return executeRolDB.ObtenerEntidad(E_ROL._MEDICO);
+
+       }
+
+       
         //CREA LAS ENTIDADES
         public bool Crear<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
-            bool primeraIteracion = true;
-            lista = CrearListaPropiedades<T>(primeraIteracion, entidad);
+            lista = CrearListaPropiedades<T>(entidad);
             return operacionesDB.Crear(rol, lista);
         }
+
+
 
         //BUSCA LAS ENTIDADES SEGUN LA CEDULA
         public DataTable ObtenerPorCedula<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
-            primeraIteracion = false;
-            lista = CrearListaPropiedadesCedula<T>(primeraIteracion, entidad);
+            lista = CrearListaPropiedadesCedula<T>(entidad);
             return operacionesDB.ObtenerPorCedula(rol, lista);
         }
 
 
         //ACTUALIZA LAS ENTIDADES
         public bool Actualizar<T>(T entidad, E_ROL rol) where T : IEntidad
-        {
+        {   
             lista.Clear();
-            primeraIteracion = true;
-            lista = CrearListaPropiedades<T>(primeraIteracion, entidad);
+            lista = CrearListaPropiedades<T>(entidad);
             return operacionesDB.Actualizar(rol, lista);
         }
 
@@ -57,8 +67,7 @@ namespace ConsultorioPrivado.Controlador
         public bool Eliminar<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista.Clear();
-            primeraIteracion = true;
-            lista = CrearListaPropiedadesId<T>(primeraIteracion, entidad);
+            lista = CrearListaPropiedadesId<T>( entidad);
             return operacionesDB.Eliminar(rol, lista);
         }
 
@@ -74,18 +83,18 @@ namespace ConsultorioPrivado.Controlador
         public DataTable ObtenerPorId<T>(T entidad, E_ROL rol)
         {
             lista.Clear();
-            lista = CrearListaPropiedadesId<T>(primeraIteracion, entidad);
+            lista = CrearListaPropiedadesId<T>( entidad);
             return operacionesDB.ObtenerPorId(rol, lista);
         }
 
         //CREA UNA LISTA CON LAS PROPIEDADES 
-        private List<CD_Parameter_SP> CrearListaPropiedades<T>(bool primeraIteracion, T entidad)
+        private List<CD_Parameter_SP> CrearListaPropiedades<T>( T entidad)
         {
             lista.Clear();
             var propiedades = typeof(T).GetProperties();
 
             foreach (var propiedad in propiedades)
-            {
+            {       
                     var nombreParametro = $"@{propiedad.Name}";
                     var valor = propiedad.GetValue(entidad);
                     var tipo = MapearTipo(propiedad.PropertyType);
@@ -95,7 +104,7 @@ namespace ConsultorioPrivado.Controlador
             return lista;
         }
 
-        private List<CD_Parameter_SP> CrearListaPropiedadesId<T>(bool primeraIteracion, T entidad)
+        private List<CD_Parameter_SP> CrearListaPropiedadesId<T>( T entidad)
         {
             lista.Clear();
             var propiedades = typeof(T).GetProperties();
@@ -114,7 +123,7 @@ namespace ConsultorioPrivado.Controlador
             return lista;
         }
 
-        private List<CD_Parameter_SP> CrearListaPropiedadesCedula<T>(bool primeraIteracion, T entidad)
+        private List<CD_Parameter_SP> CrearListaPropiedadesCedula<T>(T entidad)
         {
             lista.Clear();
             var propiedades = typeof(T).GetProperties();
@@ -166,6 +175,6 @@ namespace ConsultorioPrivado.Controlador
             throw new ArgumentException("Tipo no soportado");
         }
 
-        
+
     }
 }

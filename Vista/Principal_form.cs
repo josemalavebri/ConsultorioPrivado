@@ -7,7 +7,7 @@ namespace ConsultorioPrivado
         public Principal_form()
         {
             InitializeComponent();
-            abrirFormulario(new AgregarPaciente_form());
+            abrirFormulario(new Medico_form());
         }
 
         private void abrirFormulario(Form form)
@@ -43,6 +43,11 @@ namespace ConsultorioPrivado
         private void agendacitas_button_Click(object sender, EventArgs e)
         {
             abrirFormulario(new Agenda_form());
+        }
+
+        private void Principal_form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

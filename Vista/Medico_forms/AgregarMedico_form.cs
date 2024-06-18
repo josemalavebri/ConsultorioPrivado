@@ -19,7 +19,6 @@ namespace ConsultorioPrivado.Vista
 {
     public partial class AgregarMedico_form : Form
     {
-
         ControladorGeneral controlador;
         public AgregarMedico_form()
         {
@@ -30,25 +29,33 @@ namespace ConsultorioPrivado.Vista
             correoText.TextChanged += textBoxes_TextChanged;
             controlador = new ControladorGeneral();
             ControlFormsButton.desabilitarHabilitarBotones(false, resetear_button);
-
         }
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
-            Medico paciente = crearMedicoEntidad();
-            controlador.Crear(paciente, E_ROL._PACIENTE);
+            /*
+            Medico medico = crearMedicoEntidad();
+            if(controlador.Crear(medico, E_ROL._MEDICO))
+            {
+                MessageBox.Show("Medico Insertado Correctamente");
+                this.Close();
+            };
             vaciarTexts();
+
+            */
         }
+
 
         private Medico crearMedicoEntidad()
         {
-            Medico paciente = new Medico();
-            paciente.Cedula = Convert.ToInt32(cedula_text.Text.ToString());
-            paciente.Nombre = nombre_text.Text.ToString();
-            paciente.Apellido = apellido_text.Text.ToString();
-            paciente.Correo = correoText.Text.ToString();
-            return paciente;
-
+            Medico medico = new Medico();
+            medico.Cedula = Convert.ToInt32(cedula_text.Text.ToString());
+            medico.Nombre = nombre_text.Text.ToString();
+            medico.Apellido = apellido_text.Text.ToString();
+            medico.Correo = correoText.Text.ToString();
+            medico.Telefono = Convert.ToInt32(telefono_text.Text);
+            medico.Especialidad_id = especialidad_combo.SelectedIndex+1;
+            return medico;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,5 +91,9 @@ namespace ConsultorioPrivado.Vista
             this.Close();
         }
 
+        private void AgregarMedico_form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

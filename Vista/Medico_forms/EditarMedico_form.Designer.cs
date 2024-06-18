@@ -216,7 +216,7 @@
             Controls.Add(label1);
             Name = "EditarMedico_form";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Agregar Medico";
+            Text = "Editar Medico";
             Load += EditarMedico_form_Load;
             ResumeLayout(false);
             PerformLayout();

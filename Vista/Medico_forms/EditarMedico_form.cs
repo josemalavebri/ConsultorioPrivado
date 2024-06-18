@@ -24,6 +24,7 @@ namespace ConsultorioPrivado.Vista
         ControladorGeneral controlador;
         public EditarMedico_form(int id)
         {
+            /*
             InitializeComponent();
             cedula_text.TextChanged += textBoxes_TextChanged;
             nombre_text.TextChanged += textBoxes_TextChanged;
@@ -32,14 +33,16 @@ namespace ConsultorioPrivado.Vista
             controlador = new ControladorGeneral();
             ControlFormsButton.desabilitarHabilitarBotones(false, resetear_button);
             this.id = id;
+            */
         }
 
         private void agregarDatosFormulario()
         {
+            /*
             Medico medico = new Medico();
             medico.Id = id;
-            DataTable datosMedicos = controlador.ObtenerPorId(medico, E_ROL._MEDICO);
-            if (datosMedicos.Rows.Count > 0)
+         //   DataTable datosMedicos = controlador.ObtenerPorId(medico, E_ROL._MEDICO);
+          //  if (datosMedicos.Rows.Count > 0)
             {
                 DataRow row = datosMedicos.Rows[0];
                 id_text.Text = row["id"].ToString();
@@ -48,15 +51,19 @@ namespace ConsultorioPrivado.Vista
                 cedula_text.Text = row["cedula"].ToString();
                 telefono_text.Text = row["telefono"].ToString();
                 correoText.Text = row["correo"].ToString();
-                especialidad_combo.SelectedIndex = Convert.ToInt32(row["especialidad_id"].ToString())-1;
-            }
+                especialidad_combo.SelectedIndex = Convert.ToInt32(row["idEspecialidadFk"].ToString())-1;
+            }/**/
         }
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
             Medico medico = crearMedicoDatos();
-            controlador.Actualizar(medico, E_ROL._MEDICO);
-            vaciarTexts();
+            //if(controlador.Actualizar(medico, E_ROL._MEDICO)) ;
+            {
+                vaciarTexts();
+                MessageBox.Show("Medico Actualizado");
+                this.Close();
+            }
         }
 
         private Medico crearMedicoDatos()

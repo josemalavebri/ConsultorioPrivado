@@ -1,6 +1,5 @@
 ﻿using ConsultorioPrivado.Controlador;
 using ConsultorioPrivado.Datos.DbOpeaciones;
-using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
 using ConsultorioPrivado.Utilidad.Forms;
 using Microsoft.Identity.Client.NativeInterop;
@@ -37,7 +36,7 @@ namespace ConsultorioPrivado.Vista
         private void agregar_button_Click(object sender, EventArgs e)
         {
             Paciente paciente = crearPacienteDatos();
-            controlador.Crear(paciente, E_ROL._PACIENTE);
+           // controlador.Crear(paciente, E_ROL._PACIENTE);
             resetearControles();
         }
 

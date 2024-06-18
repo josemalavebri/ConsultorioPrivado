@@ -108,6 +108,7 @@
             Name = "Principal_form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Consultorio";
+            Load += Principal_form_Load;
             flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
