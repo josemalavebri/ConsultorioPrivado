@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Controlador
+namespace ConsultorioPrivado.Controlador.Enums
 {
-    public enum E_CODIGO_SP
+    internal enum E_CODIGO_SP
     {
         SP_OBTENER_POR,
         SP_OBTENER_POR_ID,

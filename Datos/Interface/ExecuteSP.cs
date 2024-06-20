@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConsultorioPrivado.Controlador;
+using ConsultorioPrivado.Controlador.Creators;
 using ConsultorioPrivado.Datos.DbOpeaciones;
 using ConsultorioPrivado.Utilidad.Forms;
 
@@ -12,29 +12,45 @@ namespace ConsultorioPrivado.Datos.Interface
 {
 
     //CLASE QUE CREA LOS SP SEGUN LAS ESTRUCTURA DE LAS PETICIONES
-    public class ExecuteSP : AccesoDB
+    public class ExecuteSP : I_AccesoDB
     {
+
         private ExecuteQuery obj_bd;
         public ExecuteSP()
         {
             obj_bd = new ExecuteQuery();
             
         }
-       
 
-        // Ver tabla entidad
         public DataTable ObtenerPorEntidad(string sp_query)
         {
             try
             {
-                List<CD_Parameter_SP> lista = new List<CD_Parameter_SP>();
+                List<ParametrosCreator> lista = new List<ParametrosCreator>();
                 return obj_bd.ExecuteSPQuery(sp_query, lista);
             }
             catch (Exception ex)
             {
-                throw new Exception("error  al obtener tabla de "+sp_query+" " + ex.Message);
+                throw new Exception("error  al obtener tabla de " + sp_query + " " + ex.Message);
             }
         }
+
+        public bool CrearEntidad(string sp_Non_query,List<ParametrosCreator> lista)
+        {
+            try
+            {
+                return obj_bd.ExecuteSPNonQuery(sp_Non_query, lista);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("error  al crear entidad de " + sp_Non_query + " " + ex.Message);
+            }
+        }
+
+
+        // Ver tabla entidad
+       
+
         /*
         public DataTable ObtenerPorId(E_ROL rol, List<CD_Parameter_SP> lista)
         {

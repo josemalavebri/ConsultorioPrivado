@@ -1,4 +1,4 @@
-﻿using ConsultorioPrivado.Controlador;
+﻿using ConsultorioPrivado.Controlador.Creators;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace ConsultorioPrivado.Datos.DbOpeaciones
 
 
         //EJECUTA UN SP QUE NO RETORNA DATOS
-        public bool ExecuteSPNonQuery(string nombre_sp, List<CD_Parameter_SP> lista_parametros)
+        public bool ExecuteSPNonQuery(string nombre_sp, List<ParametrosCreator> lista_parametros)
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.StoredProcedure;
@@ -40,7 +40,7 @@ namespace ConsultorioPrivado.Datos.DbOpeaciones
 
 
         //EJECUTA UN QUERY QUE RETORNA DATOS
-        public DataTable ExecuteSPQuery(string nombre_sp, List<CD_Parameter_SP> lista_parametros)
+        public DataTable ExecuteSPQuery(string nombre_sp, List<ParametrosCreator> lista_parametros)
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.StoredProcedure;

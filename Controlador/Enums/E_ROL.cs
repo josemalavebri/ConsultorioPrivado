@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Controlador
+namespace ConsultorioPrivado.Controlador.Enums
 {
-    public enum E_ROL
+    internal enum E_ROL
     {
         _PACIENTE,
         _MEDICO,

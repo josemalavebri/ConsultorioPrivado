@@ -1,4 +1,4 @@
-﻿using ConsultorioPrivado.Controlador;
+﻿using ConsultorioPrivado.Controlador.Enums;
 using ConsultorioPrivado.Datos.Interface;
 using System;
 using System.Collections.Generic;
@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Controlador
+namespace ConsultorioPrivado.Controlador.Creators
 {
-    public class ExecuteRolDB
+    internal class CadenaSPCreator
     {
-        AccesoDB accesoDatos;
+
         private StringBuilder cadenaFinal;
 
-        public ExecuteRolDB()
+        public CadenaSPCreator()
         {
-            accesoDatos = new ExecuteSP();
+
             cadenaFinal = new StringBuilder();
         }
 
-        public string CrearCadenaFinal(E_CODIGO_SP codigo, E_ROL rol)
+        private string CrearCadenaFinal(E_CODIGO_SP codigo, E_ROL rol)
         {
             cadenaFinal.Clear();
             cadenaFinal.Append(codigo);
@@ -29,10 +29,12 @@ namespace ConsultorioPrivado.Controlador
         }
 
 
-        public DataTable ObtenerEntidad(E_ROL rol)
+        public string crearProcedimientoAlmacenado(E_ROL rol)
         {
-            return accesoDatos.ObtenerPorEntidad(CrearCadenaFinal(E_CODIGO_SP.SP_OBTENER_POR, rol));
+            return CrearCadenaFinal(E_CODIGO_SP.SP_OBTENER_POR, rol);
+
         }
+
 
 
     }
