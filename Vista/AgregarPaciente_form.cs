@@ -20,11 +20,11 @@ namespace ConsultorioPrivado.Vista
     public partial class AgregarPaciente_form : Form
     {
 
-        ControladorGeneral controlador;
+        ControladorMedico controlador;
         public AgregarPaciente_form()
         {
             InitializeComponent();
-            controlador = new ControladorGeneral();
+            controlador = new ControladorMedico();
             /* cedula_text.TextChanged += textBoxes_TextChanged;
              nombre_text.TextChanged += textBoxes_TextChanged;
              apellido_text.TextChanged += textBoxes_TextChanged;

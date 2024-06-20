@@ -16,11 +16,11 @@ namespace ConsultorioPrivado.Vista
 {
     public partial class Paciente_form : Form
     {
-        ControladorGeneral controladorGeneral;
+        ControladorMedico controladorGeneral;
         public Paciente_form()
         {
             InitializeComponent();
-            controladorGeneral = new ControladorGeneral();
+            controladorGeneral = new ControladorMedico();
 
         }
 

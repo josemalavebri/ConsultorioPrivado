@@ -17,11 +17,11 @@ namespace ConsultorioPrivado.Vista
 {
     public partial class Medico_form : Form
     {
-        private ControladorGeneral controladorGeneral;
+        private ControladorMedico controladorGeneral;
         public Medico_form()
         {
             InitializeComponent();
-            controladorGeneral = new ControladorGeneral();
+            controladorGeneral = new ControladorMedico();
 
         }
         private void Medico_form_Load(object sender, EventArgs e)

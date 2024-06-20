@@ -9,7 +9,6 @@ namespace ConsultorioPrivado.Controlador.Creators
 {
     public class ParametrosCreator
     {
-
         private string nombre_parametro;
         private object valor_parametro;
         private SqlDbType tipo_dato;

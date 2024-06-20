@@ -13,26 +13,33 @@ using System.Threading.Tasks;
 namespace ConsultorioPrivado.Controlador.Controlers
 {
     //controlador que se encarga de las operaciones tipo CRUD
-    public class ControladorGeneral
+
+
+    public class ControladorMedico
     {
         private ControladorCreator controladorCreator;
 
 
-        public ControladorGeneral()
+        // MEDICO 
+
+        public ControladorMedico()
         {
             controladorCreator = new ControladorCreator();
         }
-
+        
         public DataTable ObtenerPorMedico()
         {
             return controladorCreator.ObtenerEntidad(E_ROL._MEDICO);
         }
+
+       
 
         //CREA LAS ENTIDADES
         public bool CrearMedico<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.CrearEntidad(entidad, E_ROL._MEDICO);
         }
+
 
 
         /*
@@ -81,6 +88,8 @@ namespace ConsultorioPrivado.Controlador.Controlers
 
        //CREA UNA LISTA CON LAS PROPIEDADES 
        */
+
+
 
 
 

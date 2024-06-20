@@ -29,9 +29,8 @@ namespace ConsultorioPrivado.Controlador.Creators
         }
 
 
-        public string crearProcedimientoAlmacenado(E_ROL rol)
-        {
-            return CrearCadenaFinal(E_CODIGO_SP.SP_OBTENER_POR, rol);
+        public string crearProcedimientoAlmacenado(E_CODIGO_SP sp_query, E_ROL rol) { 
+            return CrearCadenaFinal(sp_query, rol);
 
         }
 

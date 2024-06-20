@@ -21,7 +21,7 @@ namespace ConsultorioPrivado.Vista
     public partial class EditarMedico_form : Form
     {
         private int id;
-        ControladorGeneral controlador;
+        ControladorMedico controlador;
         public EditarMedico_form(int id)
         {
             /*

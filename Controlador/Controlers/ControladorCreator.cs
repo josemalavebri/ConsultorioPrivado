@@ -14,12 +14,10 @@ namespace ConsultorioPrivado.Controlador.Controlers
 {
     internal class ControladorCreator
     {
-
         private List<ParametrosCreator> lista;
         private CadenaSPCreator executeRolDB;
         private PropiedadesCreator propiedadesCreator;
         private I_AccesoDB accesoDatos;
-
 
         public ControladorCreator()
         {
@@ -31,14 +29,14 @@ namespace ConsultorioPrivado.Controlador.Controlers
 
         public DataTable ObtenerEntidad(E_ROL rol)
         {
-            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(rol);
+            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR,rol);
             return accesoDatos.ObtenerPorEntidad(procedimientoAlmacenado);
         }
 
         public bool CrearEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista = propiedadesCreator.CrearListaPropiedades(entidad);
-            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(rol);
+            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_CREAR, rol);
             return accesoDatos.CrearEntidad(procedimientoAlmacenado, lista);
         }
 

@@ -19,7 +19,7 @@ namespace ConsultorioPrivado.Vista
 {
     public partial class AgregarMedico_form : Form
     {
-        ControladorGeneral controlador;
+        ControladorMedico controlador;
         public AgregarMedico_form()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace ConsultorioPrivado.Vista
             nombre_text.TextChanged += textBoxes_TextChanged;
             apellido_text.TextChanged += textBoxes_TextChanged;
             correoText.TextChanged += textBoxes_TextChanged;
-            controlador = new ControladorGeneral();
+            controlador = new ControladorMedico();
             ControlFormsButton.desabilitarHabilitarBotones(false, resetear_button);
         }
 
