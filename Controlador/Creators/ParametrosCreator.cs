@@ -5,23 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Controlador
+namespace ConsultorioPrivado.Controlador.Creators
 {
-    public class CD_Parameter_SP
+    public class ParametrosCreator
     {
 
         private string nombre_parametro;
         private object valor_parametro;
         private SqlDbType tipo_dato;
 
-        public CD_Parameter_SP()
+        public ParametrosCreator()
         {
             nombre_parametro = string.Empty;
             valor_parametro = string.Empty;
             tipo_dato = SqlDbType.NVarChar;
         }
 
-        public CD_Parameter_SP(string nombre_parametro, object valor_parametro, SqlDbType tipo_dato)
+        public ParametrosCreator(string nombre_parametro, object valor_parametro, SqlDbType tipo_dato)
         {
             this.nombre_parametro = nombre_parametro;
             this.valor_parametro = valor_parametro;

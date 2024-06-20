@@ -1,4 +1,4 @@
-﻿using ConsultorioPrivado.Controlador;
+﻿using ConsultorioPrivado.Controlador.Controlers;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
 using ConsultorioPrivado.Utilidad.Forms;
@@ -17,7 +17,7 @@ namespace ConsultorioPrivado.Vista
 {
     public partial class Medico_form : Form
     {
-        ControladorGeneral controladorGeneral;
+        private ControladorGeneral controladorGeneral;
         public Medico_form()
         {
             InitializeComponent();

@@ -1,4 +1,4 @@
-﻿using ConsultorioPrivado.Controlador;
+﻿using ConsultorioPrivado.Controlador.Controlers;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
 using Microsoft.Identity.Client.NativeInterop;
