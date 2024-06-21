@@ -48,6 +48,18 @@ namespace ConsultorioPrivado.Datos.Interface
             }
         }
 
+        public bool EliminarEntidad(string sp_Non_query, List<ParametrosCreator> lista)
+        {
+            try
+            {
+                return obj_bd.ExecuteSPNonQuery(sp_Non_query, lista);
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception("error al eliminar la entidad de " + sp_Non_query + " " + ex.Message);
+            }
+        }
+
 
         // Ver tabla entidad
        

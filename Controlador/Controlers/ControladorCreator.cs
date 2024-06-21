@@ -44,7 +44,7 @@ namespace ConsultorioPrivado.Controlador.Controlers
         {
             lista = propiedadesCreator.CrearListaPropiedades(entidad);
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_ELIMINAR, rol);
-            return accesoDatos.CrearEntidad(procedimientoAlmacenado , lista);
+            return accesoDatos.EliminarEntidad(procedimientoAlmacenado , lista);
         }
 
         public bool ActualizarEntidad<T>(T entidad, E_ROL rol) where T : IEntidad

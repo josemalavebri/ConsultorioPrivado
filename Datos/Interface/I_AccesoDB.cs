@@ -17,6 +17,8 @@ namespace ConsultorioPrivado.Datos.Interface
 
         bool CrearEntidad(string sp_Non_query, List<ParametrosCreator> lista);
 
+        bool EliminarEntidad(string sp_Non_query, List<ParametrosCreator> lista);
+
         /*
         DataTable ObtenerPorId(E_ROL rol, List<CD_Parameter_SP> lista);
         DataTable ObtenerPorCedula(E_ROL rol, List<CD_Parameter_SP> lista);
