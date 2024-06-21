@@ -21,7 +21,8 @@ namespace ConsultorioPrivado.Datos.Interface
         DataTable ObtenerPorId(E_ROL rol, List<CD_Parameter_SP> lista);
         DataTable ObtenerPorCedula(E_ROL rol, List<CD_Parameter_SP> lista);
         bool Actualizar(E_ROL rol, List<CD_Parameter_SP> lista);
-        bool Eliminar(E_ROL rol, List<CD_Parameter_SP> lista);
         */
+        bool Eliminar(E_ROL rol, List<CD_Parameter_SP> lista);
+        
     }
 }

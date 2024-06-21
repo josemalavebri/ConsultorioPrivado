@@ -1,7 +1,7 @@
 ﻿using ConsultorioPrivado.Controlador.Controlers;
 using ConsultorioPrivado.Datos.DbOpeaciones;
 using ConsultorioPrivado.Modelo;
-using ConsultorioPrivado.Utilidad.Forms;
+using ConsultorioPrivado.Vista.Utilidad.Forms;
 using Microsoft.Identity.Client.NativeInterop;
 using System;
 using System.Collections.Generic;

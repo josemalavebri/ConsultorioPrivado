@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Utilidad.Forms
+namespace ConsultorioPrivado.Vista.Utilidad.Forms
 {
     public class ControlFormsButton
     {
 
 
-        public static void desabilitarHabilitarboton(bool estado,  Button button)
+        public static void desabilitarHabilitarboton(bool estado, Button button)
         {
             button.Enabled = estado;
         }
@@ -26,7 +26,7 @@ namespace ConsultorioPrivado.Utilidad.Forms
             return new List<Button>(botones);
         }
 
-        private static void iterarBotones(bool estado,List<Button> botones)
+        private static void iterarBotones(bool estado, List<Button> botones)
         {
             foreach (Button button in botones)
             {

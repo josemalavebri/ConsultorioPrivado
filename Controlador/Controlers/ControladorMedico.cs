@@ -32,8 +32,6 @@ namespace ConsultorioPrivado.Controlador.Controlers
             return controladorCreator.ObtenerEntidad(E_ROL._MEDICO);
         }
 
-       
-
         //CREA LAS ENTIDADES
         public bool CrearMedico<T>(T entidad) where T : IEntidad
         {
@@ -60,7 +58,7 @@ namespace ConsultorioPrivado.Controlador.Controlers
            lista = propiedadesCreator.CrearListaPropiedades<T>(entidad);
            return operacionesDB.Actualizar(rol, lista);
        }
-
+        */
 
        //ELIMINA LAS ENTIDADES
        public bool Eliminar<T>(T entidad, E_ROL rol) where T : IEntidad
@@ -70,7 +68,7 @@ namespace ConsultorioPrivado.Controlador.Controlers
            return operacionesDB.Eliminar(rol, lista);
        }
 
-
+        /*
        //OBTIENE UN REGISTRO DE ENTIDAD COMPLETO
        public DataTable ObtenerPorEntidad(E_ROL rol)
        {
