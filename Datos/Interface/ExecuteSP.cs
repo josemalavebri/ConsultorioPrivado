@@ -35,6 +35,7 @@ namespace ConsultorioPrivado.Datos.Interface
             }
         }
 
+        //Porque aqui tiene CrearEntidad? y en controlador tambien esta crear entidad
         public bool CrearEntidad(string sp_Non_query,List<ParametrosCreator> lista)
         {
             try
