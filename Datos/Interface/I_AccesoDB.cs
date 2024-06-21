@@ -22,7 +22,7 @@ namespace ConsultorioPrivado.Datos.Interface
         DataTable ObtenerPorCedula(E_ROL rol, List<CD_Parameter_SP> lista);
         bool Actualizar(E_ROL rol, List<CD_Parameter_SP> lista);
         */
-        bool Eliminar(E_ROL rol, List<CD_Parameter_SP> lista);
+        bool EliminarEntidad(string sp_Non_query, List<ParametrosCreator> lista);
         
     }
 }

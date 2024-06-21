@@ -28,13 +28,10 @@ namespace ConsultorioPrivado.Controlador.Creators
             return cadenaFinal.ToString();
         }
 
-
         public string crearProcedimientoAlmacenado(E_CODIGO_SP sp_query, E_ROL rol) { 
             return CrearCadenaFinal(sp_query, rol);
 
         }
-
-
 
     }
 }

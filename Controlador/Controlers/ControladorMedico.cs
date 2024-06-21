@@ -1,7 +1,7 @@
 ﻿using ConsultorioPrivado.Controlador.Enums;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
-using ConsultorioPrivado.Utilidad.Forms;
+using ConsultorioPrivado.Vista.Utilidad.Forms;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Controlador.Controlers
 {
-    //controlador que se encarga de las operaciones tipo CRUD
+    //controlador que se encarga de las operaciones tipo CRUD de la entidad medico
 
 
     public class ControladorMedico
@@ -61,11 +61,9 @@ namespace ConsultorioPrivado.Controlador.Controlers
         */
 
        //ELIMINA LAS ENTIDADES
-       public bool Eliminar<T>(T entidad, E_ROL rol) where T : IEntidad
+       public bool EliminarMedico<T>(T entidad) where T : IEntidad
        {
-           lista.Clear();
-           lista = propiedadesCreator.CrearListaPropiedadesId<T>(entidad);
-           return operacionesDB.Eliminar(rol, lista);
+            return controladorCreator.EliminarEntidad(entidad, E_ROL._MEDICO);
        }
 
         /*

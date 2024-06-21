@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ConsultorioPrivado.Controlador.Creators;
 using ConsultorioPrivado.Datos.DbOpeaciones;
-using ConsultorioPrivado.Utilidad.Forms;
+using ConsultorioPrivado.Vista.Utilidad.Forms;
 
 namespace ConsultorioPrivado.Datos.Interface
 {
@@ -69,18 +69,21 @@ namespace ConsultorioPrivado.Datos.Interface
                 throw new Exception("error al guardar un nuevo " + rol + " " + ex.Message);
             }
         }
+        */
         //Eliminar entidad
-        public bool Eliminar(E_ROL rol, List<CD_Parameter_SP> lista)
+        public bool EliminarEntidad(string sp_Non_query, List<ParametrosCreator> lista)
         {
             try
             {
-                return obj_bd.ExecuteSPNonQuery(crearCadenaFinal(E_CODIGO_SP.SP_ELIMINAR, rol), lista);
+                return obj_bd.ExecuteSPNonQuery(sp_Non_query, lista);
             }
             catch (Exception ex)
             {
-                throw new Exception("error al eliminar el " + rol + " " + ex.Message);
+                throw new Exception("error  al eliminar entidad de " + sp_Non_query + " " + ex.Message);
             }
+
         }
+        /*
         //Actualiza entidad
         public bool Actualizar(E_ROL rol, List<CD_Parameter_SP> lista)
         {
