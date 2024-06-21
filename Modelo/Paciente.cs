@@ -15,8 +15,10 @@ namespace ConsultorioPrivado.Modelo
         private string apellido;
         private string correo;
         private int telefono;
+
         public Paciente()
         {
+
         }
 
         public Paciente(int id, int cedula, string nombre, string apellido, string correo,int telefono)

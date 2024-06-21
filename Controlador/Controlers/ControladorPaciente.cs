@@ -18,6 +18,11 @@ namespace ConsultorioPrivado.Controlador.Controlers
 
         }
 
+        public DataTable ObtenerPorPaciente()
+        {
+            return controladorCreator.ObtenerEntidad(Enums.E_ROL._PACIENTE);
+        }
+
         public bool CrearPaciente<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.CrearEntidad(entidad, Enums.E_ROL._PACIENTE);
@@ -28,15 +33,9 @@ namespace ConsultorioPrivado.Controlador.Controlers
             return controladorCreator.EliminarEntidad(entidad, Enums.E_ROL._PACIENTE);
         }
 
-        //No estoy seguro de este pero pongamoslo por si acaso por el momento
         public bool ActualizarPaciente<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.ActualizarEntidad(entidad, Enums.E_ROL._PACIENTE);
         }
-        public DataTable ObtenerPaciente()
-        {
-            return controladorCreator.ObtenerEntidad(Enums.E_ROL._PACIENTE);
-        }
-
     }
 }

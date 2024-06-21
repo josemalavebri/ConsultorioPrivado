@@ -51,7 +51,7 @@ namespace ConsultorioPrivado.Controlador.Controlers
         {
             lista = propiedadesCreator.CrearListaPropiedades(entidad);
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_ACTUALIZAR, rol);
-            return accesoDatos.CrearEntidad(procedimientoAlmacenado, lista);
+            return accesoDatos.ActualizarEntidad(procedimientoAlmacenado, lista);
         }
 
     }
