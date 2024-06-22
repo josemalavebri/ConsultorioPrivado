@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ConsultorioPrivado.Controlador.Enums
 {
     internal enum E_ROL

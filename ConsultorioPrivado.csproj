@@ -10,6 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Datos\Utilidad_Datos\**" />
+    <Compile Remove="Vista\Paciente_forms\**" />
+    <EmbeddedResource Remove="Datos\Utilidad_Datos\**" />
+    <EmbeddedResource Remove="Vista\Paciente_forms\**" />
+    <None Remove="Datos\Utilidad_Datos\**" />
+    <None Remove="Vista\Paciente_forms\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="servicios-de-consultoria.ico" />
   </ItemGroup>
 
@@ -39,11 +48,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Datos\Utilidad_Datos\" />
-    <Folder Include="Vista\Paciente_forms\" />
   </ItemGroup>
 
 </Project>

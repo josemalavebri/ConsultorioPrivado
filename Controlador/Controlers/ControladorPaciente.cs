@@ -1,4 +1,5 @@
-﻿using ConsultorioPrivado.Modelo;
+﻿using ConsultorioPrivado.Controlador.Enums;
+using ConsultorioPrivado.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,22 +21,22 @@ namespace ConsultorioPrivado.Controlador.Controlers
 
         public DataTable ObtenerPorPaciente()
         {
-            return controladorCreator.ObtenerEntidad(Enums.E_ROL._PACIENTE);
+            return controladorCreator.ObtenerEntidad(E_ROL._PACIENTE);
         }
 
         public bool CrearPaciente<T>(T entidad) where T : IEntidad
         {
-            return controladorCreator.CrearEntidad(entidad, Enums.E_ROL._PACIENTE);
+            return controladorCreator.CrearEntidad(entidad, E_ROL._PACIENTE);
         }
 
         public bool EliminarPaciente<T>(T entidad) where T : IEntidad
         {
-            return controladorCreator.EliminarEntidad(entidad, Enums.E_ROL._PACIENTE);
+            return controladorCreator.EliminarEntidad(entidad,E_ROL._PACIENTE);
         }
 
         public bool ActualizarPaciente<T>(T entidad) where T : IEntidad
         {
-            return controladorCreator.ActualizarEntidad(entidad, Enums.E_ROL._PACIENTE);
+            return controladorCreator.ActualizarEntidad(entidad, E_ROL._PACIENTE);
         }
     }
 }
