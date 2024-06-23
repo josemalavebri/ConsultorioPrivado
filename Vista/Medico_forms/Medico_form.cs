@@ -124,7 +124,7 @@ namespace ConsultorioPrivado.Vista
                 DialogResult result = MostrarMensaje();
                 if (result == DialogResult.OK)
                 {
-                  //  controladorGeneral.Eliminar(Paciente, E_ROL._MEDICO);
+                    .);
                     CargarDataGrid();
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using ConsultorioPrivado.Controlador.Controlers;
+using ConsultorioPrivado.Controlador.Enums;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
 using ConsultorioPrivado.Vista.Utilidad.Forms;
@@ -33,16 +34,16 @@ namespace ConsultorioPrivado.Vista
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
-            /*
+            
             Medico medico = crearMedicoEntidad();
-            if(controlador.Crear(medico, E_ROL._MEDICO))
+            if(controlador.CrearMedico<Medico>(medico))
             {
                 MessageBox.Show("Medico Insertado Correctamente");
                 this.Close();
             };
             vaciarTexts();
 
-            */
+            
         }
 
 

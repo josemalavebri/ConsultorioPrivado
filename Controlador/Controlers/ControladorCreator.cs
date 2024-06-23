@@ -33,11 +33,16 @@ namespace ConsultorioPrivado.Controlador.Controlers
             return accesoDatos.ObtenerPorEntidad(procedimientoAlmacenado);
         }
 
-        public bool CrearEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
+        public DataTable ObtenerPorId(E_ROL rol)
         {
-            lista = propiedadesCreator.CrearListaPropiedades(entidad);
-            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_CREAR, rol);
-            return accesoDatos.CrearEntidad(procedimientoAlmacenado, lista);
+            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR_ID, rol);
+            return accesoDatos.ObtenerPorId(procedimientoAlmacenado);
+        }
+
+        public DataTable ObtenerPorCedula(E_ROL rol)
+        {
+            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR_CEDULA, rol);
+            return accesoDatos.ObtenerPorCedula(procedimientoAlmacenado);
         }
 
         public bool EliminarEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
@@ -45,6 +50,20 @@ namespace ConsultorioPrivado.Controlador.Controlers
             lista = propiedadesCreator.CrearListaPropiedades(entidad);
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_ELIMINAR, rol);
             return accesoDatos.EliminarEntidad(procedimientoAlmacenado, lista);
+        }
+
+        public bool CrearEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
+        {
+            lista = propiedadesCreator.CrearListaPropiedades(entidad);
+            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_CREAR, rol);
+            return accesoDatos.CrearEntidad(procedimientoAlmacenado, lista);
+        }
+
+        public bool ActualizarEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
+        {
+            lista = propiedadesCreator.CrearListaPropiedades(entidad);
+            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_ACTUALIZAR, rol);
+            return accesoDatos.ActualizarEntidad(procedimientoAlmacenado, lista);
         }
 
     }

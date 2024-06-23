@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsultorioPrivado.Controlador.Creators;
+using ConsultorioPrivado.Controlador.Enums;
 using ConsultorioPrivado.Datos.DbOpeaciones;
 using ConsultorioPrivado.Vista.Utilidad.Forms;
 
@@ -19,7 +20,7 @@ namespace ConsultorioPrivado.Datos.Interface
         public ExecuteSP()
         {
             obj_bd = new ExecuteQuery();
-            
+
         }
 
         public DataTable ObtenerPorEntidad(string sp_query)
@@ -31,45 +32,36 @@ namespace ConsultorioPrivado.Datos.Interface
             }
             catch (Exception ex)
             {
-                throw new Exception("error  al obtener tabla de " + sp_query + " " + ex.Message);
+                throw new Exception("error al obtener tabla de " + sp_query + " " + ex.Message);
             }
         }
 
-        public bool CrearEntidad(string sp_Non_query,List<ParametrosCreator> lista)
+        public DataTable ObtenerPorId(string sp_query)
         {
             try
             {
-                return obj_bd.ExecuteSPNonQuery(sp_Non_query, lista);
+                List<ParametrosCreator> lista = new List<ParametrosCreator>();
+                return obj_bd.ExecuteSPQuery(sp_query, lista);
             }
             catch (Exception ex)
             {
-                throw new Exception("error  al crear entidad de " + sp_Non_query + " " + ex.Message);
+                throw new Exception("error al buscar por ID de " + sp_query + " " + ex.Message);
             }
         }
 
-
-        // Ver tabla entidad
-       
-
-        /*
-        public DataTable ObtenerPorId(E_ROL rol, List<CD_Parameter_SP> lista)
-        {
-            //<CD_Parameter_SP> lista = new List<CD_Parameter_SP> ();
-            return obj_bd.ExecuteSPQuery(crearCadenaFinal(E_CODIGO_SP.SP_OBTENER_POR_ID, rol), lista);
-        }
-        //Crear entidad
-        public bool Crear(E_ROL rol, List<CD_Parameter_SP> lista)
+        public DataTable ObtenerPorCedula(string sp_query)
         {
             try
             {
-                return obj_bd.ExecuteSPNonQuery(crearCadenaFinal(E_CODIGO_SP.SP_CREAR, rol), lista);
+                List<ParametrosCreator> lista = new List<ParametrosCreator>();
+                return obj_bd.ExecuteSPQuery(sp_query, lista);
             }
             catch (Exception ex)
             {
-                throw new Exception("error al guardar un nuevo " + rol + " " + ex.Message);
+                throw new Exception("error al buscar por Cedula de " + sp_query + " " + ex.Message);
             }
         }
-        */
+        
         //Eliminar entidad
         public bool EliminarEntidad(string sp_Non_query, List<ParametrosCreator> lista)
         {
@@ -83,32 +75,31 @@ namespace ConsultorioPrivado.Datos.Interface
             }
 
         }
-        /*
+
+        public bool CrearEntidad(string sp_Non_query, List<ParametrosCreator> lista)
+        {
+            try
+            {
+                return obj_bd.ExecuteSPNonQuery(sp_Non_query, lista);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("error al crear entidad de " + sp_Non_query + " " + ex.Message);
+            }
+        }
+        
         //Actualiza entidad
-        public bool Actualizar(E_ROL rol, List<CD_Parameter_SP> lista)
+        public bool ActualizarEntidad(string sp_Non_query, List<ParametrosCreator> lista)
         {
             try
             {
-                return obj_bd.ExecuteSPNonQuery(crearCadenaFinal(E_CODIGO_SP.SP_ACTUALIZAR, rol), lista);
+                return obj_bd.ExecuteSPNonQuery(sp_Non_query, lista);
             }
             catch (Exception ex)
             {
-                throw new Exception("error al actualizar el " + rol + " " + ex.Message);
+                throw new Exception("error al actualizar el " + sp_Non_query + " " + ex.Message);
             }
         }
-
-        public DataTable ObtenerPorCedula(E_ROL rol, List<CD_Parameter_SP> lista)
-        {
-            try
-            {
-                return obj_bd.ExecuteSPQuery(crearCadenaFinal(E_CODIGO_SP.SP_OBTENER_POR_CEDULA, rol), lista);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("error al buscar el " + rol + " " + ex.Message);
-            }
-        }
-
-        */
+        
     }
 }

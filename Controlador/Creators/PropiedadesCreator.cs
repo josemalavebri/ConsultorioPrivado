@@ -71,25 +71,6 @@ namespace ConsultorioPrivado.Controlador.Creators
             return lista;
         }
 
-        private bool EsValorValido(object valor)
-        {
-            if (valor == null)
-            {
-                return false;
-            }
-
-            if (valor is string strValue && string.IsNullOrWhiteSpace(strValue))
-            {
-                return false;
-            }
-
-            if (valor is int intValue && intValue == 0)
-            {
-                return false;
-            }
-            return false;
-        }
-
         //MAPEA LOS TIPOS DE LAS ENTIDADES
         private static SqlDbType MapearTipo(Type tipo)
         {

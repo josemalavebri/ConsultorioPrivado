@@ -1,4 +1,5 @@
-﻿using ConsultorioPrivado.Controlador.Enums;
+﻿using ConsultorioPrivado.Controlador.Creators;
+using ConsultorioPrivado.Controlador.Enums;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
 using ConsultorioPrivado.Vista.Utilidad.Forms;
@@ -32,62 +33,33 @@ namespace ConsultorioPrivado.Controlador.Controlers
             return controladorCreator.ObtenerEntidad(E_ROL._MEDICO);
         }
 
+        public DataTable ObtenerPorId()
+        {
+            return controladorCreator.ObtenerPorId(E_ROL._MEDICO);
+        }
+
+        public DataTable ObtenerPorCedula()
+        {
+            return controladorCreator.ObtenerPorCedula(E_ROL._MEDICO);
+        }
+
+        //ELIMINA LAS ENTIDADES
+        public bool EliminarMedico<T>(T entidad) where T : IEntidad
+       {
+            return controladorCreator.EliminarEntidad(entidad, E_ROL._MEDICO);
+       }
+
         //CREA LAS ENTIDADES
         public bool CrearMedico<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.CrearEntidad(entidad, E_ROL._MEDICO);
         }
-
-
-
-        /*
-
-       //BUSCA LAS ENTIDADES SEGUN LA CEDULA
-       public DataTable ObtenerPorCedula<T>(T entidad, E_ROL rol) where T : IEntidad
-       {
-           lista.Clear();
-           lista = propiedadesCreator.CrearListaPropiedadesCedula<T>(entidad);
-           return operacionesDB.ObtenerPorCedula(rol, lista);
-       }
-
-
-       //ACTUALIZA LAS ENTIDADES
-       public bool Actualizar<T>(T entidad, E_ROL rol) where T : IEntidad
-       {
-           lista.Clear();
-           lista = propiedadesCreator.CrearListaPropiedades<T>(entidad);
-           return operacionesDB.Actualizar(rol, lista);
-       }
-        */
-
-       //ELIMINA LAS ENTIDADES
-       public bool EliminarMedico<T>(T entidad) where T : IEntidad
-       {
-            return controladorCreator.EliminarEntidad(entidad, E_ROL._MEDICO);
-       }
-
-        /*
-       //OBTIENE UN REGISTRO DE ENTIDAD COMPLETO
-       public DataTable ObtenerPorEntidad(E_ROL rol)
-       {
-           lista.Clear();
-           operacionesDB = new ExecuteSP();
-           return operacionesDB.ObtenerPorEntidad(rol);
-       }
-
-       public DataTable ObtenerPorId<T>(T entidad, E_ROL rol) where T : IEntidad
-       {
-           lista.Clear();
-           lista = propiedadesCreator.CrearListaPropiedadesId<T>(entidad);
-           return operacionesDB.ObtenerPorEntidad(rol, lista);
-       }
-
-       //CREA UNA LISTA CON LAS PROPIEDADES 
-       */
-
-
-
-
-
+       
+        //ACTUALIZA LAS ENTIDADES
+        public bool ActualizarMedico<T>(T entidad) where T : IEntidad
+        {
+            return controladorCreator.ActualizarEntidad(entidad, E_ROL._MEDICO);
+        }
+       
     }
 }
