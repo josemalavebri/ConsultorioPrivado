@@ -27,20 +27,23 @@ namespace ConsultorioPrivado.Controlador.Controlers
             accesoDatos = new ExecuteSP();
         }
 
-        public DataTable ObtenerEntidad(E_ROL rol)
+        public DataTable ObtenerPorEntidad(E_ROL rol)
         {
+            
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR,rol);
             return accesoDatos.ObtenerPorEntidad(procedimientoAlmacenado);
         }
 
         public DataTable ObtenerPorId(E_ROL rol)
         {
+            
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR_ID, rol);
             return accesoDatos.ObtenerPorId(procedimientoAlmacenado);
         }
 
         public DataTable ObtenerPorCedula(E_ROL rol)
         {
+            
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR_CEDULA, rol);
             return accesoDatos.ObtenerPorCedula(procedimientoAlmacenado);
         }

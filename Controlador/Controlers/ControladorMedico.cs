@@ -30,7 +30,7 @@ namespace ConsultorioPrivado.Controlador.Controlers
         
         public DataTable ObtenerPorMedico()
         {
-            return controladorCreator.ObtenerEntidad(E_ROL._MEDICO);
+            return controladorCreator.ObtenerPorEntidad(E_ROL._MEDICO);
         }
 
         public DataTable ObtenerPorId()
@@ -45,9 +45,9 @@ namespace ConsultorioPrivado.Controlador.Controlers
 
         //ELIMINA LAS ENTIDADES
         public bool EliminarMedico<T>(T entidad) where T : IEntidad
-       {
+        {
             return controladorCreator.EliminarEntidad(entidad, E_ROL._MEDICO);
-       }
+        }
 
         //CREA LAS ENTIDADES
         public bool CrearMedico<T>(T entidad) where T : IEntidad

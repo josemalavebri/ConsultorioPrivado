@@ -1,4 +1,5 @@
 ﻿using ConsultorioPrivado.Controlador.Controlers;
+using ConsultorioPrivado.Controlador.Enums;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
 using ConsultorioPrivado.Vista.Utilidad.Forms;
@@ -124,7 +125,7 @@ namespace ConsultorioPrivado.Vista
                 DialogResult result = MostrarMensaje();
                 if (result == DialogResult.OK)
                 {
-                    .);
+                    controladorGeneral.Eliminar(Paciente, E_ROL._MEDICO);
                     CargarDataGrid();
                 }
             }

@@ -24,25 +24,25 @@ namespace ConsultorioPrivado.Vista
         ControladorMedico controlador;
         public EditarMedico_form(int id)
         {
-            /*
+            
             InitializeComponent();
             cedula_text.TextChanged += textBoxes_TextChanged;
             nombre_text.TextChanged += textBoxes_TextChanged;
             apellido_text.TextChanged += textBoxes_TextChanged;
             correoText.TextChanged += textBoxes_TextChanged;
-            controlador = new ControladorGeneral();
+            controlador = new ControladorMedico();
             ControlFormsButton.desabilitarHabilitarBotones(false, resetear_button);
             this.id = id;
-            */
+            
         }
 
         private void agregarDatosFormulario()
         {
-            /*
+            
             Medico medico = new Medico();
             medico.Id = id;
-         //   DataTable datosMedicos = controlador.ObtenerPorId(medico, E_ROL._MEDICO);
-          //  if (datosMedicos.Rows.Count > 0)
+            DataTable datosMedicos = controlador.ObtenerPorId<Medico>(medico);
+            if (datosMedicos.Rows.Count > 0)
             {
                 DataRow row = datosMedicos.Rows[0];
                 id_text.Text = row["id"].ToString();
@@ -52,13 +52,13 @@ namespace ConsultorioPrivado.Vista
                 telefono_text.Text = row["telefono"].ToString();
                 correoText.Text = row["correo"].ToString();
                 especialidad_combo.SelectedIndex = Convert.ToInt32(row["idEspecialidadFk"].ToString())-1;
-            }/**/
+            }
         }
 
         private void agregar_button_Click(object sender, EventArgs e)
         {
             Medico medico = crearMedicoDatos();
-            //if(controlador.Actualizar(medico, E_ROL._MEDICO)) ;
+            if(controlador.ActualizarMedico<Medico>(medico)) ;
             {
                 vaciarTexts();
                 MessageBox.Show("Medico Actualizado");
@@ -68,7 +68,7 @@ namespace ConsultorioPrivado.Vista
 
         private Medico crearMedicoDatos()
         {
-            Medico medico = new Medico() ;
+            Medico medico = new Medico();
             medico.Id = Convert.ToInt32(id_text.Text.ToString());
             medico.Cedula = Convert.ToInt32(cedula_text.Text.ToString());
             medico.Nombre = nombre_text.Text.ToString();
