@@ -14,7 +14,10 @@ namespace ConsultorioPrivado.Datos.Interface
     {
 
         DataTable ObtenerPorEntidad(string sp_query);
+    
+        DataTable ObtenerPorCedula(string sp_query);
 
+        DataTable ObtenerPorID(string sp_query);
         bool CrearEntidad(string sp_Non_query, List<ParametrosCreator> lista);
 
         bool EliminarEntidad(string sp_Non_query, List<ParametrosCreator> lista);

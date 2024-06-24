@@ -33,6 +33,18 @@ namespace ConsultorioPrivado.Controlador.Controlers
             return accesoDatos.ObtenerPorEntidad(procedimientoAlmacenado);
         }
 
+        public DataTable ObtenerPorCedula(E_ROL rol) 
+        {
+            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR_CEDULA, rol);
+            return accesoDatos.ObtenerPorCedula(procedimientoAlmacenado);
+        }
+
+        public DataTable ObtenerPorID(E_ROL rol)
+        {
+            string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR_ID,rol);
+            return accesoDatos.ObtenerPorID(procedimientoAlmacenado);
+        }
+
         public bool CrearEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista = propiedadesCreator.CrearListaPropiedades(entidad);

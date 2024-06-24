@@ -35,7 +35,32 @@ namespace ConsultorioPrivado.Datos.Interface
             }
         }
 
-        //Porque aqui tiene CrearEntidad? y en controlador tambien esta crear entidad
+        public DataTable ObtenerPorCedula(string sp_query)
+        {
+            try
+            {
+                List<ParametrosCreator> lista = new List<ParametrosCreator>();
+                return obj_bd.ExecuteSPQuery(sp_query, lista);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("error  al obtener la cedula del " + sp_query + " " + ex.Message);
+            }
+        }
+
+        public DataTable ObtenerPorID(string sp_query) {
+
+            try
+            {
+                List<ParametrosCreator> lista = new List<ParametrosCreator>();
+                return obj_bd.ExecuteSPQuery(sp_query, lista);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("error  al obtener tabla de " + sp_query + " " + ex.Message);
+            }
+        }
+
         public bool CrearEntidad(string sp_Non_query,List<ParametrosCreator> lista)
         {
             try
