@@ -27,34 +27,38 @@ namespace ConsultorioPrivado.Controlador.Controlers
             accesoDatos = new ExecuteSP();
         }
 
-        public DataTable ObtenerPorEntidad(E_ROL rol)
+        //OBTIENE UNA TABLA DE LA ENTIDAD UTILIZANDO EL PROCEDIMIENTO ALMACENADO Y ROL ESPECIFICADOS
+        public DataTable ObtenerPorEntidad( E_ROL rol)
         {
-            
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR,rol);
             return accesoDatos.ObtenerPorEntidad(procedimientoAlmacenado);
         }
 
-        public DataTable ObtenerPorId(E_ROL rol)
+        ////OBTIENE UNA TABLA DE LA ENTIDAD POR ID UTILIZANDO EL PROCEDIMIENTO ALMACENADO Y ROL ESPECIFICADOS
+        public DataTable ObtenerPorId<T>(T entidad, E_ROL rol) where T : IEntidad
         {
-            
+            lista = propiedadesCreator.CrearListaPropiedadesId(entidad);
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR_ID, rol);
-            return accesoDatos.ObtenerPorId(procedimientoAlmacenado);
+            return accesoDatos.ObtenerPorId(procedimientoAlmacenado, lista);
         }
 
-        public DataTable ObtenerPorCedula(E_ROL rol)
+        //OBTIENE UNA TABLA DE LA ENTIDAD POR CEDULA UTILIZANDO EL PROCEDIMIENTO ALMACENADO Y ROL ESPECIFICADOS
+        public DataTable ObtenerPorCedula<T>(T entidad, E_ROL rol) where T : IEntidad
         {
-            
+            lista = propiedadesCreator.CrearListaPropiedadesCedula(entidad);
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_OBTENER_POR_CEDULA, rol);
-            return accesoDatos.ObtenerPorCedula(procedimientoAlmacenado);
+            return accesoDatos.ObtenerPorCedula(procedimientoAlmacenado, lista);
         }
 
+        //ELIMINA LA ENTIDAD UTILIZANDO EL PROCEDIMIENTO ALMACENADO Y ROL ESPECIFICADOS 
         public bool EliminarEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
         {
-            lista = propiedadesCreator.CrearListaPropiedades(entidad);
+            lista = propiedadesCreator.CrearListaPropiedadesId(entidad);
             string procedimientoAlmacenado = executeRolDB.crearProcedimientoAlmacenado(E_CODIGO_SP.SP_ELIMINAR, rol);
             return accesoDatos.EliminarEntidad(procedimientoAlmacenado, lista);
         }
 
+        //CREA LA ENTIDAD UTILIZANDO EL PROCEDIMIENTO ALMACENADO Y ROL ESPECIFICADOS 
         public bool CrearEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista = propiedadesCreator.CrearListaPropiedades(entidad);
@@ -62,6 +66,7 @@ namespace ConsultorioPrivado.Controlador.Controlers
             return accesoDatos.CrearEntidad(procedimientoAlmacenado, lista);
         }
 
+        //ACTUALIZA LA ENTIDAD UTILIZANDO EL PROCEDIMIENTO ALMACENADO Y ROL ESPECIFICADOS 
         public bool ActualizarEntidad<T>(T entidad, E_ROL rol) where T : IEntidad
         {
             lista = propiedadesCreator.CrearListaPropiedades(entidad);

@@ -13,49 +13,48 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Controlador.Controlers
 {
-    //controlador que se encarga de las operaciones tipo CRUD de la entidad medico
-
+    //CONTROLADOR QUE SE ENCARGA DE LAS OPERACIONES TIPO CRUD DE LA ENTIDAD MEDICO
 
     public class ControladorMedico
     {
         private ControladorCreator controladorCreator;
-
-
-        // MEDICO 
 
         public ControladorMedico()
         {
             controladorCreator = new ControladorCreator();
         }
         
+        //OBTIENE MEDICO
         public DataTable ObtenerPorMedico()
         {
             return controladorCreator.ObtenerPorEntidad(E_ROL._MEDICO);
         }
 
-        public DataTable ObtenerPorId()
+        //OBTIENE MEDICO POR ID
+        public DataTable ObtenerPorId<T>(T entidad) where T : IEntidad
         {
-            return controladorCreator.ObtenerPorId(E_ROL._MEDICO);
+            return controladorCreator.ObtenerPorId(entidad, E_ROL._MEDICO);
         }
 
-        public DataTable ObtenerPorCedula()
+        //OBTIENE MEDICO POR CEDULA
+        public DataTable ObtenerPorCedula<T>(T entidad) where T : IEntidad
         {
-            return controladorCreator.ObtenerPorCedula(E_ROL._MEDICO);
+            return controladorCreator.ObtenerPorCedula(entidad, E_ROL._MEDICO);
         }
 
-        //ELIMINA LAS ENTIDADES
+        //ELIMINA MEDICO
         public bool EliminarMedico<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.EliminarEntidad(entidad, E_ROL._MEDICO);
         }
 
-        //CREA LAS ENTIDADES
+        //CREA MEDICO
         public bool CrearMedico<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.CrearEntidad(entidad, E_ROL._MEDICO);
         }
        
-        //ACTUALIZA LAS ENTIDADES
+        //ACTUALIZA MEDICO
         public bool ActualizarMedico<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.ActualizarEntidad(entidad, E_ROL._MEDICO);

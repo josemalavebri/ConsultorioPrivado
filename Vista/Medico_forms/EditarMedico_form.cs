@@ -58,7 +58,7 @@ namespace ConsultorioPrivado.Vista
         private void agregar_button_Click(object sender, EventArgs e)
         {
             Medico medico = crearMedicoDatos();
-            if(controlador.ActualizarMedico<Medico>(medico)) ;
+            if(controlador.ActualizarMedico<Medico>(medico))
             {
                 vaciarTexts();
                 MessageBox.Show("Medico Actualizado");
@@ -101,7 +101,6 @@ namespace ConsultorioPrivado.Vista
             ControlFormsText.EliminarTextos(cedula_text, nombre_text, apellido_text, correoText, telefono_text);
             especialidad_combo.SelectedIndex = 0;
         }
-
 
         private void resetearButtonEstado(bool estado)
         {

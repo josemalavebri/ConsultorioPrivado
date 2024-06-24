@@ -23,6 +23,7 @@ namespace ConsultorioPrivado.Datos.Interface
 
         }
 
+        //OBTIENE TODOS LOS PARÁMETROS DE LA ENTIDAD
         public DataTable ObtenerPorEntidad(string sp_query)
         {
             try
@@ -36,11 +37,12 @@ namespace ConsultorioPrivado.Datos.Interface
             }
         }
 
-        public DataTable ObtenerPorId(string sp_query)
+        //OBTIENE LA ENTIDAD POR MEDIO DEL CAMPO ID
+        public DataTable ObtenerPorId(string sp_query, List<ParametrosCreator> lista)
         {
             try
             {
-                List<ParametrosCreator> lista = new List<ParametrosCreator>();
+                
                 return obj_bd.ExecuteSPQuery(sp_query, lista);
             }
             catch (Exception ex)
@@ -49,11 +51,12 @@ namespace ConsultorioPrivado.Datos.Interface
             }
         }
 
-        public DataTable ObtenerPorCedula(string sp_query)
+        //OBTIENE LA ENTIDAD POR MEDIO DEL CAMPO CEDULA
+        public DataTable ObtenerPorCedula(string sp_query, List<ParametrosCreator> lista)
         {
             try
             {
-                List<ParametrosCreator> lista = new List<ParametrosCreator>();
+                
                 return obj_bd.ExecuteSPQuery(sp_query, lista);
             }
             catch (Exception ex)
@@ -62,7 +65,7 @@ namespace ConsultorioPrivado.Datos.Interface
             }
         }
         
-        //Eliminar entidad
+        //ELIMINA LA ENTIDAD
         public bool EliminarEntidad(string sp_Non_query, List<ParametrosCreator> lista)
         {
             try
@@ -76,6 +79,7 @@ namespace ConsultorioPrivado.Datos.Interface
 
         }
 
+        //CREA LA ENTIDAD
         public bool CrearEntidad(string sp_Non_query, List<ParametrosCreator> lista)
         {
             try
@@ -88,7 +92,7 @@ namespace ConsultorioPrivado.Datos.Interface
             }
         }
         
-        //Actualiza entidad
+        //ACTUALIZA LA ENTIDAD
         public bool ActualizarEntidad(string sp_Non_query, List<ParametrosCreator> lista)
         {
             try

@@ -18,6 +18,7 @@ namespace ConsultorioPrivado.Controlador.Creators
             lista = new List<ParametrosCreator>();
         }
 
+        //CREA Y RETORNA UNA LISTA DE PARÁMETROS DE ACUERDO A LAS PROPIEDADES DE LA ENTIDAD 
         public List<ParametrosCreator> CrearListaPropiedades<T>(T entidad) where T : IEntidad
         {
             lista.Clear();
@@ -34,6 +35,7 @@ namespace ConsultorioPrivado.Controlador.Creators
             return lista;
         }
 
+        //CREA Y RETORNA UNA LISTA DE PARÁMETROS PARA EL ID DE LA ENTIDAD 
         public List<ParametrosCreator> CrearListaPropiedadesId<T>(T entidad) where T : IEntidad
         {
             lista.Clear();
@@ -52,6 +54,7 @@ namespace ConsultorioPrivado.Controlador.Creators
             return lista;
         }
 
+        //CREA Y RETORNA UNA LISTA DE PARÁMETROS PARA LA CÉDULA DE LA ENTIDAD 
         public List<ParametrosCreator> CrearListaPropiedadesCedula<T>(T entidad) where T : IEntidad
         {
             lista.Clear();

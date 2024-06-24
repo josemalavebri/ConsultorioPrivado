@@ -20,6 +20,7 @@ namespace ConsultorioPrivado.Controlador.Creators
             cadenaFinal = new StringBuilder();
         }
 
+        //COMBINA LAS CADENAS PARA CREAR EL NOMBRE COMPLETO DEL PROCESO ALMACENADO
         private string CrearCadenaFinal(E_CODIGO_SP codigo, E_ROL rol)
         {
             cadenaFinal.Clear();
@@ -28,6 +29,7 @@ namespace ConsultorioPrivado.Controlador.Creators
             return cadenaFinal.ToString();
         }
 
+        //EJECUCION DEL PROCESO ALMACENADO
         public string crearProcedimientoAlmacenado(E_CODIGO_SP sp_query, E_ROL rol) { 
             return CrearCadenaFinal(sp_query, rol);
 

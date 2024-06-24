@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsultorioPrivado.Modelo
+﻿namespace ConsultorioPrivado.Modelo
 {
     public class Medico : IEntidad
     {
@@ -18,7 +12,7 @@ namespace ConsultorioPrivado.Modelo
 
         public Medico()
         {
-            id= 0;
+            id = 0;
             cedula = 0;
             nombre = string.Empty;
             apellido = string.Empty;

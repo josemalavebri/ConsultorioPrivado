@@ -42,10 +42,8 @@ namespace ConsultorioPrivado.Vista
                 this.Close();
             };
             vaciarTexts();
-
             
         }
-
 
         private Medico crearMedicoEntidad()
         {
@@ -79,7 +77,6 @@ namespace ConsultorioPrivado.Vista
         {
             ControlFormsText.EliminarTextos(cedula_text, nombre_text, apellido_text, correoText);
         }
-
 
         private void resetearButtonEstado(bool estado)
         {
