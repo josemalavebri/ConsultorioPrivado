@@ -43,7 +43,6 @@
 
   <ItemGroup>
     <Folder Include="Datos\Utilidad_Datos\" />
-    <Folder Include="Vista\Paciente_forms\" />
   </ItemGroup>
 
 </Project>
