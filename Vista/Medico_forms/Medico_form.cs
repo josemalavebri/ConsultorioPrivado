@@ -76,7 +76,7 @@ namespace ConsultorioPrivado.Vista
             form.ShowDialog();
         }
 
-        //NO TERMINADO
+        /*/NO TERMINADO
         private void buscar_button_Click_1(object sender, EventArgs e)
         {
             Medico medico = new Medico();
@@ -93,7 +93,7 @@ namespace ConsultorioPrivado.Vista
                 medicos_dgv.Columns["Editar"].Width = 75;
                 medicos_dgv.Columns["Eliminar"].Width = 75;
             }
-        }
+        }*/
 
         private void medicos_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {

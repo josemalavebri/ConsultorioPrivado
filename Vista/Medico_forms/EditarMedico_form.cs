@@ -22,7 +22,7 @@ namespace ConsultorioPrivado.Vista
     {
         private int id;
         ControladorMedico controlador;
-        public EditarMedico_form(int id)
+        public EditarMedico_form(int id)//ya la
         {
             
             InitializeComponent();

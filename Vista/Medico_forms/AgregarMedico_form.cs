@@ -20,8 +20,8 @@ namespace ConsultorioPrivado.Vista
 {
     public partial class AgregarMedico_form : Form
     {
-        ControladorMedico controlador;
-        public AgregarMedico_form()
+        ControladorMedico controlador;//ya la
+        public AgregarMedico_form()//ya la
         {
             InitializeComponent();
             cedula_text.TextChanged += textBoxes_TextChanged;
@@ -32,7 +32,7 @@ namespace ConsultorioPrivado.Vista
             ControlFormsButton.desabilitarHabilitarBotones(false, resetear_button);
         }
 
-        private void agregar_button_Click(object sender, EventArgs e)
+        private void agregar_button_Click(object sender, EventArgs e)//ya la
         {
             
             Medico medico = crearMedicoEntidad();
@@ -45,7 +45,7 @@ namespace ConsultorioPrivado.Vista
             
         }
 
-        private Medico crearMedicoEntidad()
+        private Medico crearMedicoEntidad()//ya la
         {
             Medico medico = new Medico();
             medico.Cedula = Convert.ToInt32(cedula_text.Text.ToString());
@@ -57,13 +57,13 @@ namespace ConsultorioPrivado.Vista
             return medico;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//ya la
         {
             vaciarTexts();
             ControlFormsButton.desabilitarHabilitarBotones(false, resetear_button);
         }
 
-        private void textBoxes_TextChanged(object sender, EventArgs e)
+        private void textBoxes_TextChanged(object sender, EventArgs e)//ya la
         {
             TextBox textBox = sender as TextBox;
 
@@ -73,18 +73,18 @@ namespace ConsultorioPrivado.Vista
             }
         }
 
-        private void vaciarTexts()
+        private void vaciarTexts()//ya la
         {
             ControlFormsText.EliminarTextos(cedula_text, nombre_text, apellido_text, correoText);
         }
 
-        private void resetearButtonEstado(bool estado)
+        private void resetearButtonEstado(bool estado)//ya la
         {
             ControlFormsButton.desabilitarHabilitarBotones(estado, resetear_button);
 
         }
 
-        private void cancelar_button_Click(object sender, EventArgs e)
+        private void cancelar_button_Click(object sender, EventArgs e)//ya la
         {
             this.Close();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsultorioPrivado.Vista.Paciente_forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

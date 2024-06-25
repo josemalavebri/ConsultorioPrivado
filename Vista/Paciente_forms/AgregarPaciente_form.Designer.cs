@@ -131,6 +131,7 @@
             agregar_button.TabIndex = 10;
             agregar_button.Text = "Aceptar";
             agregar_button.UseVisualStyleBackColor = true;
+            agregar_button.Click += agregar_button_Click;
             // 
             // resetear_button
             // 
@@ -140,6 +141,7 @@
             resetear_button.TabIndex = 11;
             resetear_button.Text = "Resetear";
             resetear_button.UseVisualStyleBackColor = true;
+            resetear_button.Click += resetear_button_Click;
             // 
             // cancelar_button
             // 
@@ -149,6 +151,7 @@
             cancelar_button.TabIndex = 12;
             cancelar_button.Text = "Cancelar";
             cancelar_button.UseVisualStyleBackColor = true;
+            cancelar_button.Click += cancelar_button_Click;
             // 
             // AgregarPaciente_form
             // 

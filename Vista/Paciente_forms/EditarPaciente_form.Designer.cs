@@ -39,7 +39,7 @@
             nombre_textBox = new TextBox();
             apellido_textBox = new TextBox();
             correo_textBox = new TextBox();
-            textBox6 = new TextBox();
+            telefono_textBox = new TextBox();
             agregar_button = new Button();
             resetear_button = new Button();
             cancelar_button = new Button();
@@ -134,12 +134,12 @@
             correo_textBox.Size = new Size(100, 23);
             correo_textBox.TabIndex = 10;
             // 
-            // textBox6
+            // telefono_textBox
             // 
-            textBox6.Location = new Point(143, 230);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 11;
+            telefono_textBox.Location = new Point(143, 230);
+            telefono_textBox.Name = "telefono_textBox";
+            telefono_textBox.Size = new Size(100, 23);
+            telefono_textBox.TabIndex = 11;
             // 
             // agregar_button
             // 
@@ -149,6 +149,7 @@
             agregar_button.TabIndex = 12;
             agregar_button.Text = "Aceptar";
             agregar_button.UseVisualStyleBackColor = true;
+            agregar_button.Click += agregar_button_Click;
             // 
             // resetear_button
             // 
@@ -158,15 +159,17 @@
             resetear_button.TabIndex = 13;
             resetear_button.Text = "Resetear";
             resetear_button.UseVisualStyleBackColor = true;
+            resetear_button.Click += resetear_button_Click;
             // 
             // cancelar_button
             // 
-            cancelar_button.Location = new Point(107, 315);
+            cancelar_button.Location = new Point(105, 318);
             cancelar_button.Name = "cancelar_button";
             cancelar_button.Size = new Size(75, 23);
             cancelar_button.TabIndex = 14;
             cancelar_button.Text = "Cancelar";
             cancelar_button.UseVisualStyleBackColor = true;
+            cancelar_button.Click += cancelar_button_Click;
             // 
             // EditarPaciente_form
             // 
@@ -176,7 +179,7 @@
             Controls.Add(cancelar_button);
             Controls.Add(resetear_button);
             Controls.Add(agregar_button);
-            Controls.Add(textBox6);
+            Controls.Add(telefono_textBox);
             Controls.Add(correo_textBox);
             Controls.Add(apellido_textBox);
             Controls.Add(nombre_textBox);
@@ -190,6 +193,7 @@
             Controls.Add(id_label);
             Name = "EditarPaciente_form";
             Text = "EditarPaciente_form";
+            Load += EditarPaciente_form_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,7 +211,7 @@
         private TextBox nombre_textBox;
         private TextBox apellido_textBox;
         private TextBox correo_textBox;
-        private TextBox textBox6;
+        private TextBox telefono_textBox;
         private Button agregar_button;
         private Button resetear_button;
         private Button cancelar_button;

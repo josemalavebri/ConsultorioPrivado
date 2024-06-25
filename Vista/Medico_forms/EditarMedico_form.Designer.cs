@@ -187,7 +187,7 @@
             // id_text
             // 
             id_text.Enabled = false;
-            id_text.Location = new Point(128, 14);
+            id_text.Location = new Point(132, 14);
             id_text.Name = "id_text";
             id_text.Size = new Size(100, 23);
             id_text.TabIndex = 16;
