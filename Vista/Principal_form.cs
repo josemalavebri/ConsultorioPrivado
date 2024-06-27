@@ -1,4 +1,5 @@
 using ConsultorioPrivado.Vista;
+using ConsultorioPrivado.Vista.Paciente;
 
 namespace ConsultorioPrivado
 {

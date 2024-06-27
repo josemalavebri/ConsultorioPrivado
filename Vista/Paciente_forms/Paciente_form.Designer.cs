@@ -35,10 +35,10 @@
             cedula_text = new TextBox();
             label4 = new Label();
             label1 = new Label();
-            medicos_dgv = new DataGridView();
+            paciente_dgv = new DataGridView();
             Editar = new DataGridViewImageColumn();
             Eliminar = new DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)medicos_dgv).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)paciente_dgv).BeginInit();
             SuspendLayout();
             // 
             // resetear_button
@@ -50,6 +50,7 @@
             resetear_button.TabIndex = 29;
             resetear_button.Text = "Resetear";
             resetear_button.UseVisualStyleBackColor = true;
+            resetear_button.Click += resetear_button_Click;
             // 
             // nuevo_button
             // 
@@ -60,6 +61,7 @@
             nuevo_button.TabIndex = 28;
             nuevo_button.Text = "Nuevo";
             nuevo_button.UseVisualStyleBackColor = true;
+            nuevo_button.Click += nuevo_button_Click;
             // 
             // buscar_button
             // 
@@ -97,16 +99,17 @@
             label1.TabIndex = 24;
             label1.Text = "Medicos Agregados:";
             // 
-            // medicos_dgv
+            // paciente_dgv
             // 
-            medicos_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            medicos_dgv.Columns.AddRange(new DataGridViewColumn[] { Editar, Eliminar });
-            medicos_dgv.Location = new Point(5, 201);
-            medicos_dgv.Margin = new Padding(3, 4, 3, 4);
-            medicos_dgv.Name = "medicos_dgv";
-            medicos_dgv.RowHeadersWidth = 51;
-            medicos_dgv.Size = new Size(973, 255);
-            medicos_dgv.TabIndex = 23;
+            paciente_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            paciente_dgv.Columns.AddRange(new DataGridViewColumn[] { Editar, Eliminar });
+            paciente_dgv.Location = new Point(5, 201);
+            paciente_dgv.Margin = new Padding(3, 4, 3, 4);
+            paciente_dgv.Name = "paciente_dgv";
+            paciente_dgv.RowHeadersWidth = 51;
+            paciente_dgv.Size = new Size(973, 255);
+            paciente_dgv.TabIndex = 23;
+            paciente_dgv.CellClick += paciente_dgv_CellClick;
             // 
             // Editar
             // 
@@ -139,10 +142,10 @@
             Controls.Add(cedula_text);
             Controls.Add(label4);
             Controls.Add(label1);
-            Controls.Add(medicos_dgv);
+            Controls.Add(paciente_dgv);
             Name = "Paciente_form";
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)medicos_dgv).EndInit();
+            Text = "Pacientes";
+            ((System.ComponentModel.ISupportInitialize)paciente_dgv).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -155,7 +158,7 @@
         private TextBox cedula_text;
         private Label label4;
         private Label label1;
-        private DataGridView medicos_dgv;
+        private DataGridView paciente_dgv;
         private DataGridViewImageColumn Editar;
         private DataGridViewImageColumn Eliminar;
     }

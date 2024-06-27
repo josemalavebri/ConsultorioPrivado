@@ -1,6 +1,6 @@
 ﻿namespace ConsultorioPrivado.Vista.Paciente
 {
-    partial class Pacienteadd_form
+    partial class add_Paciente_form
     {
         /// <summary>
         /// Required designer variable.

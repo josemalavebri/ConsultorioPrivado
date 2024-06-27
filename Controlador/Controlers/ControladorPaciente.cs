@@ -24,6 +24,15 @@ namespace ConsultorioPrivado.Controlador.Controlers
             return controladorCreator.ObtenerEntidad(E_ROL._PACIENTE);
         }
 
+        public DataTable ObtenerPorId(int idPacientes)
+        {
+            return controladorCreator.ObtenerPorID(E_ROL._PACIENTE);
+        }
+
+        public DataTable ObtenerPorCedula()
+        {
+            return controladorCreator.ObtenerPorCedula(E_ROL._PACIENTE);
+        }
         public bool CrearPaciente<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.CrearEntidad(entidad, E_ROL._PACIENTE);

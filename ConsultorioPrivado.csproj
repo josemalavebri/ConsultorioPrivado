@@ -11,11 +11,8 @@
 
   <ItemGroup>
     <Compile Remove="Datos\Utilidad_Datos\**" />
-    <Compile Remove="Vista\Paciente_forms\**" />
     <EmbeddedResource Remove="Datos\Utilidad_Datos\**" />
-    <EmbeddedResource Remove="Vista\Paciente_forms\**" />
     <None Remove="Datos\Utilidad_Datos\**" />
-    <None Remove="Vista\Paciente_forms\**" />
   </ItemGroup>
 
   <ItemGroup>

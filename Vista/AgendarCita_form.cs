@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsultorioPrivado.Vista.Paciente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,12 +25,13 @@ namespace ConsultorioPrivado.Vista
 
         private void buscarPaciente_button_Click(object sender, EventArgs e)
         {
-
+            Form form = new add_Paciente_form();
+            form.ShowDialog();
         }
 
         private void agregarPaciente_button_Click(object sender, EventArgs e)
         {
-            Form form = new AgregarPaciente_form();
+            Form form = new add_Paciente_form();
             form.Show();
         }
 

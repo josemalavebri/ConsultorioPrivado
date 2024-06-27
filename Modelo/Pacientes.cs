@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Modelo
 {
-    //Modelo paciente
-    public class Paciente : IEntidad
+    public class Pacientes : IEntidad
     {
         private int id;
         private int cedula;
@@ -16,19 +15,24 @@ namespace ConsultorioPrivado.Modelo
         private string correo;
         private int telefono;
 
-        public Paciente()
+        public Pacientes()
         {
-
+            id = 0;
+            cedula = 0;
+            nombre = string.Empty;
+            apellido = string.Empty;
+            telefono = 0;
+            correo = string.Empty;
         }
 
-        public Paciente(int id, int cedula, string nombre, string apellido, string correo,int telefono)
+        public Pacientes(int id, int cedula, string nombre, string apellido, string correo,int telefono)
         {
             this.id = id;
             this.cedula = cedula;
             this.nombre = nombre;
             this.apellido = apellido;
             this.correo = correo;
-            this.Telefono = telefono;
+            this.telefono = telefono;
         }
 
         public int Id { get => id; set => id = value; }

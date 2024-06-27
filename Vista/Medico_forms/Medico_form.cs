@@ -50,7 +50,8 @@ namespace ConsultorioPrivado.Vista
         
         private void buscar_button_Click(object sender, EventArgs e)
         {
-            Paciente Paciente = new Paciente();
+            /*Paciente Paciente = new Paciente();
+*/
            
             /*Paciente.Cedula = Convert.ToInt32(cedula_text.Text);*/
             
@@ -119,8 +120,8 @@ namespace ConsultorioPrivado.Vista
                 int id = Convert.ToInt32(medicos_dgv.CurrentRow.
 
                    Cells["Id"].Value.ToString()); ;
-                Paciente Paciente = new Paciente();
-                Paciente.Id = id;
+                Pacientes Pacientes = new Pacientes();
+                Pacientes.Id = id;
                 DialogResult result = MostrarMensaje();
                 if (result == DialogResult.OK)
                 {

@@ -9,11 +9,11 @@ namespace ConsultorioPrivado.Modelo
     internal class CitaMedica : IEntidad
     {
         private int idCitaMedica;
-        private Paciente paciente;
+        private Pacientes paciente;
         private Medico medico;
         private DateTime horaConsulta;
 
-        public CitaMedica(int idCitaMedica, Paciente paciente, DateTime horaConsulta, Medico medico)
+        public CitaMedica(int idCitaMedica, Pacientes paciente, DateTime horaConsulta, Medico medico)
         {
             this.IdCitaMedica = idCitaMedica;
             this.Paciente = paciente;
@@ -23,7 +23,7 @@ namespace ConsultorioPrivado.Modelo
 
         public int IdCitaMedica { get => idCitaMedica; set => idCitaMedica = value; }
         public DateTime HoraConsulta { get => horaConsulta; set => horaConsulta = value; }
-        internal Paciente Paciente { get => paciente; set => paciente = value; }
+        internal Pacientes Paciente { get => paciente; set => paciente = value; }
         internal Medico Medico { get => medico; set => medico = value; }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ConsultorioPrivado.Vista.Paciente
 {
-    public partial class Paciente_form : Form
+    public partial class add_Paciente_form : Form
     {
-        public Paciente_form()
+        public add_Paciente_form()
         {
             InitializeComponent();
         }
