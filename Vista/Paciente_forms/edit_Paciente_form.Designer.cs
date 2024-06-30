@@ -200,7 +200,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "edit_Paciente_form";
-            Text = "edit_Paciente_form";
+            Text = "Editar Paciente";
             Load += edit_Paciente_form_Load;
             ResumeLayout(false);
             PerformLayout();

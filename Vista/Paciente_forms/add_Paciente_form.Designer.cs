@@ -28,165 +28,176 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            textBox3 = new TextBox();
+            cancelar_button = new Button();
+            telefono_textBox = new TextBox();
+            telefono_label = new Label();
+            resetear_button = new Button();
+            agregar_button = new Button();
+            correo_textBox = new TextBox();
+            cedula_textBox = new TextBox();
+            apellido_textBox = new TextBox();
+            nombre_textBox = new TextBox();
             label4 = new Label();
-            textBox4 = new TextBox();
-            label5 = new Label();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
-            // label1
+            // cancelar_button
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(184, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 20);
-            label1.TabIndex = 0;
+            cancelar_button.Location = new Point(213, 361);
+            cancelar_button.Margin = new Padding(3, 4, 3, 4);
+            cancelar_button.Name = "cancelar_button";
+            cancelar_button.Size = new Size(86, 31);
+            cancelar_button.TabIndex = 29;
+            cancelar_button.Text = "Cancelar";
+            cancelar_button.UseVisualStyleBackColor = true;
+            cancelar_button.Click += cancelar_button_Click;
             // 
-            // textBox1
+            // telefono_textBox
             // 
-            textBox1.Location = new Point(184, 59);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 1;
+            telefono_textBox.Location = new Point(249, 240);
+            telefono_textBox.Margin = new Padding(3, 4, 3, 4);
+            telefono_textBox.Name = "telefono_textBox";
+            telefono_textBox.Size = new Size(114, 27);
+            telefono_textBox.TabIndex = 26;
             // 
-            // label2
+            // telefono_label
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(184, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Cedula";
+            telefono_label.AutoSize = true;
+            telefono_label.Location = new Point(129, 240);
+            telefono_label.Name = "telefono_label";
+            telefono_label.Size = new Size(67, 20);
+            telefono_label.TabIndex = 25;
+            telefono_label.Text = "Telefono";
             // 
-            // textBox2
+            // resetear_button
             // 
-            textBox2.Location = new Point(184, 121);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 3;
+            resetear_button.Location = new Point(262, 309);
+            resetear_button.Margin = new Padding(3, 4, 3, 4);
+            resetear_button.Name = "resetear_button";
+            resetear_button.Size = new Size(86, 31);
+            resetear_button.TabIndex = 24;
+            resetear_button.Text = "Resetear";
+            resetear_button.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // agregar_button
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(184, 98);
-            label3.Name = "label3";
-            label3.Size = new Size(64, 20);
-            label3.TabIndex = 4;
-            label3.Text = "Nombre";
+            agregar_button.Location = new Point(145, 309);
+            agregar_button.Margin = new Padding(3, 4, 3, 4);
+            agregar_button.Name = "agregar_button";
+            agregar_button.Size = new Size(86, 31);
+            agregar_button.TabIndex = 23;
+            agregar_button.Text = "Aceptar";
+            agregar_button.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // correo_textBox
             // 
-            textBox3.Location = new Point(184, 183);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 5;
+            correo_textBox.Location = new Point(249, 184);
+            correo_textBox.Margin = new Padding(3, 4, 3, 4);
+            correo_textBox.Name = "correo_textBox";
+            correo_textBox.Size = new Size(114, 27);
+            correo_textBox.TabIndex = 22;
+            // 
+            // cedula_textBox
+            // 
+            cedula_textBox.Location = new Point(249, 139);
+            cedula_textBox.Margin = new Padding(3, 4, 3, 4);
+            cedula_textBox.Name = "cedula_textBox";
+            cedula_textBox.Size = new Size(114, 27);
+            cedula_textBox.TabIndex = 21;
+            // 
+            // apellido_textBox
+            // 
+            apellido_textBox.Location = new Point(249, 95);
+            apellido_textBox.Margin = new Padding(3, 4, 3, 4);
+            apellido_textBox.Name = "apellido_textBox";
+            apellido_textBox.Size = new Size(114, 27);
+            apellido_textBox.TabIndex = 20;
+            // 
+            // nombre_textBox
+            // 
+            nombre_textBox.Location = new Point(249, 43);
+            nombre_textBox.Margin = new Padding(3, 4, 3, 4);
+            nombre_textBox.Name = "nombre_textBox";
+            nombre_textBox.Size = new Size(114, 27);
+            nombre_textBox.TabIndex = 19;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(184, 160);
+            label4.Location = new Point(129, 184);
             label4.Name = "label4";
-            label4.Size = new Size(66, 20);
-            label4.TabIndex = 6;
-            label4.Text = "Apellido";
+            label4.Size = new Size(54, 20);
+            label4.TabIndex = 18;
+            label4.Text = "Correo";
             // 
-            // textBox4
+            // label3
             // 
-            textBox4.Location = new Point(184, 246);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 7;
+            label3.AutoSize = true;
+            label3.Location = new Point(129, 139);
+            label3.Name = "label3";
+            label3.Size = new Size(55, 20);
+            label3.TabIndex = 17;
+            label3.Text = "Cedula";
             // 
-            // label5
+            // label2
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(184, 289);
-            label5.Name = "label5";
-            label5.Size = new Size(67, 20);
-            label5.TabIndex = 8;
-            label5.Text = "Telefono";
+            label2.AutoSize = true;
+            label2.Location = new Point(129, 95);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 20);
+            label2.TabIndex = 16;
+            label2.Text = "Apellido";
             // 
-            // textBox5
+            // label1
             // 
-            textBox5.Location = new Point(184, 312);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 9;
+            label1.AutoSize = true;
+            label1.Location = new Point(129, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 20);
+            label1.TabIndex = 15;
+            label1.Text = "Nombre";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(184, 223);
-            label6.Name = "label6";
-            label6.Size = new Size(54, 20);
-            label6.TabIndex = 10;
-            label6.Text = "Correo";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(92, 385);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 11;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(319, 385);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 12;
-            button2.Text = "Regresar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // Pacienteadd_form
+            // add_Paciente_form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(516, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label6);
-            Controls.Add(textBox5);
-            Controls.Add(label5);
-            Controls.Add(textBox4);
+            ClientSize = new Size(516, 441);
+            Controls.Add(cancelar_button);
+            Controls.Add(telefono_textBox);
+            Controls.Add(telefono_label);
+            Controls.Add(resetear_button);
+            Controls.Add(agregar_button);
+            Controls.Add(correo_textBox);
+            Controls.Add(cedula_textBox);
+            Controls.Add(apellido_textBox);
+            Controls.Add(nombre_textBox);
             Controls.Add(label4);
-            Controls.Add(textBox3);
             Controls.Add(label3);
-            Controls.Add(textBox2);
             Controls.Add(label2);
-            Controls.Add(textBox1);
             Controls.Add(label1);
-            Name = "Pacienteadd_form";
-            Text = "Form1";
+            Name = "add_Paciente_form";
+            Text = "Añadir Paciente";
+            Load += add_Paciente_form_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox1;
-        private Label label2;
-        private TextBox textBox2;
-        private Label label3;
-        private TextBox textBox3;
+        private Button cancelar_button;
+        private TextBox telefono_textBox;
+        private Label telefono_label;
+        private Button resetear_button;
+        private Button agregar_button;
+        private TextBox correo_textBox;
+        private TextBox cedula_textBox;
+        private TextBox apellido_textBox;
+        private TextBox nombre_textBox;
         private Label label4;
-        private TextBox textBox4;
-        private Label label5;
-        private TextBox textBox5;
-        private Label label6;
-        private Button button1;
-        private Button button2;
+        private Label label3;
+        private Label label2;
+        private Label label1;
     }
 }

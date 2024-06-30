@@ -1,7 +1,6 @@
 ﻿using ConsultorioPrivado.Controlador.Controlers;
 using ConsultorioPrivado.Utilidad.Forms;
 using ConsultorioPrivado.Modelo;
-using ConsultorioPrivado.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +31,6 @@ namespace ConsultorioPrivado.Vista.Paciente_forms
 
         private void agregarDatosFormularios()
         {
-            //Arreglar bien esto
             Pacientes pacientes = new Pacientes();
             pacientes.Id = id;
             DataTable datosPaciente = controlador.ObtenerPorId(id);
