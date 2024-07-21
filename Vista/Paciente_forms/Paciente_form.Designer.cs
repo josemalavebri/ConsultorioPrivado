@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             pacientes_dgv = new DataGridView();
+            Editar = new DataGridViewImageColumn();
+            Eliminar = new DataGridViewImageColumn();
             label1 = new Label();
             label4 = new Label();
             cedula_text = new TextBox();
@@ -36,17 +38,38 @@
             label2 = new Label();
             nombre_text = new TextBox();
             apellido_text = new TextBox();
+            resetear_button = new Button();
+            nuevo_button = new Button();
             ((System.ComponentModel.ISupportInitialize)pacientes_dgv).BeginInit();
             SuspendLayout();
             // 
             // pacientes_dgv
             // 
             pacientes_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            pacientes_dgv.Location = new Point(22, 152);
+            pacientes_dgv.Columns.AddRange(new DataGridViewColumn[] { Editar, Eliminar });
+            pacientes_dgv.Location = new Point(12, 148);
             pacientes_dgv.Name = "pacientes_dgv";
-            pacientes_dgv.Size = new Size(596, 191);
+            pacientes_dgv.Size = new Size(851, 191);
             pacientes_dgv.TabIndex = 0;
-            pacientes_dgv.CellContentClick += paciente_dgv_CellContentClick;
+            pacientes_dgv.CellClick += pacientes_dgv_CellClick;
+            // 
+            // Editar
+            // 
+            Editar.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            Editar.HeaderText = "Editar";
+            Editar.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Editar.Name = "Editar";
+            Editar.Resizable = DataGridViewTriState.True;
+            Editar.Width = 43;
+            // 
+            // Eliminar
+            // 
+            Eliminar.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Eliminar.HeaderText = "Eliminar";
+            Eliminar.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Eliminar.Name = "Eliminar";
+            Eliminar.Resizable = DataGridViewTriState.True;
+            Eliminar.Width = 56;
             // 
             // label1
             // 
@@ -75,7 +98,7 @@
             // 
             // buscar_button
             // 
-            buscar_button.Location = new Point(218, 25);
+            buscar_button.Location = new Point(233, 26);
             buscar_button.Name = "buscar_button";
             buscar_button.Size = new Size(75, 23);
             buscar_button.TabIndex = 8;
@@ -100,16 +123,38 @@
             // 
             // apellido_text
             // 
-            apellido_text.Location = new Point(290, 72);
+            apellido_text.Location = new Point(218, 72);
             apellido_text.Name = "apellido_text";
             apellido_text.Size = new Size(100, 23);
             apellido_text.TabIndex = 9;
+            // 
+            // resetear_button
+            // 
+            resetear_button.Location = new Point(335, 26);
+            resetear_button.Name = "resetear_button";
+            resetear_button.Size = new Size(75, 23);
+            resetear_button.TabIndex = 10;
+            resetear_button.Text = "Resetear";
+            resetear_button.UseVisualStyleBackColor = true;
+            resetear_button.Click += resetear_button_Click;
+            // 
+            // nuevo_button
+            // 
+            nuevo_button.Location = new Point(405, 59);
+            nuevo_button.Name = "nuevo_button";
+            nuevo_button.Size = new Size(170, 47);
+            nuevo_button.TabIndex = 11;
+            nuevo_button.Text = "Nuevo";
+            nuevo_button.UseVisualStyleBackColor = true;
+            nuevo_button.Click += nuevo_button_Click;
             // 
             // Paciente_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(644, 381);
+            ClientSize = new Size(875, 381);
+            Controls.Add(nuevo_button);
+            Controls.Add(resetear_button);
             Controls.Add(apellido_text);
             Controls.Add(buscar_button);
             Controls.Add(cedula_text);
@@ -137,5 +182,9 @@
         private Label label2;
         private TextBox nombre_text;
         private TextBox apellido_text;
+        private Button resetear_button;
+        private Button nuevo_button;
+        private DataGridViewImageColumn Editar;
+        private DataGridViewImageColumn Eliminar;
     }
 }

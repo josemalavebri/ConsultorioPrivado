@@ -1,7 +1,8 @@
-﻿using ConsultorioPrivado.Controlador.Enums;
+﻿using ConsultorioPrivado.Controlador.Creators;
+using ConsultorioPrivado.Controlador.Enums;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
-using ConsultorioPrivado.Utilidad.Forms;
+using ConsultorioPrivado.Vista.Utilidad.Forms;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,86 +13,52 @@ using System.Threading.Tasks;
 
 namespace ConsultorioPrivado.Controlador.Controlers
 {
-    //controlador que se encarga de las operaciones tipo CRUD
-
+    //CONTROLADOR QUE SE ENCARGA DE LAS OPERACIONES TIPO CRUD DE LA ENTIDAD MEDICO
 
     public class ControladorMedico
     {
         private ControladorCreator controladorCreator;
-
-
-        // MEDICO 
 
         public ControladorMedico()
         {
             controladorCreator = new ControladorCreator();
         }
         
+        //OBTIENE MEDICO
         public DataTable ObtenerPorMedico()
         {
-            return controladorCreator.ObtenerEntidad(E_ROL._MEDICO);
+            return controladorCreator.ObtenerPorEntidad(E_ROL._MEDICO);
         }
 
-       
+        //OBTIENE MEDICO POR ID
+        public DataTable ObtenerPorId<T>(T entidad) where T : IEntidad
+        {
+            return controladorCreator.ObtenerPorId(entidad, E_ROL._MEDICO);
+        }
 
-        //CREA LAS ENTIDADES
+        //OBTIENE MEDICO POR CEDULA
+        public DataTable ObtenerPorCedula<T>(T entidad) where T : IEntidad
+        {
+            return controladorCreator.ObtenerPorCedula(entidad, E_ROL._MEDICO);
+        }
+
+        //ELIMINA MEDICO
+        public bool EliminarMedico<T>(T entidad) where T : IEntidad
+        {
+            return controladorCreator.EliminarEntidad(entidad, E_ROL._MEDICO);
+        }
+
+        //CREA MEDICO
         public bool CrearMedico<T>(T entidad) where T : IEntidad
         {
             return controladorCreator.CrearEntidad(entidad, E_ROL._MEDICO);
         }
-
-
-
-        /*
-
-       //BUSCA LAS ENTIDADES SEGUN LA CEDULA
-       public DataTable ObtenerPorCedula<T>(T entidad, E_ROL rol) where T : IEntidad
-       {
-           lista.Clear();
-           lista = propiedadesCreator.CrearListaPropiedadesCedula<T>(entidad);
-           return operacionesDB.ObtenerPorCedula(rol, lista);
-       }
-
-
-       //ACTUALIZA LAS ENTIDADES
-       public bool Actualizar<T>(T entidad, E_ROL rol) where T : IEntidad
-       {
-           lista.Clear();
-           lista = propiedadesCreator.CrearListaPropiedades<T>(entidad);
-           return operacionesDB.Actualizar(rol, lista);
-       }
-
-
-       //ELIMINA LAS ENTIDADES
-       public bool Eliminar<T>(T entidad, E_ROL rol) where T : IEntidad
-       {
-           lista.Clear();
-           lista = propiedadesCreator.CrearListaPropiedadesId<T>(entidad);
-           return operacionesDB.Eliminar(rol, lista);
-       }
-
-
-       //OBTIENE UN REGISTRO DE ENTIDAD COMPLETO
-       public DataTable ObtenerPorEntidad(E_ROL rol)
-       {
-           lista.Clear();
-           operacionesDB = new ExecuteSP();
-           return operacionesDB.ObtenerPorEntidad(rol);
-       }
-
-       public DataTable ObtenerPorId<T>(T entidad, E_ROL rol) where T : IEntidad
-       {
-           lista.Clear();
-           lista = propiedadesCreator.CrearListaPropiedadesId<T>(entidad);
-           return operacionesDB.ObtenerPorEntidad(rol, lista);
-       }
-
-       //CREA UNA LISTA CON LAS PROPIEDADES 
-       */
-
-
-
-
-
+       
+        //ACTUALIZA MEDICO
+        public bool ActualizarMedico<T>(T entidad) where T : IEntidad
+        {
+            return controladorCreator.ActualizarEntidad(entidad, E_ROL._MEDICO);
+        }
+       
     }
 }

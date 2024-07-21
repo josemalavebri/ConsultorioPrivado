@@ -13,6 +13,6 @@ namespace ConsultorioPrivado.Controlador.Enums
         SP_OBTENER_POR_CEDULA,
         SP_ELIMINAR,
         SP_CREAR,
-        SP_ACTUALIZAR,
+        SP_ACTUALIZAR
     }
 }

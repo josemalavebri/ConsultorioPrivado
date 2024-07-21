@@ -1,7 +1,8 @@
 ﻿using ConsultorioPrivado.Controlador.Controlers;
+using ConsultorioPrivado.Controlador.Enums;
 using ConsultorioPrivado.Datos.Interface;
 using ConsultorioPrivado.Modelo;
-using ConsultorioPrivado.Utilidad.Forms;
+using ConsultorioPrivado.Vista.Utilidad.Forms;
 using Microsoft.Identity.Client.NativeInterop;
 using System;
 using System.Collections.Generic;
@@ -17,36 +18,32 @@ namespace ConsultorioPrivado.Vista
 {
     public partial class Medico_form : Form
     {
-        private ControladorMedico controladorGeneral;
+        private ControladorMedico controladorMedico;
         public Medico_form()
         {
             InitializeComponent();
-            controladorGeneral = new ControladorMedico();
+            controladorMedico = new ControladorMedico();
 
         }
         private void Medico_form_Load(object sender, EventArgs e)
         {
             CargarDataGrid();
+            
         }
 
         public void CargarDataGrid()
         {
 
-            medicos_dgv.DataSource = controladorGeneral.ObtenerPorMedico();
+            medicos_dgv.DataSource = controladorMedico.ObtenerPorMedico();
 
             int numero = medicos_dgv.ColumnCount;
 
-            medicos_dgv.Columns["Editar"].DisplayIndex = numero - 1;
+            medicos_dgv.Columns["Editar"].DisplayIndex = numero - 1; 
             medicos_dgv.Columns["Eliminar"].DisplayIndex = numero - 1;
 
             medicos_dgv.Columns["Editar"].Width = 75;
             medicos_dgv.Columns["Eliminar"].Width = 75;
         }
-
-        private void medicos_dgv_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         
         private void buscar_button_Click(object sender, EventArgs e)
         {
@@ -56,9 +53,6 @@ namespace ConsultorioPrivado.Vista
             
             /*controladorGeneral.ObtenerPorCedula(Paciente, E_ROL._MEDICO);*/
         }
-
-      
-
         
         private DialogResult MostrarMensaje()
         {
@@ -76,15 +70,13 @@ namespace ConsultorioPrivado.Vista
             CargarDataGrid();
         }
 
-       
-
         private void nuevo_button_Click_1(object sender, EventArgs e)
         {
             Form form = new AgregarMedico_form();
             form.ShowDialog();
         }
 
-        //NO TERMINADO
+        /*/NO TERMINADO
         private void buscar_button_Click_1(object sender, EventArgs e)
         {
             Medico medico = new Medico();
@@ -101,7 +93,7 @@ namespace ConsultorioPrivado.Vista
                 medicos_dgv.Columns["Editar"].Width = 75;
                 medicos_dgv.Columns["Eliminar"].Width = 75;
             }
-        }
+        }*/
 
         private void medicos_dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -117,14 +109,13 @@ namespace ConsultorioPrivado.Vista
             if (medicos_dgv.Columns[e.ColumnIndex].Name == "Eliminar")
             {
                 int id = Convert.ToInt32(medicos_dgv.CurrentRow.
-
-                   Cells["Id"].Value.ToString()); ;
-                Paciente Paciente = new Paciente();
-                Paciente.Id = id;
+                   Cells["Id"].Value.ToString());
+                Medico medico = new Medico();
+                medico.Id = id;
                 DialogResult result = MostrarMensaje();
                 if (result == DialogResult.OK)
                 {
-                  //  controladorGeneral.Eliminar(Paciente, E_ROL._MEDICO);
+                    controladorMedico.EliminarMedico<Medico>(medico); 
                     CargarDataGrid();
                 }
             }

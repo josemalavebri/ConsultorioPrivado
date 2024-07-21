@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Utilidad.Forms
+namespace ConsultorioPrivado.Vista.Utilidad.Forms
 {
     public class ControlFormsText
     {

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsultorioPrivado.Utilidad.Forms
+namespace ConsultorioPrivado.Vista.Utilidad.Forms
 {
     internal class ControlFormsReset
     {
         public static void TextBoxChangeListener(Button resetButton, params TextBox[] textBoxes)
         {
-            EmpezarEventos(resetButton,textBoxes);
+            EmpezarEventos(resetButton, textBoxes);
         }
 
         private static void EmpezarEventos(Button resetButton, params TextBox[] textBoxes)

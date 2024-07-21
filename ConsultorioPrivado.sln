@@ -5,8 +5,6 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsultorioPrivado", "ConsultorioPrivado.csproj", "{BA33FB95-0F1E-49EC-809A-EC1298BA2770}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsultorioTest", "..\ConsultorioTest\ConsultorioTest.csproj", "{3AD66F7D-D735-4924-9C8C-424A049771EA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{BA33FB95-0F1E-49EC-809A-EC1298BA2770}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA33FB95-0F1E-49EC-809A-EC1298BA2770}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA33FB95-0F1E-49EC-809A-EC1298BA2770}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3AD66F7D-D735-4924-9C8C-424A049771EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AD66F7D-D735-4924-9C8C-424A049771EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AD66F7D-D735-4924-9C8C-424A049771EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AD66F7D-D735-4924-9C8C-424A049771EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
